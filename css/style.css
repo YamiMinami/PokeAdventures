@@ -1,0 +1,51 @@
+
+/* Stijlen voor het formulier */
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 600px;
+    
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    
+}
+
+label {
+    display: none; /* Label wordt verborgen om ruimte te besparen */
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
