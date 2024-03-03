@@ -66,9 +66,21 @@ main {
     display: flex;
     align-items: center;
     background-color: grey;
-    padding: 6rem 12rem 6rem 12rem;
-    border-radius: 5px;
+    padding: 0.5rem 4rem 0.5rem 4rem;
+    border-radius: 15px;
     flex: 1 1;
 }
 
+.boxContent {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.boxContent img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
