@@ -1,2 +1,0 @@
-# PokeAdventures
-SchoolProject
