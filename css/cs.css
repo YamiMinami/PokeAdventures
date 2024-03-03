@@ -50,6 +50,8 @@ header {
 main {
     grid-area: Main;
     margin-top: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 .mainContainer {
@@ -64,8 +66,9 @@ main {
     display: flex;
     align-items: center;
     background-color: grey;
-    padding: 3rem 5rem 3rem 5rem;
+    padding: 6rem 12rem 6rem 12rem;
     border-radius: 5px;
+    flex: 1 1;
 }
 
 
