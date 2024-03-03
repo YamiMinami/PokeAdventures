@@ -29,6 +29,8 @@ header {
     padding: 0;
     padding-left: 3rem;
     padding-right: 1rem;
+    position: fixed;
+    width: 100%;
 }
 
 .navbar ul {
@@ -50,6 +52,8 @@ header {
 .navbar a:hover {
     text-decoration: underline;
 }
+
+/* pokedex */
 
 main {
     grid-area: Main;
@@ -98,4 +102,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
 }
+
+/* projecten */
+
 
