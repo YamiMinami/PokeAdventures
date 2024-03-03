@@ -1,19 +1,24 @@
 
-/* Stijlen voor het formulier */
-form {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+main, .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px ;
 }
 
-
-.container {
+/* Stijlen voor het formulier */
+form {
+    max-width: 500px;
+    margin: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    align-self: center;
+    justify-content: center;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 600px;
-    
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+
 }
 
 .input-group {
