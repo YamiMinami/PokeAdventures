@@ -27,6 +27,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    position: fixed;
 }
 
 .navbar ul {
