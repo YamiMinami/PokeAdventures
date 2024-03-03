@@ -64,6 +64,15 @@ main {
     gap: 2rem;
 }
 
+.mainContainer a {
+    text-decoration: none;
+    color: white;
+}
+
+.mainContainer a:hover {
+    opacity: 50%;
+}
+
 .box {
     display: flex;
     align-items: center;
@@ -72,6 +81,7 @@ main {
     border-radius: 15px;
     flex: 1 1;
 }
+
 
 .boxContent {
     display: flex;
