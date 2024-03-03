@@ -49,18 +49,22 @@ header {
 
 main {
     grid-area: Main;
+    margin-top: 3rem;
 }
 
 .mainContainer {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
 }
 
 .box {
     display: flex;
     align-items: center;
     background-color: grey;
-    padding: 20px;
+    padding: 3rem 5rem 3rem 5rem;
     border-radius: 5px;
 }
 
