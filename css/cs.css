@@ -47,5 +47,11 @@ header {
     text-decoration: underline;
 }
 
+main {
+    grid-area: Main;
+}
 
-
+.mainContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
