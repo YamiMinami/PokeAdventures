@@ -14,10 +14,12 @@ html, body {
     height: 100vh;
     width: 100vw;
     grid-template-rows: 10% 80% 10%;
+    color: white;
 }
 
 header {
     grid-area: Header;
+    background-color: #3d65ba;
 }
 
 .navbar {
@@ -39,7 +41,7 @@ header {
 }
 
 .navbar a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -50,8 +52,8 @@ header {
 main {
     grid-area: Main;
     margin-top: 3rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
 .mainContainer {
@@ -65,8 +67,8 @@ main {
 .box {
     display: flex;
     align-items: center;
-    background-color: grey;
-    padding: 0.5rem 4rem 0.5rem 4rem;
+    background-color:	#546d89;
+    padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
 }
@@ -74,7 +76,8 @@ main {
 .boxContent {
     display: flex;
     justify-content: space-around;
-    gap: 2rem;
+    align-items: center;
+    gap: 10rem;
 }
 
 .boxContent img {
