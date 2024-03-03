@@ -76,7 +76,7 @@ main {
 }
 
 .mainContainer a:hover {
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .box {
@@ -86,6 +86,7 @@ main {
     padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
+    box-shadow: 5px 5px 5px grey;
 }
 
 
