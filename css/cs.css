@@ -156,3 +156,55 @@ main {
     border-radius: 50%;
 }
 
+.selectionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectionContainer button {
+    text-align: center;
+}
+
+.selectedPokemon {
+    align-items: center;
+    justify-content: center;
+}
+
+.selectedPokemon img {
+    height: 100px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.selectionBox {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3d65ba;
+    padding: 2em;
+    gap: 5em;
+    border-radius: 15px;
+}
+
+.selectionBox h1 {
+    padding-bottom: 1em;
+}
+
+button {
+    color: white;
+    background-color: #546d89;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 5em;
+    border: none;
+    width: 385px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button :hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+
