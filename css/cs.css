@@ -26,11 +26,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 0.25em;
     padding-left: 3rem;
     padding-right: 1rem;
     position: fixed;
     width: 100%;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -125,3 +126,33 @@ main {
     object-fit: cover;
     
 }
+
+/* Teamplanner */
+
+.teamContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    flex: 1 1 150px;
+}
+
+.teamContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+.teamContent {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.teamContent img {
+    height: 100px;
+    width: auto;
+    object-fit: cover;
+    padding: 1em;
+    border-radius: 50%;
+}
+
