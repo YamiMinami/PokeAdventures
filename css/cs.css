@@ -107,3 +107,21 @@ main {
 /* projecten */
 
 
+.projectBox {
+    display: flex;
+    align-items: center;
+    background-color:	#546d89;
+    padding: 3em;
+    border-radius: 15px;
+    flex: 1 1 ;
+    box-shadow: 5px 5px 5px grey;
+    text-align: center;
+}
+
+.projectContent img{
+    height: 300px;
+    width: auto;
+    padding-bottom: 1em;
+    object-fit: cover;
+    
+}
