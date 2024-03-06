@@ -1,31 +1,35 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    margin : 0;
+    padding : 0;
 }
 
 html, body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     display: grid;
-    line-height: 1.6;
-    background-color: #f2f2f2;
-    object-fit: cover;
-    background-position: center;
-
+    grid-template-areas: 
+    "Header Header Header"
+    "Main Main Main"
+    "Footer Footer Footer";
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 10% auto auto;
+    color: white;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0rem;
-    height: 40%;
+    grid-area: Header;
     background-color: #3d65ba;
-    
 }
 
-header img {
-    height: 30px;
+footer {
+    grid-area: Footer;
+    background-color: #17213a;  
+    text-align: center; 
+    padding: 1em;
+    color: #ffffff; 
+    font-size: 14px; 
+    border-top: black solid 1px;
 }
 
 .navbar {
@@ -56,72 +60,180 @@ header img {
     text-decoration: none;
 }
 
-main {
-    padding: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
+.navbar a:hover {
+    text-decoration: underline;
 }
 
-.inlogContainer {
-    width: 500px;
-    min-width: 300px;
-    margin: 2rem 0;
-    padding: 5rem;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    border-top: #2b639f solid 10px;
+/* pokedex */
+
+main {
+    grid-area: Main;
+    margin: 3rem;
+}
+
+main img {
+    object-fit: cover;
+}
+
+.mainContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+
+}
+
+.mainContainer a {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease-out;
     
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
+.mainContainer a:hover {
+    opacity: 80%;
+    transform: scale(1.05);
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    background-color:	#546d89;
+    padding: 1rem 2rem 1em 2rem;
+    border-radius: 15px;
+    flex: 1 1;
+    box-shadow: 5px 5px 5px grey;
+}
+
+
+.boxContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10rem;
+    
+}
+
+.boxContent img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* projecten */
+
+
+.projectBox {
+    display: flex;
+    align-items: center;
+    background-color:	#546d89;
+    padding: 3em;
+    border-radius: 15px;
+    flex: 1 1 ;
+    box-shadow: 5px 5px 5px grey;
     text-align: center;
-    grid-column: 1 / 2;
-    justify-self: right;
-    align-self: center;
-    padding-right: 1em;
 }
 
-input[type="text"],
-input[type="password"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    grid-column: 2 / 3;
+.projectContent img{
+    height: 300px;
+    width: auto;
+    padding-bottom: 1em;
+    object-fit: cover;
+    
 }
 
-button[type="submit"] {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+/* Teamplanner */
+
+.teamContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    flex: 1 1 150px;
+    gap: 10px;
+}
+
+.teamContainer a {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-out;
+}
+
+.teamContainer a:hover {
+    opacity: 80%;
+    transform: scale(1.1);
+    
+}
+
+.teamContent {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.teamContent img {
+    height: 100px;
+    width: auto;
+    object-fit: cover;
+    padding: 1em;
+    border-radius: 50%;
+}
+
+.selectionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectionContainer button {
+    text-align: center;
+}
+
+.selectedPokemon {
+    align-items: center;
+    justify-content: center;
+}
+
+.selectedPokemon img {
+    height: 100px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.selectionBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #304f91;
+    padding: 2em;
+    gap: 5em;
+    border-radius: 15px;
+}
+
+.selectionBox h1 {
+    padding-bottom: 1em;
+}
+
+button {
+    color: white;
+    background-color: #546d89;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 5em;
     border: none;
-    border-radius: 5px;
+    width: 385px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    grid-column: 2 / 3;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+button :hover {
+    background-color: aliceblue;
+    cursor: pointer;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
 
-p {
-    text-align: center;
-    color: #555;
-    margin-bottom: 2rem;
-}
