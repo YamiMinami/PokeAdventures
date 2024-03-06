@@ -71,6 +71,10 @@ main {
     margin: 3rem;
 }
 
+main img {
+    object-fit: cover;
+}
+
 .mainContainer {
     display: flex;
     flex-flow: row wrap;
