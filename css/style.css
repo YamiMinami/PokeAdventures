@@ -19,7 +19,7 @@ html, body {
 
 header {
     grid-area: Header;
-    background-color: #3d65ba;
+    background-color: #ff4848;
 }
 
 footer {
@@ -101,7 +101,7 @@ main img {
 .box {
     display: flex;
     align-items: center;
-    background-color:	#546d89;
+    background-color:	#c12828;
     padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
@@ -130,7 +130,7 @@ main img {
 .projectBox {
     display: flex;
     align-items: center;
-    background-color:	#546d89;
+    background-color:	#eb3c3c;
     padding: 3em;
     border-radius: 15px;
     flex: 1 1 ;
@@ -209,7 +209,7 @@ main img {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #304f91;
+    background-color: #c11c1c;
     padding: 2em;
     gap: 5em;
     border-radius: 15px;
@@ -221,7 +221,7 @@ main img {
 
 button {
     color: white;
-    background-color: #546d89;
+    background-color: #751a1a;
     padding: 1em;
     margin-top: 1em;
     margin-bottom: 5em;
