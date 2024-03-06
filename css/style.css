@@ -244,8 +244,7 @@ button :hover {
     align-items: center;
     gap: 2rem;
     padding-bottom: 5rem;
-    padding-top: 5rem;
-    margin-top: 4rem;
+    padding-top: 3rem;
 }
 .inlogContent{
     display: flex;
