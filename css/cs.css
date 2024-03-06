@@ -69,15 +69,19 @@ main {
     justify-content: space-around;
     align-items: center;
     gap: 2rem;
+
 }
 
 .mainContainer a {
     text-decoration: none;
     color: white;
+    transition: transform 0.2s ease-out;
+    
 }
 
 .mainContainer a:hover {
     opacity: 80%;
+    transform: scale(1.1);
 }
 
 .box {
@@ -96,6 +100,7 @@ main {
     justify-content: space-around;
     align-items: center;
     gap: 10rem;
+    
 }
 
 .boxContent img {
@@ -140,6 +145,13 @@ main {
 .teamContainer a {
     text-decoration: none;
     color: black;
+    transition: transform 0.3s ease-out;
+}
+
+.teamContainer a:hover {
+    opacity: 80%;
+    transform: scale(1.1);
+    
 }
 
 .teamContent {
