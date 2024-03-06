@@ -4,39 +4,51 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font-family: Arial, sans-serif;
+    display: grid;
     line-height: 1.6;
     background-color: #f2f2f2;
-    background-image: url(https://tcg.pokemon.com/assets/img/home/wallpapers/wallpaper-55.jpg);
     object-fit: cover;
     background-position: center;
+
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0rem;
+    height: 40%;
     background-color: #3d65ba;
+    
 }
 
 header img {
-    height: 50px;
+    height: 30px;
 }
 
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 0.25em;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    position: fixed;
-    width: 100%;
 }
 
 .navbar li {
-    margin: 0 1rem;
+    margin: 0 10px;
 }
 
 .navbar a {
@@ -45,7 +57,7 @@ header img {
 }
 
 main {
-    padding: 8rem;
+    padding: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,6 +76,8 @@ form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    border-top: #2b639f solid 10px;
+    
 }
 
 label {
@@ -74,6 +88,7 @@ label {
     grid-column: 1 / 2;
     justify-self: right;
     align-self: center;
+    padding-right: 1em;
 }
 
 input[type="text"],
