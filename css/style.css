@@ -122,6 +122,8 @@ main img {
     width: 100px;
     border-radius: 50%;
     object-fit: cover;
+    background-color: white;
+    padding: 10px;
 }
 
 /* projecten */
@@ -203,6 +205,8 @@ main img {
     height: 100px;
     width: auto;
     border-radius: 50%;
+    background-color: white;
+    padding: 10px;
 }
 
 .selectionBox {
