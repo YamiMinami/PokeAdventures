@@ -140,6 +140,7 @@ main {
     align-items: center;
     flex-flow: row wrap;
     flex: 1 1 150px;
+    gap: 10px;
 }
 
 .teamContainer a {
