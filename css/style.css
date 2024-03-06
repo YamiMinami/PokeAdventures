@@ -64,7 +64,7 @@ main {
  
 }
 
-form {
+.inlogContainer {
     width: 500px;
     min-width: 300px;
     margin: 2rem 0;
