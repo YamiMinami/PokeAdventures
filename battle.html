@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1>Logo</h1>
+  <nav>
+  <ul>
+      <li><a href="#">Speel</a></li>
+      <li><a href="pokedex.html">Pokedex</a></li>
+      <li><a href="#">TeamPlanner</a></li>
+      <li><a href="index.html">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
+  </ul>
+  </nav>
+</header>
+<main>
+  <h2 id="text-battle">Vechten</h2>
+  <div class="battle-container-wrapper">
+    <section class="battle-container">
+      <div class="pokemon" id="pokemon1">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Pokemon 1">
+        <div class="name">Bulbasaur</div>
+        <p class="hp">HP: <span id="hp1">100</span></p>
+      </div>
+      <div class="vs">VS</div> <!-- Toegevoegd -->
+
+      <div class="pokemon" id="pokemon2">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="Pokemon 2">
+        <div class="name">Yvisaur</div>
+        <p class="hp">HP: <span id="hp2">100</span></p>
+      </div>
+    </section>
+  </div>
+  <button class="attack-btn" onclick="attack()">Aanvallen!</button>
+</main>
+
+<footer>
+  <p>&copy; 2023 Pokemon Battle</p>
+</footer>
+
+</body>
+</html>
