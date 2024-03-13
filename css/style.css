@@ -78,6 +78,8 @@ footer {
     text-decoration: underline;
 }
 
+
+
 /* pokedex */
 
 main {
@@ -371,6 +373,7 @@ button[type="submit"]:hover {
 
 /*Battle-pokemon*/
 
+
 .battle-container-wrapper {
     display: flex;
     justify-content: center;
@@ -379,19 +382,20 @@ button[type="submit"]:hover {
     height: calc(100vh - 200px);
 }
 
-
 .battle-container {
+    background-image: url('../assets/sylvain-sarrailh-jardinstatues.jpg');
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 800px;
+    width: 800px; /* Vaste breedte aanpassen voor responsiviteit */
     height: 300px;
     background-color: transparent; 
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.pokemon {
+
+section.pokemon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -403,16 +407,16 @@ button[type="submit"]:hover {
     background-color: transparent; 
 }
 
-
-
-.pokemon img {
-    width: 150px;
-    height: 150px; 
+section.pokemon img {
+    width: 100%; /* Afbeelding 100% breedte van de container */
+    height: auto; /* Behoud de aspect ratio */
+    max-width: 150px; /* Maximale breedte instellen */
     margin-bottom: 10px; 
 }
 
-.name, .hp {
-    font-size: 20px;
+section.pokemon .name,
+section.pokemon .hp {
+    font-size: 1em; /* Relatieve grootte */
     font-weight: bold;
     color: #333;
     padding: 10px; 
@@ -423,17 +427,16 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-.hp {
-    color:  #c11c1c;; 
+section.pokemon .hp {
+    color: #c11c1c; 
 }
-
 
 .attack-btn {
     display: block;
     margin: 30px auto; 
     padding: 20px; 
-    font-size: 20px; 
-    background-color:  #c11c1c;
+    font-size: 1em; /* Relatieve grootte */
+    background-color: #c11c1c;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -443,18 +446,19 @@ button[type="submit"]:hover {
 }
 
 .attack-btn:hover {
-    background-color:  #c11c1c;
+    background-color: #c11c1c;
 }
 
 .vs {
-    font-size: 50px;
+    font-size: 2em; /* Relatieve grootte */
     font-weight: bold;
-    color:  #c11c1c;
+    color: #c11c1c;
     font-family: 'Roboto Condensed', sans-serif;
     flex: 0 0 auto;
 }
+
 #text-battle {
-    font-size: 24px; 
+    font-size: 1.5em; /* Relatieve grootte */
     font-weight: bold;
     color: #333; 
     text-align: center; 
@@ -462,13 +466,39 @@ button[type="submit"]:hover {
     text-transform: uppercase;
 }
 
-@media only screen and (max-width: 768px) {
+
+
+#check {display: none;}
+
+/* Mediaquery voor kleinere schermen */
+@media only screen and (max-width: 896px) {
     .battle-container {
-        flex-direction: column;
-        height: auto;
+        flex-direction: row;
+        width: auto; /* Breedte aanpassen aan de viewport */
+        padding: 10px; /* Extra ruimte toevoegen */
     }
 
-    .pokemon {
+    section.pokemon {
         width: 100%;
     }
+
+    .attack-btn {
+        font-size: 1.2em; /* Aanpassen aan kleinere schermen */
+        margin-top: -20px;
+    }
+
+    .vs {
+        font-size: 1.5em; /* Aanpassen aan kleinere schermen */
+    }
+
+    #text-battle {
+        font-size: 1.2em; /* Aanpassen aan kleinere schermen */
+    }
+
+    
+
+
+  
+   
 }
+

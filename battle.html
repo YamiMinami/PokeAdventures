@@ -9,36 +9,39 @@
 <body>
 
 <header class="navbar">
-  <h1>Logo</h1>
+  <h1>Logo</h1> 
   <nav>
   <ul>
-      <li><a href="#">Speel</a></li>
+      <li><a href="battle.html">Speel</a></li>
       <li><a href="pokedex.html">Pokedex</a></li>
-      <li><a href="#">TeamPlanner</a></li>
+      <li><a href="teamplanner.html">TeamPlanner</a></li>
       <li><a href="index.html">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
+      
+
   </ul>
   </nav>
 </header>
 <main>
   <h2 id="text-battle">Vechten</h2>
-  <div class="battle-container-wrapper">
+  <section class="battle-container-wrapper">
     <section class="battle-container">
-      <div class="pokemon" id="pokemon1">
+      <section class="pokemon" id="pokemon1">
         <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="Pokemon 1">
-        <div class="name">Charizard</div>
+        <h3 class="name">Charizard</h3>
         <p class="hp">HP: <span id="hp1">100</span></p>
-      </div>
-      <div class="vs">VS</div> <!-- Toegevoegd -->
+      </section>
+      <div class="vs">VS</div> 
 
-      <div class="pokemon" id="pokemon2">
+      <section class="pokemon" id="pokemon2">
         <img src="assets/Hektakun-Pokemon-009-Blastoise.72.png" alt="Pokemon 2">
-        <div class="name">Blastoise</div>
+        <h3 class="name">Blastoise</h3>
         <p class="hp">HP: <span id="hp2">100</span></p>
-      </div>
+      </section>
     </section>
-  </div>
+  </section>
   <button class="attack-btn" onclick="attack()">Aanvallen!</button>
 </main>
+
 
 <footer>
   <p>&copy; 2023 Pokemon Battle</p>
