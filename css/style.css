@@ -243,6 +243,11 @@ button :hover {
 }
 
 /*detail.html*/
+.text-black-center{
+    text-align: center;
+    color: black;
+    margin: 0px;
+}
 #pokemon-detail-container {
     display: flex;
     width: 100%;
@@ -251,13 +256,13 @@ button :hover {
 }
 
 .img-detail-pokemon {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 500px;
+    max-height: 500px;
     border-radius: 20px;
 }
 
 #pokemon-stats-container {
-width: 10%;
+width: 20%;
 }
 
 .pokemon-detail-stats {
@@ -268,4 +273,17 @@ width: 10%;
     text-align: left;
     margin-top: 5px;
     font-weight: bold;
+}
+#pokemon-evolution-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+    flex: 1 1 10%;
+}
+#pokemon-evolution-container img {
+    max-width: 10%;
+    height: auto;
+    border-radius: 20px;
 }
