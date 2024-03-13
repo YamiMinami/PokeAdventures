@@ -246,3 +246,13 @@ button :hover {
     height: 300px;
     border-radius: 20px;
 }
+.pokemon-stats {
+    background-color: #546d89;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: left;
+    width: 50%;
+    margin-top: 5px;
+    
+}
