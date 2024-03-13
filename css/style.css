@@ -318,8 +318,8 @@ button[type="submit"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -100px; /* Hiermee verplaatsen we alles hoger op de pagina */
-    height: calc(100vh - 200px); /* Aangepast om de container verticaal in het midden van de pagina te positioneren */
+    margin-top: -100px; 
+    height: calc(100vh - 200px);
 }
 
 
@@ -329,7 +329,7 @@ button[type="submit"]:hover {
     align-items: center;
     width: 800px;
     height: 300px;
-    background-color: transparent; /* Achtergrondkleur transparant maken */
+    background-color: transparent; 
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -343,50 +343,50 @@ button[type="submit"]:hover {
     border: 1px solid #ccc;
     box-sizing: border-box;
     padding: 20px;
-    background-color: transparent; /* Achtergrondkleur transparant maken */
+    background-color: transparent; 
 }
 
 
 
 .pokemon img {
-    width: 200px; /* Afbeeldingsgrootte vergroot */
-    height: 150px; /* Afbeeldingsgrootte vergroot */
-    margin-bottom: 10px; /* Marge vergroot */
+    width: 150px;
+    height: 150px; 
+    margin-bottom: 10px; 
 }
 
 .name, .hp {
     font-size: 20px;
     font-weight: bold;
     color: #333;
-    padding: 10px; /* Toegevoegde padding */
+    padding: 10px; 
     text-align: center;
-    border: 2px solid #ccc; /* Toegevoegde rand */
-    border-radius: 8px; /* Toegevoegde afgeronde hoeken */
-    background-color: #f0f0f0; /* Toegevoegde achtergrondkleur */
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+    background-color: #f0f0f0; 
     margin-bottom: 10px;
 }
 
 .hp {
-    color: #ff4d4d; /* Rode kleur voor HP */
+    color: #ff4d4d; 
 }
 
 
 .attack-btn {
     display: block;
-    margin: 30px auto; /* Gecentreerd de aanvalsknop horizontaal */
-    padding: 20px; /* Padding vergroot */
-    font-size: 20px; /* Lettergrootte vergroot */
+    margin: 30px auto; 
+    padding: 20px; 
+    font-size: 20px; 
     background-color: #ff4d4d;
     color: #fff;
     border: none;
     cursor: pointer;
-    border-radius: 8px; /* Randdikte vergroot */
-    transition: background-color 0.3s ease; /* Vloeiende overgang toegevoegd */
+    border-radius: 8px; 
+    transition: background-color 0.3s ease;
     margin-top: -40px;
 }
 
 .attack-btn:hover {
-    background-color: #ff6666; /* Kleurverandering toegevoegd bij hover */
+    background-color: #ff6666; 
 }
 
 .vs {
@@ -397,12 +397,12 @@ button[type="submit"]:hover {
     flex: 0 0 auto;
 }
 #text-battle {
-    font-size: 24px; /* Lettergrootte vergroot */
-    font-weight: bold; /* Vetgedrukte tekst */
-    color: #333; /* Tekstkleur */
-    text-align: center; /* Centreren van de tekst */
-    margin-bottom: 0.5px; /* Onderste marge toegevoegd */
-    text-transform: uppercase; /* Tekst omzetten naar hoofdletters */
+    font-size: 24px; 
+    font-weight: bold;
+    color: #333; 
+    text-align: center; 
+    margin-bottom: 0.5px; 
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 768px) {
