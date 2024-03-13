@@ -13,7 +13,7 @@ html, body {
     "Footer Footer Footer";
     height: 100vh;
     width: 100vw;
-    grid-template-rows: 10% auto auto;
+    grid-template-rows: auto auto auto;
     color: white;
 }
 
@@ -42,6 +42,20 @@ footer {
     position: fixed;
     width: 100%;
     z-index: 1000;
+}
+
+#navbar-index
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25em;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: #083249;
 }
 
 .navbar ul {
@@ -132,7 +146,7 @@ main img {
 .projectBox {
     display: flex;
     align-items: center;
-    background-color:	#eb3c3c;
+    background-color:	#083249;
     padding: 3em;
     border-radius: 15px;
     flex: 1 1 ;
@@ -239,4 +253,47 @@ button {
 button :hover {
     background-color: aliceblue;
     cursor: pointer;
+}
+
+/* Image Catch Pokemon */
+
+
+.background-image
+{
+    background-image: url(/assets/derek-weselake-breathe-small.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.catch img 
+{
+    height: 200%;
+    width: auto;
+}
+
+.catchContainer 
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    transition: transform 0.2s ease-out ;
+}
+
+.catchContainer:hover
+{
+    transform: scale(2);
+    margin-top: 5%;
+}
+
+.catchHeading 
+{
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-top: 3em;
+    padding-bottom: 20%;
+    text-shadow: 3px 3px 3px #3a1717;
 }
