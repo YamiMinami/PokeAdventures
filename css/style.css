@@ -244,6 +244,7 @@ button :hover {
 .pokemon-input{
     margin-bottom: 15px;
     padding: 5px;
+    width: 100%;
 }
 
 
@@ -260,6 +261,7 @@ button :hover {
     align-items: center;
     text-align: center;
     padding: 0 15px 0 15px;
+    margin-bottom: 2rem;
 }
 
 #compare-container{
@@ -281,7 +283,7 @@ button :hover {
     padding: 1rem;
     border-radius: 10px;
     text-align: left;
-    width: 50%;
+    width: 100%;
     margin-top: 5px;
     
 }
