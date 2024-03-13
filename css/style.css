@@ -1,16 +1,17 @@
 * {
     box-sizing: border-box;
-    margin : 0;
-    padding : 0;
+    margin: 0;
+    padding: 0;
 }
 
-html, body {
+html,
+body {
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
-    grid-template-areas: 
-    "Header Header Header"
-    "Main Main Main"
-    "Footer Footer Footer";
+    grid-template-areas:
+        "Header Header Header"
+        "Main Main Main"
+        "Footer Footer Footer";
     height: 100vh;
     width: 100vw;
     grid-template-rows: 10% auto auto;
@@ -24,11 +25,11 @@ header {
 
 footer {
     grid-area: Footer;
-    background-color: #17213a;  
-    text-align: center; 
+    background-color: #17213a;
+    text-align: center;
     padding: 1em;
-    color: #ffffff; 
-    font-size: 14px; 
+    color: #ffffff;
+    font-size: 14px;
     border-top: black solid 1px;
 }
 
@@ -90,7 +91,7 @@ main img {
     text-decoration: none;
     color: white;
     transition: transform 0.2s ease-out;
-    
+
 }
 
 .mainContainer a:hover {
@@ -101,7 +102,7 @@ main img {
 .box {
     display: flex;
     align-items: center;
-    background-color:	#546d89;
+    background-color: #546d89;
     padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
@@ -114,7 +115,7 @@ main img {
     justify-content: space-around;
     align-items: center;
     gap: 10rem;
-    
+
 }
 
 .boxContent img {
@@ -130,20 +131,20 @@ main img {
 .projectBox {
     display: flex;
     align-items: center;
-    background-color:	#546d89;
+    background-color: #546d89;
     padding: 3em;
     border-radius: 15px;
-    flex: 1 1 ;
+    flex: 1 1;
     box-shadow: 5px 5px 5px grey;
     text-align: center;
 }
 
-.projectContent img{
+.projectContent img {
     height: 300px;
     width: auto;
     padding-bottom: 1em;
     object-fit: cover;
-    
+
 }
 
 /* Teamplanner */
@@ -166,7 +167,7 @@ main img {
 .teamContainer a:hover {
     opacity: 80%;
     transform: scale(1.1);
-    
+
 }
 
 .teamContent {
@@ -235,16 +236,19 @@ button :hover {
     background-color: aliceblue;
     cursor: pointer;
 }
+
 /*Compare.html*/
-.text-black-center{
+.text-black-center {
     text-align: center;
     color: black;
     margin: 0px;
 }
-.pokemon-input{
+
+.pokemon-input {
     margin-bottom: 15px;
     padding: 5px;
     width: 100%;
+    border-radius: 10px;
 }
 
 
@@ -264,7 +268,7 @@ button :hover {
     margin-bottom: 2rem;
 }
 
-#compare-container{
+#compare-container {
     margin-bottom: 1rem;
     padding: 0.5rem;
 }
@@ -278,17 +282,26 @@ button :hover {
 }
 
 .pokemon-stats {
-    background-color: #546d89;
     color: white;
     padding: 1rem;
+    border: 1px solid black;
     border-radius: 10px;
     text-align: left;
     width: 100%;
     margin-top: 5px;
-    
+
 }
+
+.pokemon-stats p {
+    color: black;
+}
+
 @media (max-width: 768px) {
     #compare-container {
-        display: block;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+        padding-bottom: 5rem;
+        padding-top: 2rem;
     }
 }
