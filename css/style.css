@@ -367,7 +367,7 @@ button[type="submit"]:hover {
 }
 
 .hp {
-    color: #ff4d4d; 
+    color:  #c11c1c;; 
 }
 
 
@@ -376,7 +376,7 @@ button[type="submit"]:hover {
     margin: 30px auto; 
     padding: 20px; 
     font-size: 20px; 
-    background-color: #ff4d4d;
+    background-color:  #c11c1c;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -386,13 +386,13 @@ button[type="submit"]:hover {
 }
 
 .attack-btn:hover {
-    background-color: #ff6666; 
+    background-color:  #c11c1c;
 }
 
 .vs {
     font-size: 50px;
     font-weight: bold;
-    color: #ffcc00;
+    color:  #c11c1c;
     font-family: 'Roboto Condensed', sans-serif;
     flex: 0 0 auto;
 }
