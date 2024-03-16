@@ -307,17 +307,17 @@ button :hover {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 10%;
+    bottom: 5%;
     right: 5%;
     background-color: #083249;
     padding: 1rem;
     border-radius: 30px;
     border: turquoise solid 2px;
-
 }
 
 .current-pokemon article {
     display: flex;
+    flex: 1 1;
 }
 
 .current-pokemon h1, .current-pokemon p {
@@ -340,4 +340,17 @@ button :hover {
         display: contents;
     }
     
+    .current-pokemon img {
+        width: 50px;
+        height: auto;
+    }
+
+    .current-pokemon h1, .current-pokemon p {
+        padding: 0.2rem;
+        font-size: 10px;
+    }
+
+    .current-pokemon {
+        bottom: 1%;
+    }
 }
