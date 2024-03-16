@@ -85,10 +85,6 @@ main {
     margin: 3rem;
 }
 
-main img {
-    object-fit: cover;
-}
-
 .mainContainer {
     display: flex;
     flex-flow: row wrap;
@@ -97,6 +93,7 @@ main img {
     gap: 2rem;
     padding-bottom: 5rem;
     padding-top: 2rem;
+    flex: 1 1;
 
 }
 
