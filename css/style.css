@@ -89,7 +89,8 @@ main {
     margin: 3rem;
 }
 
-.mainContainer {
+.main-container
+ {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -101,14 +102,16 @@ main {
 
 }
 
-.mainContainer a {
+.main-container
+ a {
     text-decoration: none;
     color: white;
     transition: transform 0.2s ease-out;
     
 }
 
-.mainContainer a:hover {
+.main-container
+ a:hover {
     opacity: 80%;
     transform: scale(1.05);
 }
