@@ -320,7 +320,7 @@ button :hover {
     display: flex;
 }
 
-.current-pokemon h1, p {
+.current-pokemon h1, .current-pokemon p {
     padding: 0.5rem;
 }
 
