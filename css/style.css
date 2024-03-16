@@ -78,6 +78,10 @@ footer {
     text-decoration: underline;
 }
 
+.icon{
+    display: none;
+}
+
 
 
 /* pokedex */
@@ -486,9 +490,7 @@ section.pokemon .hp {
 
 
 
-#check {display: none;}
-
-@media only screen and (max-width: 896px) {
+@media only screen and (max-width: 600px) {
     .battle-container {
         flex-direction: row;
         width: auto; 
@@ -512,10 +514,56 @@ section.pokemon .hp {
         font-size: 1.2em; /* Aanpassen aan kleinere schermen */
     }
 
+
+    
+    
+        /* Style de hamburger menu icon */
+    
+    
+        .navbar ul {
+            display: none;
+          }
+        
+          /* Toon de hamburgermenu-icoon op kleinere schermen */
+          .icon {
+            display: block;
+            background-color: #333; /* Achtergrondkleur voor de hamburgermenu-icoon */
+            padding: 10px; /* Voeg wat padding toe voor betere zichtbaarheid */
+          }
+        
+          /* Wanneer de hamburgermenu-icoon wordt geselecteerd, toon de navigatielinks */
+          .icon:checked ~ ul {
+            display: flex;
+            flex-direction: column; /* Toon links onder elkaar */
+            position: absolute;
+            top: 100%; /* Plaats de links onder de hamburgermenu-icoon */
+            left: 0;
+            background-color: #083249; /* Achtergrondkleur voor de navigatielinks */
+            width: 100%;
+            padding: 10px;
+          }
+        
+          /* Stijl voor de individuele navigatielinks */
+          .icon:checked ~ ul li {
+            margin: 5px 0; /* Voeg wat marge toe tussen de links */
+          }
+        
+          /* Stijl voor de individuele navigatielinks bij hover */
+          .icon:checked ~ ul li:hover {
+            background-color: #555; /* Achtergrondkleur bij hover */
+          }
+    
+          
+      
+       
+    }
     
 
 
+    
   
    
-}
+
+
+
 
