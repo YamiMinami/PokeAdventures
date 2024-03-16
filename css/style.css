@@ -127,7 +127,7 @@ main {
 }
 
 
-.boxContent {
+.box-content {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -135,7 +135,7 @@ main {
     
 }
 
-.boxContent img {
+.box-content img {
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -147,7 +147,7 @@ main {
 /* projecten */
 
 
-.projectBox {
+.project-box {
     display: flex;
     align-items: center;
     background-color:	#083249;
@@ -158,7 +158,7 @@ main {
     text-align: center;
 }
 
-.projectContent img{
+.project-content img{
     height: 300px;
     width: auto;
     padding-bottom: 1em;
@@ -168,7 +168,7 @@ main {
 
 /* Teamplanner */
 
-.teamContainer {
+.team-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,26 +177,26 @@ main {
     gap: 10px;
 }
 
-.teamContainer a {
+.team-container a {
     text-decoration: none;
     color: black;
     transition: transform 0.3s ease-out;
 }
 
-.teamContainer a:hover {
+.team-container a:hover {
     opacity: 80%;
     transform: scale(1.1);
     
 }
 
-.teamContent {
+.team-content {
     display: flex;
     align-items: center;
     text-align: center;
     padding-bottom: 1em;
 }
 
-.teamContent img {
+.team-content img {
     height: 100px;
     width: auto;
     object-fit: cover;
@@ -278,7 +278,7 @@ button :hover {
     width: auto;
 }
 
-.catchContainer 
+.catch-container 
 {
     display: flex;
     justify-content: center;
@@ -286,13 +286,13 @@ button :hover {
     transition: transform 0.2s ease-out ;
 }
 
-.catchContainer:hover
+.catch-container:hover
 {
     transform: scale(2);
     margin-top: 5%;
 }
 
-.catchHeading 
+.catch-heading 
 {
     text-align: center;
     font-size: 2em;
