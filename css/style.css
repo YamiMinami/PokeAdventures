@@ -78,6 +78,10 @@ footer {
     text-decoration: underline;
 }
 
+#hamburger {
+    display: none;
+}
+
 /* pokedex */
 
 main {
@@ -293,4 +297,17 @@ button :hover {
     margin-top: 3em;
     padding-bottom: 20%;
     text-shadow: 3px 3px 3px #3a1717;
+}
+
+@media screen and (max-width: 600px){
+    .hide-navbar
+    {
+        display: none;
+    }
+
+    #hamburger 
+    {
+        display: contents;
+    }
+    
 }
