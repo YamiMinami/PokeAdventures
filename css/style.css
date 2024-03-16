@@ -306,6 +306,10 @@ button :hover {
 /* inlog page */
 
 .inlogContainer {
+    background-image: url('https://cdn.wallpapersafari.com/44/5/V9oD56.jpg');
+    background-size: 1100px;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -315,9 +319,10 @@ button :hover {
     padding-top: 3rem;
 }
 .inlogContent{
+    
     display: flex;
     margin-top: 6rem;
-    width: 700px;
+    width: 400px;
     min-width: 300px;
     margin: 2rem 1rem;
     padding: 5rem;
@@ -332,6 +337,7 @@ button :hover {
     align-items: center;
     text-align: center;
     border-top: #0056b3 solid 10px;
+    opacity: 0.9;
 }
 
 label {
@@ -374,6 +380,30 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+/* Algemene opmaak voor kleine schermen */
+@media only screen and (max-width: 600px) {
+    .inlogContent {
+        width: 90%; /* Verander de breedte voor kleinere schermen */
+        margin: 2rem auto; /* Midden uitlijnen op kleinere schermen */
+        padding: 2rem; /* Verklein de padding voor betere leesbaarheid */
+        grid-template-columns: 1fr; /* Verander naar één kolom op kleinere schermen */
+        text-align: center; /* Centreer de tekst op kleinere schermen */
+        border-top: #0056b3 solid 5px; /* Verminder de dikte van de bovenste rand */
+    }
+
+    label {
+        grid-column: auto; /* Terugzetten naar standaardinstellingen */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    button[type="submit"] {
+        grid-column: auto; /* Terugzetten naar standaardinstellingen */
+        width: 100%; /* Neem volledige breedte in op kleinere schermen */
+    }
+}
+
 
 /*Battle-pokemon*/
 
@@ -464,8 +494,7 @@ section.pokemon .hp {
     cursor: pointer;
     border-radius: 8px; 
     transition: background-color 0.3s ease;
-    margin-top: -40px;
-}
+    margin-top: -20px !important;}
 
 .attack-btn:hover {
     background-color: #c11c1c;
@@ -484,86 +513,88 @@ section.pokemon .hp {
     font-weight: bold;
     color: #333; 
     text-align: center; 
-    margin-bottom: 0.5px; 
+    margin-bottom: 20px; 
     text-transform: uppercase;
 }
 
 
 
 @media only screen and (max-width: 600px) {
+    /* Algemene opmaak voor kleine schermen */
     .battle-container {
-        flex-direction: row;
-        width: auto; 
-        padding: 10px; 
+        flex-direction: row; 
+        width: 100%; 
+        padding: 20px 10px; 
+        margin-top: -40px; 
     }
 
     section.pokemon {
-        width: 100%;
+        width: 100%; 
     }
 
     .attack-btn {
-        font-size: 1.2em; /* Aanpassen aan kleinere schermen */
-        margin-top: -20px;
+        font-size: 1.2em; 
+        margin-top: 10px; 
     }
 
     .vs {
-        font-size: 1.5em; /* Aanpassen aan kleinere schermen */
+        font-size: 1.5em; 
     }
 
     #text-battle {
-        font-size: 1.2em; /* Aanpassen aan kleinere schermen */
+        font-size: 1.2em; 
+        margin-top: 20px; 
     }
 
+    /* Hamburger menu-stijl */
+    .navbar ul {
+        display: none; 
+    }
 
-    
-    
-        /* Style de hamburger menu icon */
-    
-    
-        .navbar ul {
-            display: none;
-          }
-        
-          /* Toon de hamburgermenu-icoon op kleinere schermen */
-          .icon {
-            display: block;
-            background-color: #333; /* Achtergrondkleur voor de hamburgermenu-icoon */
-            padding: 10px; /* Voeg wat padding toe voor betere zichtbaarheid */
-          }
-        
-          /* Wanneer de hamburgermenu-icoon wordt geselecteerd, toon de navigatielinks */
-          .icon:checked ~ ul {
-            display: flex;
-            flex-direction: column; /* Toon links onder elkaar */
-            position: absolute;
-            top: 100%; /* Plaats de links onder de hamburgermenu-icoon */
-            left: 0;
-            background-color: #083249; /* Achtergrondkleur voor de navigatielinks */
-            width: 100%;
-            padding: 10px;
-          }
-        
-          /* Stijl voor de individuele navigatielinks */
-          .icon:checked ~ ul li {
-            margin: 5px 0; /* Voeg wat marge toe tussen de links */
-          }
-        
-          /* Stijl voor de individuele navigatielinks bij hover */
-          .icon:checked ~ ul li:hover {
-            background-color: #555; /* Achtergrondkleur bij hover */
-          }
-    
-          
-      
-       
+    .icon {
+        display: block; 
+        background-color: c11c1c; 
+        padding: 10px; 
+        float: right;
+        margin-right: -250px; 
+    }
+
+    .icon:checked ~ ul {
+        display: flex;
+        flex-direction: column; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        background-color: #083249; 
+        width: 100%;
+        padding: 10px;
+    }
+
+    .icon:checked ~ ul li {
+        margin: 5px 0; 
+    }
+
+    .icon:checked ~ ul li:hover {
+        background-color: #555; 
+    }
+
+    #menu-toggle:checked ~ nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 100%;
+        left: 0;
+        background-color: #083249;
+        width: 100%;
+        padding: 10px;
+
+    }
+
+    #menu-toggle {
+        display: none; 
     }
     
-
-
     
-  
-   
-
-
-
-
+}
