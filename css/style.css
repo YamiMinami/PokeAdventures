@@ -394,12 +394,6 @@ button:hover {
     margin-top: 7rem
 }
 /*Compare.html*/
-.text-black-center {
-    text-align: center;
-    color: black;
-    margin: 0px;
-}
-
 .pokemon-input {
     margin-bottom: 15px;
     padding: 5px;
@@ -460,5 +454,8 @@ button:hover {
         gap: 2rem;
         padding-bottom: 5rem;
         padding-top: 2rem;
+    }
+    #compare-container{
+        margin-top: 0;
     }
 }
