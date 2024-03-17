@@ -14,7 +14,7 @@ body {
         "Footer Footer Footer";
     height: 100vh;
     width: 100vw;
-    grid-template-rows: 10% auto auto;
+    grid-template-rows: auto auto auto;
     color: white;
 }
 
@@ -45,6 +45,20 @@ footer {
     z-index: 1000;
 }
 
+#navbar-index
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25em;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: #083249;
+}
+
 .navbar ul {
     display: flex;
     list-style-type: none;
@@ -65,6 +79,10 @@ footer {
     text-decoration: underline;
 }
 
+#hamburger {
+    display: none;
+}
+
 /* pokedex */
 
 main {
@@ -72,11 +90,8 @@ main {
     margin: 3rem;
 }
 
-main img {
-    object-fit: cover;
-}
-
-.mainContainer {
+.main-container
+ {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -84,17 +99,20 @@ main img {
     gap: 2rem;
     padding-bottom: 5rem;
     padding-top: 2rem;
+    flex: 1 1;
 
 }
 
-.mainContainer a {
+.main-container
+ a {
     text-decoration: none;
     color: white;
     transition: transform 0.2s ease-out;
 
 }
 
-.mainContainer a:hover {
+.main-container
+ a:hover {
     opacity: 80%;
     transform: scale(1.05);
 }
@@ -110,7 +128,7 @@ main img {
 }
 
 
-.boxContent {
+.box-content {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -118,7 +136,7 @@ main img {
 
 }
 
-.boxContent img {
+.box-content img {
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -130,10 +148,10 @@ main img {
 /* projecten */
 
 
-.projectBox {
+.project-box {
     display: flex;
     align-items: center;
-    background-color:	#546d89;
+    background-color:	#083249;
     padding: 3em;
     border-radius: 15px;
     flex: 1 1;
@@ -141,7 +159,7 @@ main img {
     text-align: center;
 }
 
-.projectContent img {
+.project-content img{
     height: 300px;
     width: auto;
     padding-bottom: 1em;
@@ -151,7 +169,7 @@ main img {
 
 /* Teamplanner */
 
-.teamContainer {
+.team-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,26 +178,26 @@ main img {
     gap: 10px;
 }
 
-.teamContainer a {
+.team-container a {
     text-decoration: none;
     color: black;
     transition: transform 0.3s ease-out;
 }
 
-.teamContainer a:hover {
+.team-container a:hover {
     opacity: 80%;
     transform: scale(1.1);
 
 }
 
-.teamContent {
+.team-content {
     display: flex;
     align-items: center;
     text-align: center;
     padding-bottom: 1em;
 }
 
-.teamContent img {
+.team-content img {
     height: 100px;
     width: auto;
     object-fit: cover;
@@ -237,11 +255,144 @@ button {
     cursor: pointer;
 }
 
-button :hover {
+button:hover {
     background-color: aliceblue;
     cursor: pointer;
 }
 
+/* Image Catch Pokemon */
+
+
+.background-image
+{
+    background-image: url(/assets/derek-weselake-breathe-small.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.catch img 
+{
+    height: 200%;
+    width: auto;
+}
+
+.catch-container 
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    transition: transform 0.2s ease-out ;
+}
+
+.catch-container:hover
+{
+    transform: scale(2);
+    margin-top: 5%;
+}
+
+.catch-heading 
+{
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-top: 3em;
+    padding-bottom: 20%;
+    text-shadow: 3px 3px 3px #3a1717;
+}
+
+.current-pokemon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    background-color: #083249;
+    padding: 1rem;
+    border-radius: 30px;
+    border: turquoise solid 2px;
+}
+
+.current-pokemon article {
+    display: flex;
+    flex: 1 1;
+}
+
+.current-pokemon h1, .current-pokemon p {
+    padding: 0.5rem;
+}
+
+.current-pokemon img {
+    width: 100px;
+    height: auto;
+}
+
+@media screen and (max-width: 600px){
+    .hide-navbar
+    {
+        display: none;
+    }
+
+    #hamburger 
+    {
+        display: contents;
+    }
+    
+    .current-pokemon img {
+        width: 50px;
+        height: auto;
+    }
+
+    .current-pokemon h1, .current-pokemon p {
+        padding: 0.2rem;
+        font-size: 10px;
+    }
+
+    .current-pokemon {
+        bottom: 1%;
+    }
+}
+
+
+/*GuessPokemon*/
+.black-center-text {
+    color: black;
+    text-align: center;
+}
+#main-guess-pokemon h2{
+    margin: 4rem 0 0.5rem 0;
+}
+#pokemon-input {
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    margin: 0.5rem auto 0 auto;
+    border-radius: 20px;  
+}
+
+#img-guess {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 20px;
+}
+#button-submit {
+    display: block;
+    margin: 0.5rem auto 0 auto;
+    width: 10em;
+}
+#button-submit:hover{
+    background-color: #304f91;
+}
+#footer-guess-pokemon{
+    margin-top: 7rem
+}
 /*Compare.html*/
 .text-black-center {
     text-align: center;
