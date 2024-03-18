@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeAdventures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/7450ea0e8a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="navbar">
+        <h1>Logo</h1>
+        <nav>
+            <ul>
+                <li class="hide-navbar"><a href="#">Speel</a></li>
+                <li class="hide-navbar"><a href="pokedex.html">Pokedex</a></li>
+                <li class="hide-navbar"><a href="teamplanner.html">TeamPlanner</a></li>
+                <li class="hide-navbar"><a href="index.html">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
+                <li id="hamburger"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="black-center-text">Vergelijk pokemon</h2>
+        <article id="compare-container">
+            <section class="compare-pokemon-info">
+                <input type="text" class="pokemon-input" placeholder="Bulbasaur">
+                <img class="img-compare" src="assets/compare-bulbasaur.png">
+                <section class="pokemon-stats">
+                    <p><i class="fa-solid fa-heart"></i>Leven: 200 <span style="color: red;">(-20)</span></p>
+                    <p><i class="fa-solid fa-hand-fist"></i>Aanval: 10 <span style="color: red;">(-5)</span></p>
+                    <p><i class="fa-solid fa-shield"></i>Verdediging: 30 <span style="color: greenyellow;">(+15)</span>
+                    </p>
+                </section>
+            </section>
+            <section class="compare-pokemon-info">
+                <input type="text" class="pokemon-input" placeholder="Eevee">
+                <img class="img-compare" src="assets/compare-eevee.png">
+                <section class="pokemon-stats">
+                    <p><i class="fa-solid fa-heart"></i>Leven: 220 <span style="color: greenyellow;">(+20)</span></p>
+                    </p>
+                    <p><i class="fa-solid fa-hand-fist"></i>Aanval: 15 <span style="color: greenyellow;">(+5)</span></p>
+                    </p>
+                    <p><i class="fa-solid fa-shield"></i>Verdediging: 15 <span style="color: red;">(-15)</span></p>
+                </section>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 PokeAdventures. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
