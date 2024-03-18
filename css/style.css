@@ -241,7 +241,6 @@ button :hover {
     background-color: aliceblue;
     cursor: pointer;
 }
-
 /*detail.html*/
 #main-detail{
     margin-top: 0;
@@ -250,7 +249,7 @@ button :hover {
     text-align: center;
     color: black;
 }
-#pokemon-detail-container {
+#pokemon-detail-container, #img-detail-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -287,20 +286,24 @@ width: 25%;
     max-width: 25%;
     height: auto;
 }
+
 #h2-evolution{
     margin-top: 4rem;
 }
-#img-detail-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 @media screen and (max-width: 768px) {
-    .pokemon-information-container,
-    .pokemon-detail-stats, #img-detail-container,
-    #pokemon-evolution-container {
-        width: 100%;
-        max-width: 100%;
+    
+    #pokemon-detail-container {
         margin: 0 auto;
+        display: block;
+    }
+    .pokemon-information-container{
+        display: flex;
+        width: 100%;
+    }
+    .pokemon-detail-stats{
+        margin-right: 1px;
+        width: 33%;
+        font-size: 0.7rem;
     }
 }
