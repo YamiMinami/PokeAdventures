@@ -142,7 +142,7 @@ main img {
 }
 
 .projectContent img {
-    height: 300px;
+    height: 500px;
     width: auto;
     padding-bottom: 1em;
     object-fit: cover;
@@ -243,26 +243,28 @@ button :hover {
 }
 
 /*detail.html*/
-.text-black-center{
+#main-detail{
+    margin-top: 0;
+}
+.black-center-text{
     text-align: center;
     color: black;
-    margin: 0px;
 }
 #pokemon-detail-container {
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
 .img-detail-pokemon {
-    max-width: 500px;
-    max-height: 500px;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
 }
 
-#pokemon-stats-container {
-width: 20%;
+.pokemon-information-container {
+width: 25%;
 }
 
 .pokemon-detail-stats {
@@ -276,14 +278,29 @@ width: 20%;
 }
 #pokemon-evolution-container{
     display: flex;
+    width: 80%;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
     margin: 20px auto;
-    flex: 1 1 10%;
 }
 #pokemon-evolution-container img {
-    max-width: 10%;
+    max-width: 25%;
     height: auto;
-    border-radius: 20px;
+}
+#h2-evolution{
+    margin-top: 4rem;
+}
+#img-detail-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .pokemon-information-container,
+    .pokemon-detail-stats, #img-detail-container,
+    #pokemon-evolution-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
