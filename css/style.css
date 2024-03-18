@@ -522,6 +522,7 @@ section.pokemon .hp {
 @media only screen and (max-width: 600px) {
     /* Algemene opmaak voor kleine schermen */
     .battle-container {
+        flex: auto;
         flex-direction: row; 
         width: 100%; 
         padding: 20px 10px; 
@@ -596,5 +597,8 @@ section.pokemon .hp {
         display: none; 
     }
     
+    footer{
+        margin-top: 170px;
+    }
     
 }
