@@ -91,11 +91,8 @@ main {
     margin: 3rem;
 }
 
-main img {
-    object-fit: cover;
-}
-
-.mainContainer {
+.main-container
+ {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -103,17 +100,20 @@ main img {
     gap: 2rem;
     padding-bottom: 5rem;
     padding-top: 2rem;
+    flex: 1 1;
 
 }
 
-.mainContainer a {
+.main-container
+ a {
     text-decoration: none;
     color: white;
     transition: transform 0.2s ease-out;
     
 }
 
-.mainContainer a:hover {
+.main-container
+ a:hover {
     opacity: 80%;
     transform: scale(1.05);
 }
@@ -129,7 +129,7 @@ main img {
 }
 
 
-.boxContent {
+.box-content {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -137,7 +137,7 @@ main img {
     
 }
 
-.boxContent img {
+.box-content img {
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -149,7 +149,7 @@ main img {
 /* projecten */
 
 
-.projectBox {
+.project-box {
     display: flex;
     align-items: center;
     background-color:	#083249;
@@ -160,7 +160,7 @@ main img {
     text-align: center;
 }
 
-.projectContent img{
+.project-content img{
     height: 300px;
     width: auto;
     padding-bottom: 1em;
@@ -170,7 +170,7 @@ main img {
 
 /* Teamplanner */
 
-.teamContainer {
+.team-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,26 +179,26 @@ main img {
     gap: 10px;
 }
 
-.teamContainer a {
+.team-container a {
     text-decoration: none;
     color: black;
     transition: transform 0.3s ease-out;
 }
 
-.teamContainer a:hover {
+.team-container a:hover {
     opacity: 80%;
     transform: scale(1.1);
     
 }
 
-.teamContent {
+.team-content {
     display: flex;
     align-items: center;
     text-align: center;
     padding-bottom: 1em;
 }
 
-.teamContent img {
+.team-content img {
     height: 100px;
     width: auto;
     object-fit: cover;
@@ -303,6 +303,70 @@ button :hover {
     padding-bottom: 20%;
     text-shadow: 3px 3px 3px #3a1717;
 }
+
+.catch-heading 
+{
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-top: 3em;
+    padding-bottom: 20%;
+    text-shadow: 3px 3px 3px #3a1717;
+}
+
+.current-pokemon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    background-color: #083249;
+    padding: 1rem;
+    border-radius: 30px;
+    border: turquoise solid 2px;
+}
+
+.current-pokemon article {
+    display: flex;
+    flex: 1 1;
+}
+
+.current-pokemon h1, .current-pokemon p {
+    padding: 0.5rem;
+}
+
+.current-pokemon img {
+    width: 100px;
+    height: auto;
+}
+
+@media screen and (max-width: 600px){
+    .hide-navbar
+    {
+        display: none;
+    }
+
+    #hamburger 
+    {
+        display: contents;
+    }
+    
+    .current-pokemon img {
+        width: 50px;
+        height: auto;
+    }
+
+    .current-pokemon h1, .current-pokemon p {
+        padding: 0.2rem;
+        font-size: 10px;
+    }
+
+    .current-pokemon {
+        bottom: 1%;
+    }
+}
+
 /* inlog page */
 
 .inlogContainer {
