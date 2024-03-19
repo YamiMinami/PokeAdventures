@@ -306,10 +306,11 @@ button :hover {
 /* inlog page */
 
 .inlogContainer {
-    background-image: url('https://cdn.wallpapersafari.com/44/5/V9oD56.jpg');
-    background-size: 1100px;
+    background-image: url('https://media.discordapp.net/attachments/1204734924784013392/1219740040331264140/back_ground_for_d8101009-3352-4810-8185-8ac5bfa66ba0.png?ex=660c666f&is=65f9f16f&hm=525f7d9c19b9a84ec9452ad7c8e6716cba6c3f45c44e1b44514b2896737b9362&=&format=webp&quality=lossless&width=960&height=540');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: 0px 0px 10px rgba(0, 1, 3, 5);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -381,26 +382,25 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Algemene opmaak voor kleine schermen */
 @media only screen and (max-width: 600px) {
     .inlogContent {
-        width: 90%; /* Verander de breedte voor kleinere schermen */
-        margin: 2rem auto; /* Midden uitlijnen op kleinere schermen */
-        padding: 2rem; /* Verklein de padding voor betere leesbaarheid */
-        grid-template-columns: 1fr; /* Verander naar één kolom op kleinere schermen */
-        text-align: center; /* Centreer de tekst op kleinere schermen */
-        border-top: #0056b3 solid 5px; /* Verminder de dikte van de bovenste rand */
+        width: 90%;
+        margin: 2rem auto; 
+        padding: 2rem; 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        border-top: #0056b3 solid 5px; 
     }
 
     label {
-        grid-column: auto; /* Terugzetten naar standaardinstellingen */
+        grid-column: auto;
     }
 
     input[type="text"],
     input[type="password"],
     button[type="submit"] {
-        grid-column: auto; /* Terugzetten naar standaardinstellingen */
-        width: 100%; /* Neem volledige breedte in op kleinere schermen */
+        grid-column: auto;
+        width: 100%; 
     }
 }
 
@@ -417,13 +417,11 @@ button[type="submit"]:hover {
 }
 
 .battle-container {
-    background-image: url('https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/204364595/original/86db6005cd51b4f60e71cca277f603a82cf5646a/draw-a-pixel-pokemon-battle-background.png');
+    background-image: url('../assets/draw-a-pixel-pokemon-battle-background.png');
     background-size: 800px;
-
-
     background-repeat: no-repeat;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 800px; 
     height: 300px;
@@ -433,7 +431,7 @@ button[type="submit"]:hover {
 }
 
 #pokemon1,#pokemon2{
-    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b0add0a1-77fd-4a46-879b-03cc5f1692e2/derjkb8-7b612ef5-aa9c-4168-a93c-bf7e7c67457e.png/v1/fill/w_1280,h_1280/pokemon_battle_platform_by_pinkdankk_derjkb8-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2IwYWRkMGExLTc3ZmQtNGE0Ni04NzliLTAzY2M1ZjE2OTJlMlwvZGVyamtiOC03YjYxMmVmNS1hYTljLTQxNjgtYTkzYy1iZjdlN2M2NzQ1N2UucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.xNrgCrr8FE1URo7nAlQJDdIoPShmcUndd6JpxPl0smY');
+    background-image: url('../assets/pokemon_battle_platform_by_pinkdankk_derjkb8-fullview.png');
     background-size: 400px;
 
 
@@ -473,6 +471,19 @@ section.pokemon .hp {
     background-color: #f0f0f0; 
     margin-bottom: 10px;
 }
+.catch-info{
+    font-size: 1em; 
+    font-weight: bold;
+    color: #333;
+    padding: 0.5px; 
+    text-align: center;
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+    background-color: #f0f0f0; 
+    margin-top: 10px;
+    bottom: px;
+
+}
 
 
 
@@ -483,7 +494,7 @@ section.pokemon .hp {
 }
 
 
-.attack-btn {
+.attack-btn, .capture-btn {
     display: block;
     margin: 30px auto; 
     padding: 20px; 
@@ -496,9 +507,18 @@ section.pokemon .hp {
     transition: background-color 0.3s ease;
     margin-top: -20px !important;}
 
-.attack-btn:hover {
-    background-color: #c11c1c;
-}
+    .attack-btn:hover,
+    .capture-btn:hover {
+        background-color: #c11c1c;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .catch-info {
+        font-size: 14px;
+        color: #333;
+        text-align: center;
+        margin-top: 10px;
+      }
 
 .vs {
     font-size: 2em; 
@@ -506,6 +526,7 @@ section.pokemon .hp {
     color: #c11c1c;
     font-family: 'Roboto Condensed', sans-serif;
     flex: 0 0 auto;
+
 }
 
 #text-battle {
@@ -533,7 +554,7 @@ section.pokemon .hp {
         width: 100%; 
     }
 
-    .attack-btn {
+    .attack-btn, .capture-btn {
         font-size: 1.2em; 
         margin-top: 10px; 
     }
@@ -547,55 +568,6 @@ section.pokemon .hp {
         margin-top: 20px; 
     }
 
-    /* Hamburger menu-stijl */
-    .navbar ul {
-        display: none; 
-    }
-
-    .icon {
-        display: block; 
-        background-color: c11c1c; 
-        padding: 10px; 
-        float: right;
-        margin-right: -250px; 
-    }
-
-    .icon:checked ~ ul {
-        display: flex;
-        flex-direction: column; 
-        position: absolute;
-        top: 100%; 
-        left: 0;
-        background-color: #083249; 
-        width: 100%;
-        padding: 10px;
-    }
-
-    .icon:checked ~ ul li {
-        margin: 5px 0; 
-    }
-
-    .icon:checked ~ ul li:hover {
-        background-color: #555; 
-    }
-
-    #menu-toggle:checked ~ nav ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        top: 100%;
-        left: 0;
-        background-color: #083249;
-        width: 100%;
-        padding: 10px;
-
-    }
-
-    #menu-toggle {
-        display: none; 
-    }
     
     footer{
         margin-top: 170px;

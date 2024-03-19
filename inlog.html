@@ -10,34 +10,32 @@
 </head>
 <body>
     <header class="navbar">
-    <h1>Logo</h1>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="icon">
-      <i class="fa-solid fa-bars"></i>
-    </label>
-    <nav>
-        <ul>
-            <li><a href="battle.html">Speel</a></li>
-            <li><a href="pokedex.html">Pokedex</a></li>
-            <li><a href="teamplanner.html">TeamPlanner</a></li>
-            <li><a href="index.html">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
-            
-      
-        </ul>
+        <h1>Logo</h1>
+        <nav>
+            <ul>
+                <li class="hide-navbar"><a href="#">Speel</a></li>
+                <li class="hide-navbar"><a href="pokedex.html">Pokedex</a></li>
+                <li class="hide-navbar"><a href="teamplanner.html">TeamPlanner</a></li>
+                <li class="hide-navbar"><a href="index.html">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
+                <li id="hamburger"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+            </ul>
         </nav>
-</header>
+    </header>
 
     <main class="inlogContainer">
     
-    <form class="inlogContent" >
-        <label for="username">Gebruikersnaam</label>
-        <input type="text" id="username" name="username">
-
-        <label for="password">Wachtwoord</label>
-        <input type="password" id="password" name="password">
+        <form class="inlogContent" action="battle.html">
+            <label for="username">Gebruikersnaam</label>
+            <input type="text" id="username" name="username">
         
-        <button type="submit">Login</button>
-    </form>
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" name="password">
+            
+            <button type="submit">Inloggen</a></button>
+        </form>
+
+        
+        
 
     </main>
 
