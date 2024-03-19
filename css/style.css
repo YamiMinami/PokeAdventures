@@ -306,7 +306,7 @@ button :hover {
 /* inlog page */
 
 .inlogContainer {
-    background-image: url('https://media.discordapp.net/attachments/1204734924784013392/1219740040331264140/back_ground_for_d8101009-3352-4810-8185-8ac5bfa66ba0.png?ex=660c666f&is=65f9f16f&hm=525f7d9c19b9a84ec9452ad7c8e6716cba6c3f45c44e1b44514b2896737b9362&=&format=webp&quality=lossless&width=960&height=540');
+    background-image: url('../assets/');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
