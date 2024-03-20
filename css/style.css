@@ -55,7 +55,7 @@ footer {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background-color: #083249;
+    background-color: #0a415e;
 }
 
 .navbar ul {
@@ -78,8 +78,19 @@ footer {
     text-decoration: underline;
 }
 
-.icon{
+.navbar img {
+    height: 30px;
+    width: auto;
+}
+
+.navbar img {
+    height: 30px;
+    width: auto;
+}
+
+#hamburger {
     display: none;
+    font-size: 1.5em;
 }
 
 
@@ -152,8 +163,8 @@ main {
 .project-box {
     display: flex;
     align-items: center;
-    background-color:	#083249;
-    padding: 3em;
+    background-color: #2a4e6b;
+    padding: 2em;
     border-radius: 15px;
     flex: 1 1 ;
     box-shadow: 5px 5px 5px grey;
@@ -162,7 +173,7 @@ main {
 
 .project-content img{
     height: 300px;
-    width: auto;
+    width: 300px;
     padding-bottom: 1em;
     object-fit: cover;
     
@@ -747,5 +758,10 @@ section.pokemon .hp {
 
     #compare-container {
         margin-top: 0;
+    }
+
+    .project-content img{
+        width: 250px;
+        height: 250px;
     }
 }
