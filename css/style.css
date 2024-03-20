@@ -1,16 +1,17 @@
 * {
     box-sizing: border-box;
-    margin : 0;
-    padding : 0;
+    margin: 0;
+    padding: 0;
 }
 
-html, body {
+html,
+body {
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
-    grid-template-areas: 
-    "Header Header Header"
-    "Main Main Main"
-    "Footer Footer Footer";
+    grid-template-areas:
+        "Header Header Header"
+        "Main Main Main"
+        "Footer Footer Footer";
     height: 100vh;
     width: 100vw;
     grid-template-rows: auto auto auto;
@@ -24,11 +25,11 @@ header {
 
 footer {
     grid-area: Footer;
-    background-color: #17213a;  
-    text-align: center; 
+    background-color: #17213a;
+    text-align: center;
     padding: 1em;
-    color: #ffffff; 
-    font-size: 14px; 
+    color: #ffffff;
+    font-size: 14px;
     border-top: black solid 1px;
 }
 
@@ -44,8 +45,7 @@ footer {
     z-index: 1000;
 }
 
-#navbar-index
-{
+#navbar-index {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,8 +102,7 @@ main {
     margin: 3rem;
 }
 
-.main-container
- {
+.main-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -115,16 +114,14 @@ main {
 
 }
 
-.main-container
- a {
+.main-container a {
     text-decoration: none;
     color: white;
     transition: transform 0.2s ease-out;
-    
+
 }
 
-.main-container
- a:hover {
+.main-container a:hover {
     opacity: 80%;
     transform: scale(1.05);
 }
@@ -132,7 +129,7 @@ main {
 .box {
     display: flex;
     align-items: center;
-    background-color:	#c12828;
+    background-color: #c12828;
     padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
@@ -145,7 +142,7 @@ main {
     justify-content: space-around;
     align-items: center;
     gap: 10rem;
-    
+
 }
 
 .box-content img {
@@ -166,17 +163,17 @@ main {
     background-color: #2a4e6b;
     padding: 2em;
     border-radius: 15px;
-    flex: 1 1 ;
+    flex: 1 1;
     box-shadow: 5px 5px 5px grey;
     text-align: center;
 }
 
-.project-content img{
+.project-content img {
     height: 300px;
     width: 300px;
     padding-bottom: 1em;
     object-fit: cover;
-    
+
 }
 
 /* Teamplanner */
@@ -199,7 +196,7 @@ main {
 .team-container a:hover {
     opacity: 80%;
     transform: scale(1.1);
-    
+
 }
 
 .team-content {
@@ -248,7 +245,7 @@ main {
     padding: 2em;
     gap: 5em;
     border-radius: 15px;
-    box-shadow : 0px 5px 0px #17213a ;
+    box-shadow: 0px 5px 0px #17213a;
 }
 
 .selectionBox h1 {
@@ -275,8 +272,7 @@ button :hover {
 /* Image Catch Pokemon */
 
 
-.background-image
-{
+.background-image {
     background-image: url(/assets/derek-weselake-breathe-small.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -285,28 +281,24 @@ button :hover {
     padding: 0;
 }
 
-.catch img 
-{
+.catch img {
     height: 200%;
     width: auto;
 }
 
-.catch-container 
-{
+.catch-container {
     display: flex;
     justify-content: center;
     margin-top: 7%;
-    transition: transform 0.2s ease-out ;
+    transition: transform 0.2s ease-out;
 }
 
-.catch-container:hover
-{
+.catch-container:hover {
     transform: scale(2);
     margin-top: 5%;
 }
 
-.catch-heading 
-{
+.catch-heading {
     text-align: center;
     font-size: 2em;
     text-transform: uppercase;
@@ -333,7 +325,8 @@ button :hover {
     flex: 1 1;
 }
 
-.current-pokemon h1, .current-pokemon p {
+.current-pokemon h1,
+.current-pokemon p {
     padding: 0.5rem;
 }
 
@@ -342,23 +335,22 @@ button :hover {
     height: auto;
 }
 
-@media screen and (max-width: 600px){
-    .hide-navbar
-    {
+@media screen and (max-width: 600px) {
+    .hide-navbar {
         display: none;
     }
 
-    #hamburger 
-    {
+    #hamburger {
         display: contents;
     }
-    
+
     .current-pokemon img {
         width: 50px;
         height: auto;
     }
 
-    .current-pokemon h1, .current-pokemon p {
+    .current-pokemon h1,
+    .current-pokemon p {
         padding: 0.2rem;
         font-size: 10px;
     }
@@ -367,11 +359,13 @@ button :hover {
         bottom: 1%;
     }
 }
+
 /* inlog page */
-.button-inlog{
+.button-inlog {
     text-decoration: none;
     color: white;
 }
+
 .inlogContainer {
     background-image: url('../assets/back_ground_for_d8101009-3352-4810-8185-8ac5bfa66ba0.png');
     background-size: cover;
@@ -388,8 +382,9 @@ button :hover {
     padding-bottom: 5rem;
     padding-top: 3rem;
 }
-.inlogContent{
-    
+
+.inlogContent {
+
     display: flex;
     margin-top: 6rem;
     width: 400px;
@@ -402,7 +397,7 @@ button :hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px; 
+    grid-gap: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -422,6 +417,7 @@ label {
     width: 10em;
 
 }
+
 input[type="text"],
 input[type="password"] {
     padding: 10px;
@@ -430,7 +426,8 @@ input[type="password"] {
     outline: none;
     grid-column: 2 / 3;
     width: 10em;
-    margin: 0.3em; ;
+    margin: 0.3em;
+    ;
 
 }
 
@@ -447,6 +444,7 @@ button[type="submit"] {
     width: 10em;
     margin: 0.3em;
 }
+
 /*button[type="submit"]:hover {
     background-color: #0056b3;
 }*/
@@ -454,16 +452,19 @@ button[type="submit"] {
 @media only screen and (max-width: 600px) {
     .inlogContent {
         width: 90%;
-        margin: 2rem auto; 
-        padding: 2rem; 
-        grid-template-columns: 1fr; 
-        text-align: center; 
-        border-top: #0056b3 solid 5px; 
+        margin: 2rem auto;
+        padding: 2rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+        border-top: #0056b3 solid 5px;
     }
-    .inlogContainer{ /*spacing van onder de background image minder groot maken.*/
+
+    .inlogContainer {
+        /*spacing van onder de background image minder groot maken.*/
         margin-bottom: 0;
         padding-bottom: 0;
     }
+
     label {
         grid-column: auto;
     }
@@ -472,15 +473,20 @@ button[type="submit"] {
     input[type="password"],
     button[type="submit"] {
         grid-column: auto;
-        width: 100%; 
+        width: 100%;
     }
 }
 
 
 /*Battle-pokemon*/
 
-#p-huidige-pokemon{ /*text van battle.html huidige pokemon aan te tonen*/
-    color: red;
+#p-huidige-pokemon {
+    /*text van battle.html huidige pokemon aan te tonen*/
+    color: black;
+    font-weight: bold;
+}
+#p-tegenstander-pokemon{
+    color: black;
     font-weight: bold;
 }
 .battle-container-wrapper {
@@ -488,7 +494,7 @@ button[type="submit"] {
     justify-content: center;
     position: relative;
     align-items: center;
-    margin-top: -100px; 
+    margin-top: -100px;
     height: calc(100vh - 200px);
 }
 
@@ -499,14 +505,15 @@ button[type="submit"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 800px; 
+    width: 800px;
     height: 300px;
-    background-color: transparent; 
+    background-color: transparent;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-#pokemon1,#pokemon2{
+#pokemon1,
+#pokemon2 {
     background-image: url('../assets/pokemon_battle_platform_by_pinkdankk_derjkb8-fullview.png');
     background-size: 400px;
 
@@ -525,78 +532,82 @@ section.pokemon {
     border: 1px solid #ccc;
     box-sizing: border-box;
     padding: 20px;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 section.pokemon img {
-    width: 100%; 
-    height: auto; 
-    max-width: 150px; 
-    margin-bottom: 10px; 
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    margin-bottom: 10px;
 }
 
 section.pokemon .name,
 section.pokemon .hp {
-    font-size: 1em; 
+    font-size: 1em;
     font-weight: bold;
     color: #333;
-    padding: 10px; 
+    padding: 10px;
     text-align: center;
-    border: 2px solid #ccc; 
-    border-radius: 8px; 
-    background-color: #f0f0f0; 
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
     margin-bottom: 10px;
 }
-.catch-info{
-    position: absolute; 
-    bottom: 20px; 
+
+.catch-info {
+    position: absolute;
+    bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
 }
 
 
 
 section.pokemon .hp {
-    color: #c11c1c; 
+    color: #c11c1c;
     margin-bottom: 20px;
     margin: 1px;
 }
 
 
-.attack-btn, .capture-btn {
+.attack-btn,
+.capture-btn {
     display: block;
-    margin: 30px auto; 
-    padding: 20px; 
-    font-size: 1em; 
+    margin: 30px auto;
+    padding: 20px;
+    font-size: 1em;
     background-color: #c11c1c;
     color: #fff;
     border: none;
     cursor: pointer;
-    border-radius: 8px; 
+    border-radius: 8px;
     transition: background-color 0.3s ease;
-    margin-top: -20px !important;}
+    margin-top: -20px !important;
+}
 
-    .attack-btn:hover,
-    .capture-btn:hover {
-        background-color: #c11c1c;
-        transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .catch-info {
-        font-size: 1em;
-        font-weight: bold;
-        color: #333;
-        padding: 10px;
-        text-align: center;
-        border: 2px solid #ccc;
-        border-radius: 8px;
-        background-color: #f0f0f0;
-        margin-top: 20px; 
-    }
-    
+.attack-btn:hover,
+.capture-btn:hover {
+    background-color: #c11c1c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.catch-info {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+}
+
 
 .vs {
-    font-size: 2em; 
+    font-size: 2em;
     font-weight: bold;
     color: #c11c1c;
     font-family: 'Roboto Condensed', sans-serif;
@@ -607,9 +618,9 @@ section.pokemon .hp {
 #text-battle {
     font-size: 1.5em;
     font-weight: bold;
-    color: #333; 
-    text-align: center; 
-    margin-bottom: 20px; 
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
@@ -618,40 +629,44 @@ section.pokemon .hp {
 @media only screen and (max-width: 600px) {
     .battle-container {
         flex: auto;
-        flex-direction: row; 
-        width: 100%; 
-        padding: 20px 10px; 
-        margin-top: -40px; 
+        flex-direction: row;
+        width: 100%;
+        padding: 20px 10px;
+        margin-top: -40px;
     }
 
     section.pokemon {
-        width: 100%; 
+        width: 100%;
     }
 
-    .attack-btn, .capture-btn {
-        font-size: 1.2em; 
-        margin-top: 10px; 
+    .attack-btn,
+    .capture-btn {
+        font-size: 1.2em;
+        margin-top: 10px;
     }
 
     .vs {
-        font-size: 1.5em; 
+        font-size: 1.5em;
     }
 
     #text-battle {
-        font-size: 1.2em; 
-        margin-top: 20px; 
+        font-size: 1.2em;
+        margin-top: 20px;
     }
 
-    
-    footer{
+
+    footer {
         margin-top: 170px;
     }
-    
+
 }
 
 
 
 /*GuessPokemon*/
+#main-guess-pokemon a{
+text-decoration: none;
+}
 .black-center-text {
     color: black;
     text-align: center;
@@ -760,15 +775,19 @@ section.pokemon .hp {
         margin-top: 0;
     }
 
-    .project-content img{
+    .project-content img {
         width: 250px;
         height: 250px;
     }
-}/*detail.html*/
-#main-detail{
+}
+
+/*detail.html*/
+#main-detail {
     margin-top: 4rem;
 }
-#pokemon-detail-container, #img-detail-container {
+
+#pokemon-detail-container,
+#img-detail-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -782,7 +801,7 @@ section.pokemon .hp {
 }
 
 .pokemon-information-container {
-width: 25%;
+    width: 25%;
 }
 
 .pokemon-detail-stats {
@@ -794,35 +813,43 @@ width: 25%;
     margin-top: 5px;
     font-weight: bold;
 }
-#pokemon-evolution-container{
+
+#pokemon-evolution-container {
     display: flex;
     width: 80%;
     justify-content: space-around;
     align-items: center;
     margin: 20px auto;
 }
+
 #pokemon-evolution-container img {
     max-width: 25%;
     height: auto;
 }
 
-#h2-evolution{
+#h2-evolution {
     margin-top: 4rem;
 }
 
 @media screen and (max-width: 768px) {
-    
+
     #pokemon-detail-container {
         margin: 0 auto;
         display: block;
     }
-    .pokemon-information-container{
+
+    .pokemon-information-container {
         display: flex;
         width: 100%;
     }
-    .pokemon-detail-stats{
+
+    .pokemon-detail-stats {
         margin-right: 1px;
         width: 33%;
         font-size: 0.7rem;
+    }
+    /*h1 van project.html kleiner maken note: alle medias moeten later bij mekaar.*/
+    #navbar-index { 
+        font-size: 0.8rem;
     }
 }
