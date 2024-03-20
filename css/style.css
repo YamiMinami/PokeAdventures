@@ -469,11 +469,7 @@ button:hover {
     }
 }/*detail.html*/
 #main-detail{
-    margin-top: 0;
-}
-.black-center-text{
-    text-align: center;
-    color: black;
+    margin-top: 4rem;
 }
 #pokemon-detail-container, #img-detail-container {
     display: flex;
