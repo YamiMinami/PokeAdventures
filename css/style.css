@@ -496,6 +496,7 @@ button[type="submit"] {
     align-items: center;
     margin-top: -100px;
     height: calc(100vh - 200px);
+    
 }
 
 .battle-container {
@@ -510,6 +511,7 @@ button[type="submit"] {
     background-color: transparent;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 #pokemon1,
@@ -523,7 +525,7 @@ button[type="submit"] {
 
 }
 
-section.pokemon {
+.pokemon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -535,15 +537,15 @@ section.pokemon {
     background-color: transparent;
 }
 
-section.pokemon img {
+.pokemon img {
     width: 100%;
     height: auto;
     max-width: 150px;
     margin-bottom: 10px;
 }
 
-section.pokemon .name,
-section.pokemon .hp {
+.pokemon .name,
+.pokemon .hp {
     font-size: 1em;
     font-weight: bold;
     color: #333;
@@ -564,7 +566,7 @@ section.pokemon .hp {
 
 
 
-section.pokemon .hp {
+.pokemon .hp {
     color: #c11c1c;
     margin-bottom: 20px;
     margin: 1px;
@@ -612,8 +614,11 @@ section.pokemon .hp {
     color: #c11c1c;
     font-family: 'Roboto Condensed', sans-serif;
     flex: 0 0 auto;
+    text-align: center;
+    display: inline-block;
 
 }
+
 
 #text-battle {
     font-size: 1.5em;
