@@ -510,6 +510,7 @@ button[type="submit"] {
     background-color: transparent;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 #pokemon1,
@@ -523,7 +524,7 @@ button[type="submit"] {
 
 }
 
-section.pokemon {
+.pokemon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -535,15 +536,15 @@ section.pokemon {
     background-color: transparent;
 }
 
-section.pokemon img {
+.pokemon img {
     width: 100%;
     height: auto;
     max-width: 150px;
     margin-bottom: 10px;
 }
 
-section.pokemon .name,
-section.pokemon .hp {
+.pokemon .name,
+.pokemon .hp {
     font-size: 1em;
     font-weight: bold;
     color: #333;
@@ -564,7 +565,7 @@ section.pokemon .hp {
 
 
 
-section.pokemon .hp {
+.pokemon .hp {
     color: #c11c1c;
     margin-bottom: 20px;
     margin: 1px;
@@ -612,8 +613,11 @@ section.pokemon .hp {
     color: #c11c1c;
     font-family: 'Roboto Condensed', sans-serif;
     flex: 0 0 auto;
+    text-align: center;
+    display: inline-block;
 
 }
+
 
 #text-battle {
     font-size: 1.5em;
@@ -709,7 +713,8 @@ text-decoration: none;
 }
 
 /*Compare.html*/
-.pokemon-input {
+.compare-pokemon-info input{
+    border: 1px solid black;
     margin-bottom: 15px;
     padding: 5px;
     width: 100%;
@@ -754,7 +759,6 @@ text-decoration: none;
     text-align: left;
     width: 100%;
     margin-top: 5px;
-
 }
 
 .pokemon-stats p {
@@ -805,7 +809,7 @@ text-decoration: none;
 }
 
 .pokemon-detail-stats {
-    background-color: #c12828;
+    background-color: #546d89;
     color: white;
     padding: 1rem;
     border-radius: 10px;
