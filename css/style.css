@@ -360,13 +360,13 @@ button :hover {
     }
 }
 
-/* inlog page */
-.button-inlog {
+/* register, inlog page */
+.button-inlog, .button-register {
     text-decoration: none;
     color: white;
 }
 
-.inlogContainer {
+.inlogContainer, .registerContainer {
     background-image: url('../assets/back_ground_for_d8101009-3352-4810-8185-8ac5bfa66ba0.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -383,7 +383,7 @@ button :hover {
     padding-top: 3rem;
 }
 
-.inlogContent {
+.inlogContent, .registerContent {
 
     display: flex;
     margin-top: 6rem;
@@ -415,11 +415,12 @@ label {
     align-self: center;
     color: black;
     width: 10em;
-
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"]
+ {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -427,7 +428,6 @@ input[type="password"] {
     grid-column: 2 / 3;
     width: 10em;
     margin: 0.3em;
-    ;
 
 }
 
@@ -443,14 +443,17 @@ button[type="submit"] {
     align-self: center;
     width: 10em;
     margin: 0.3em;
+    transition: transform 0.2s ease-out;
+    
+
 }
 
-/*button[type="submit"]:hover {
-    background-color: #0056b3;
-}*/
+button[type="submit"]:hover {
+    transform: scale(1.05);
+}
 
 @media only screen and (max-width: 600px) {
-    .inlogContent {
+    .inlogContent, .registerContent {
         width: 90%;
         margin: 2rem auto;
         padding: 2rem;
@@ -459,7 +462,7 @@ button[type="submit"] {
         border-top: #0056b3 solid 5px;
     }
 
-    .inlogContainer {
+    .inlogContainer, .registerContainer {
         /*spacing van onder de background image minder groot maken.*/
         margin-bottom: 0;
         padding-bottom: 0;
@@ -514,18 +517,10 @@ button[type="submit"] {
     overflow: hidden;
 }
 
-#pokemon1,
+
+
+.pokemon, #pokemon1,
 #pokemon2 {
-    background-image: url('../assets/pokemon_battle_platform_by_pinkdankk_derjkb8-fullview.png');
-    background-size: 400px;
-
-
-    background-repeat: no-repeat;
-    background-position: center;
-
-}
-
-.pokemon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -535,6 +530,11 @@ button[type="submit"] {
     box-sizing: border-box;
     padding: 20px;
     background-color: transparent;
+    background-image: url('../assets/pokemon_battle_platform_by_pinkdankk_derjkb8-fullview.png');
+    background-size: 400px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .pokemon img {
@@ -584,14 +584,14 @@ button[type="submit"] {
     border: none;
     cursor: pointer;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease-out;
     margin-top: -20px !important;
 }
 
 .attack-btn:hover,
 .capture-btn:hover {
     background-color: #c11c1c;
-    transform: translateY(-3px);
+    transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
