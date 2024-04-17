@@ -10,7 +10,7 @@ body {
     display: grid;
     grid-template-areas:
         "Header Header Header"
-        "Main Main Main"
+        "Main Main Aside"
         "Footer Footer Footer";
     height: 100vh;
     width: 100vw;
@@ -93,6 +93,10 @@ footer {
 main {
     grid-area: Main;
     margin: 3rem;
+}
+
+aside {
+    grid-area: Aside;
 }
 
 .main-container {
