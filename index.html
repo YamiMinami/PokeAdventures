@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeAdventures</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleV2.css">
     <script src="https://kit.fontawesome.com/7450ea0e8a.js" crossorigin="anonymous"></script>
 
 </head>
@@ -11,7 +11,29 @@
     <header id="navbar-index">
         <h1>Projecten</h1>
     </header>
-    <main class="main-container">
+    <main id="login-container">
+        <section>
+            <article id="login-icon">
+                <i class="fa-solid fa-user"></i>
+            </article>
+        </section>
+        <section id="login-content">
+            <article>
+                <form action="#">
+                    <label for="email">Email:</label>
+                    <br>
+                    <input type="email">
+                    <br>
+                    <br>
+                    <label for="password">Password:</label>
+                    <br>
+                    <input type="password">
+                </form>
+                <button>Sign in</button>
+            </article>
+        </section>
+    </main>
+    <aside class="index-container">
         <a href="tester.html">
             <section class="project-box">
                 <article class="project-content">
@@ -60,7 +82,7 @@
                 </article>
             </section>
         </a>
-    </main>
+    </aside>
     <footer>
         <p>&copy; 2023 PokeAdventures. All rights reserved.</p>
     </footer>

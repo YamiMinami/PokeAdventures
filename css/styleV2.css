@@ -16,6 +16,9 @@ body {
     width: 100vw;
     grid-template-rows: auto auto auto;
     color: white;
+    background-image: url(/assets/samuel-speziali-4-by-samuel-speziali.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
 }
 
 header {
@@ -55,7 +58,7 @@ footer {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background-color: #0a415e;
+    background-color: black;
 }
 
 .navbar ul {
@@ -92,7 +95,7 @@ footer {
 
 main {
     grid-area: Main;
-    margin: 3rem;
+    margin: 3em;
 }
 
 aside {
@@ -100,12 +103,12 @@ aside {
 }
 
 .aside-container {
-    margin-top: 40%;
     margin-right: 2em;
+    margin-left: 2em;
     background-color: grey;
     padding: 1em;
     border: solid 0.5em rgb(164, 164, 164) ;
-    margin-bottom: 1em;
+
 }
 
 .aside-content {
@@ -118,10 +121,14 @@ aside {
 
 .current-pokemon-container {
     display: flex;
+    margin-top: 30%;
     padding: 0.5em;
     border: solid 0.5em #0a415e;
+    background-color: white;
     justify-content: center;
     margin-right: 2em;
+    margin-left: 2em;
+    margin-bottom: 1em;
 }
 
 .current-content {
@@ -147,7 +154,6 @@ aside {
     padding-bottom: 5rem;
     padding-top: 2rem;
     flex: 1 1;
-
 }
 
 .main-container a {
@@ -165,11 +171,12 @@ aside {
 .box {
     display: flex;
     align-items: center;
-    background-color: #c12828;
     padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
     box-shadow: 5px 5px 5px grey;
+    border: solid 0.25em #c11c1c;
+    background-color: white;
 }
 
 
@@ -177,7 +184,8 @@ aside {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
+    color: #083249;
 
 }
 
@@ -192,16 +200,30 @@ aside {
 
 /* projecten */
 
+.index-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+    flex: 1 1;
+    background-color: rgb(47, 47, 47);
+}
+
+.index-container a {
+    color: white;
+    text-decoration: none;
+    margin-top: 2em;
+}
 
 .project-box {
     display: flex;
     align-items: center;
-    background-color: #2a4e6b;
-    padding: 2em;
-    border-radius: 15px;
     flex: 1 1;
-    box-shadow: 5px 5px 5px grey;
     text-align: center;
+    padding: 1em;
 }
 
 .project-content img {
@@ -209,9 +231,45 @@ aside {
     width: 300px;
     padding-bottom: 1em;
     object-fit: cover;
-
 }
 
+.project-content h1 {
+    font-size: 2em;
+    background-color: rgb(34, 0, 0);
+    margin-top: -0.5em;
+}
+
+#login-container {
+    background-color: rgb(51, 51, 51);
+    margin: 0;
+    padding: 2em;
+    border-right: 1px solid black;
+}
+
+#login-content {
+    margin-top: 1.5em;
+}
+
+#login-icon {
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(117, 117, 117);
+    margin-top: 1em;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+    padding: 0.25em;
+    font-size: 3em;
+    border-radius: 50%;
+}
+
+#login-content button {
+    padding: 1em;
+    width: 10.75em;
+    height: 2em;
+    text-align: center;
+    margin-top: 1em;
+    padding: 0;
+}
 /* Teamplanner */
 
 .team-container {
@@ -225,7 +283,7 @@ aside {
 
 .team-container a {
     text-decoration: none;
-    color: black;
+    color: white;
     transition: transform 0.3s ease-out;
 }
 
@@ -277,11 +335,12 @@ aside {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #c11c1c;
     padding: 2em;
     gap: 5em;
     border-radius: 15px;
-    box-shadow: 0px 5px 0px #17213a;
+    background-color: white;
+    border: #083249 solid 5px;
+    color: black;
 }
 
 .selectionBox h1 {
