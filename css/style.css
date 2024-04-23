@@ -817,6 +817,7 @@ text-decoration: none;
 #pokemon-detail-container, #pokemon-evolution-container{
     background-color: lightgrey;
     margin: 0;
+    border-radius: 10px;
 }
 .img-detail-pokemon {
     width: 100%;
@@ -841,10 +842,11 @@ text-decoration: none;
 
 #pokemon-evolution-container {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
     margin: 20px auto;
+    margin-top: 0;
 }
 
 #pokemon-evolution-container img {
@@ -853,11 +855,14 @@ text-decoration: none;
 }
 
 #h2-evolution {
-    margin-top: 4rem;
+    margin-top: 1.5rem;
 }
 
 
 @media screen and (max-width: 768px) {
+    #footer-detail{
+        margin-top: 0;
+    }
     #evo1{
         width: 15%;
     }
@@ -865,13 +870,14 @@ text-decoration: none;
         width: 20%;
     }
     #evo3{
-        width: 25%;
+        width: 20%;
     }
     #evo4{
-        width: 30%;
+        width: 45%;
     }
     #main-detail{
         margin: 1rem;
+        margin-top: 3rem;
     }
     #pokemon-evolution-container{
         display:flex;
