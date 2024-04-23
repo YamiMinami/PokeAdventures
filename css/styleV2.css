@@ -105,10 +105,37 @@ aside {
     background-color: grey;
     padding: 1em;
     border: solid 0.5em rgb(164, 164, 164) ;
+    margin-bottom: 1em;
 }
 
 .aside-content {
     color: white;
+}
+
+.aside-content div {
+    margin-bottom: 0.25em;
+}
+
+.current-pokemon-container {
+    display: flex;
+    padding: 0.5em;
+    border: solid 0.5em #0a415e;
+    justify-content: center;
+    margin-right: 2em;
+}
+
+.current-content {
+    color: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.current-content img {
+    width: 100px;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .main-container {
