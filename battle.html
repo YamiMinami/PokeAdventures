@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/7450ea0e8a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <img src="assets/478d8e49233e7de64a3cbb875e526807.png" alt="Logo">
+    <nav>
+        <ul>
+            <li class="hide-navbar"><a href="guesspokemon.html">Speel</a></li>
+            <li class="hide-navbar"><a href="overzicht.html">Overzicht</a></li>
+            <li class="hide-navbar"><a href="teamplanner.html">TeamPlanner</a></li>
+            <li class="hide-navbar"><a href="index.html">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
+            <li id="hamburger"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+  <h2 id="text-battle">Vechten</h2>
+  <section class="battle-container-wrapper">
+
+    <article class="battle-container">
+
+      <section class="pokemon" id="pokemon1">
+        <img src="assets/Hektakun-Pokemon-004-Charmander.72.png" alt="Pokemon 1">
+        <p id="p-huidige-pokemon">Jouw pokemon</p>
+        <h3 class="name">Charmander</h3>
+        <p class="hp">HP: <span id="hp1">100</span></p>
+      </section>
+
+      <div class="vs">VS</div> 
+
+      <section class="pokemon" id="pokemon2">
+        <img src="assets/Hektakun-Pokemon-009-Blastoise.72.png" alt="Pokemon 2">
+        <p id="p-tegenstander-pokemon">Tegenstander</p>
+        <h3 class="name">Blastoise</h3>
+        <p class="hp">HP: <span id="hp2">100</span></p>
+        
+      </section>
+
+      
+    </article>
+    
+    <section class="catch-info">
+      <p>Bij lage HP is de kans om te vangen hoger!</p>
+    </section>
+  
+  </section>
+  
+  <button class="attack-btn" onclick="attack()">Aanvallen!</button>
+
+  <button class="capture-btn" onclick="capture()">
+    Vangen! (3 kansen) 
+  </button>
+</main>
+
+<footer>
+  <p>&copy; 2023 Pokemon Battle</p>
+</footer>
+
+
+
+</body>
+</html>

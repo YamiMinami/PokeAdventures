@@ -83,10 +83,17 @@ footer {
     width: auto;
 }
 
+.navbar img {
+    height: 30px;
+    width: auto;
+}
+
 #hamburger {
     display: none;
     font-size: 1.5em;
 }
+
+
 
 /* pokedex */
 
@@ -257,7 +264,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button :hover {
     background-color: aliceblue;
     cursor: pointer;
 }
@@ -328,7 +335,47 @@ button:hover {
     height: auto;
 }
 
+@media screen and (max-width: 600px) {
+    .hide-navbar {
+        display: none;
+    }
+
+    #hamburger {
+        display: contents;
+    }
+
+    .current-pokemon img {
+        width: 50px;
+        height: auto;
+    }
+
+    .current-pokemon h1,
+    .current-pokemon p {
+        padding: 0.2rem;
+        font-size: 10px;
+    }
+
+    .current-pokemon {
+        bottom: 1%;
+    }
+}
+
+
 /*GuessPokemon*/
+#body-guess-pokemon {
+    background-image: url("/assets/guessBGI1.jpg");
+    background-position: bottom;
+    background-size: cover;
+}
+
+#main-guess-pokemon {
+    margin-bottom: 10em;
+}
+
+#main-guess-pokemon a {
+    text-decoration: none;
+}
+
 .black-center-text {
     color: black;
     text-align: center;
@@ -360,18 +407,20 @@ button:hover {
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
+    transition: transform 0.2s ease-out;
 }
 
 #button-submit:hover {
-    background-color: #304f91;
+    transform: scale(1.05);
 }
 
 #footer-guess-pokemon {
-    margin-top: 7rem
+    margin-top: 0;
 }
 
 /*Compare.html*/
-.pokemon-input {
+.compare-pokemon-info input {
+    border: 1px solid black;
     margin-bottom: 15px;
     padding: 5px;
     width: 100%;
@@ -416,7 +465,6 @@ button:hover {
     text-align: left;
     width: 100%;
     margin-top: 5px;
-
 }
 
 .pokemon-stats p {
@@ -448,7 +496,7 @@ button:hover {
         margin-top: 0;
     }
 
-    .project-content img{
+    .project-content img {
         width: 250px;
         height: 250px;
     }
@@ -477,5 +525,79 @@ button:hover {
 
     .current-pokemon {
         bottom: 1%;
+    }
+}
+
+/*detail.html*/
+#main-detail {
+    margin-top: 4rem;
+}
+
+#pokemon-detail-container,
+#img-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-detail-pokemon {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pokemon-information-container {
+    width: 25%;
+}
+
+.pokemon-detail-stats {
+    background-color: #c12828;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+#pokemon-evolution-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+}
+
+#pokemon-evolution-container img {
+    max-width: 25%;
+    height: auto;
+}
+
+#h2-evolution {
+    margin-top: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    #pokemon-detail-container {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .pokemon-information-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .pokemon-detail-stats {
+        margin-right: 1px;
+        width: 33%;
+        font-size: 0.7rem;
+    }
+
+    /*h1 van project.html kleiner maken note: alle medias moeten later bij mekaar.*/
+    #navbar-index {
+        font-size: 0.8rem;
     }
 }
