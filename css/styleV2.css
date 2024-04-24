@@ -124,12 +124,13 @@ aside {
     display: flex;
     margin-top: 30%;
     padding: 0.5em;
-    border: solid 0.5em #0a415e;
+    border: solid 1px #c12828;
     background-color: white;
     justify-content: center;
     margin-right: 2em;
     margin-left: 2em;
     margin-bottom: 1em;
+    border-radius: 10%;
 }
 
 .current-content {
@@ -175,8 +176,8 @@ aside {
     padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
-    box-shadow: 5px 5px 5px grey;
-    border: solid 0.25em #c11c1c;
+    box-shadow: 2px 2px 2px grey;
+    border: solid 2px #c11c1c;
     background-color: white;
 }
 
@@ -188,6 +189,10 @@ aside {
     gap: 3rem;
     color: #083249;
 
+}
+
+.box-content span {
+    color: white;
 }
 
 .box-content img {
@@ -264,12 +269,23 @@ aside {
 }
 
 #login-content button {
-    padding: 1em;
+    padding: 0em;
     width: 10.75em;
     height: 2em;
     text-align: center;
     margin-top: 1em;
-    padding: 0;
+    margin-bottom: 1em;
+    color: white;
+    background-color: #751a1a;
+    box-shadow: none;
+}
+
+input {
+    box-shadow: #083249 1px 1px;
+}
+
+#login-content a {
+    color: rgb(178, 177, 177);
 }
 /* Teamplanner */
 
@@ -364,6 +380,11 @@ aside {
 
 .carousel-content div {
     margin-top: 0.5em;
+}
+
+.carousel-content img {
+    width: 60px;
+    height: auto;
 }
 
 .button-carousel{
@@ -578,6 +599,24 @@ label {
 }
 
 /*detail.html*/
+.type{
+    display: inline-block;
+  padding: 3px;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    max-width: 4rem;
+}
+
+#type1{
+  background-color: #10b981;
+  margin: 1px;
+}
+#type2{
+    margin: 1px;
+    background-color: purple;
+}
 #main-detail {
     margin-top: 4rem;
 }
@@ -588,7 +627,11 @@ label {
     justify-content: center;
     align-items: center;
 }
-
+#pokemon-detail-container, #pokemon-evolution-container{
+    background-color: lightgrey;
+    margin: 0;
+    border-radius: 10px;
+}
 .img-detail-pokemon {
     width: 100%;
     max-width: 400px;
@@ -612,10 +655,11 @@ label {
 
 #pokemon-evolution-container {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
     margin: 20px auto;
+    margin-top: 0;
 }
 
 #pokemon-evolution-container img {
@@ -624,7 +668,7 @@ label {
 }
 
 #h2-evolution {
-    margin-top: 4rem;
+    margin-top: 1.5rem;
 }
 
 @media (max-width: 768px) {
