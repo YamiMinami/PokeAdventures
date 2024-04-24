@@ -17,8 +17,9 @@ body {
     grid-template-rows: auto auto auto;
     color: white;
     background-image: url(/assets/samuel-speziali-4-by-samuel-speziali.jpg);
-    background-repeat:no-repeat;
+    background-repeat:repeat-y;
     background-size: cover;
+    background-position: center;
 }
 
 header {
@@ -347,7 +348,33 @@ aside {
     padding-bottom: 1em;
 }
 
-button {
+#carousel-container {
+    display: block;
+}
+
+.carousel-content {
+    background-color: #304f91;
+    display: flex;
+    justify-content: center;
+    margin: 0 2em 0 2em;
+    border: #083249 Solid 2px;
+    gap: 1em;
+
+}
+
+.carousel-content div {
+    margin-top: 0.5em;
+}
+
+.button-carousel{
+    background-color:#304f91;
+    color: white;
+    width: 10em;
+    border: none;
+    cursor: pointer;
+}
+
+#button-view {
     color: white;
     background-color: #751a1a;
     padding: 1em;
