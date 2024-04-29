@@ -124,7 +124,6 @@ aside {
     display: flex;
     margin-top: 30%;
     padding: 0.5em;
-    border: solid 1px #c12828;
     background-color: white;
     justify-content: center;
     margin-right: 2em;
@@ -369,13 +368,13 @@ input {
 }
 
 .carousel-content {
-    background-color: #304f91;
+    background-color: white;
     display: flex;
     justify-content: center;
     margin: 0 2em 0 2em;
     border: #083249 Solid 2px;
     gap: 1em;
-
+    opacity: 95%;
 }
 
 .carousel-content div {
@@ -388,11 +387,16 @@ input {
 }
 
 .button-carousel{
-    background-color:#304f91;
-    color: white;
-    width: 10em;
+    background-color:white;
+    color: darkred;
+    width: auto;
     border: none;
     cursor: pointer;
+    padding: 0.25em 5em 0.25em 5em;
+}
+
+.button-carousel:hover {
+    background-color: none;
 }
 
 #button-view {
