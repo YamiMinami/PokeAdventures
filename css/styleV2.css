@@ -41,9 +41,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25em;
-    padding-left: 3rem;
-    padding-right: 1rem;
+    padding: 0.25em 1rem 0.25em 3rem;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -53,9 +51,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25em;
-    padding-left: 3rem;
-    padding-right: 1rem;
+    padding: 0.25em 1rem 0.25em 3rem;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -122,13 +118,10 @@ aside {
 
 .current-pokemon-container {
     display: flex;
-    margin-top: 30%;
     padding: 0.5em;
     background-color: white;
     justify-content: center;
-    margin-right: 2em;
-    margin-left: 2em;
-    margin-bottom: 1em;
+    margin: 30% 2em 1em;
     border-radius: 10%;
 }
 
@@ -268,7 +261,7 @@ aside {
 }
 
 #login-content button {
-    padding: 0em;
+    padding: 0;
     width: 10.75em;
     height: 2em;
     text-align: center;
@@ -396,7 +389,7 @@ input {
 }
 
 .button-carousel:hover {
-    background-color: none;
+    background-color: white;
 }
 
 #button-view {

@@ -37,9 +37,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25em;
-    padding-left: 3rem;
-    padding-right: 1rem;
+    padding: 0.25em 1rem 0.25em 3rem;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -49,9 +47,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25em;
-    padding-left: 3rem;
-    padding-right: 1rem;
+    padding: 0.25em 1rem 0.25em 3rem;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -245,7 +241,7 @@ main {
     padding: 2em;
     gap: 5em;
     border-radius: 15px;
-    box-shadow: 0px 5px 0px #17213a;
+    box-shadow: 0 5px 0 #17213a;
 }
 
 .selectionBox h1 {
@@ -305,19 +301,6 @@ button :hover {
     margin-top: 3em;
     padding-bottom: 20%;
     text-shadow: 3px 3px 3px #3a1717;
-}
-
-.current-pokemon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    background-color: #083249;
-    padding: 1rem;
-    border-radius: 30px;
-    border: turquoise solid 2px;
 }
 
 .current-pokemon article {
@@ -619,8 +602,7 @@ button :hover {
         width: 45%;
     }
     #main-detail{
-        margin: 1rem;
-        margin-top: 3rem;
+        margin: 3rem 1rem 1rem;
     }
     #pokemon-evolution-container{
         display:flex;
