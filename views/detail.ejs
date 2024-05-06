@@ -1,28 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl-be">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeAdventures</title>
-    <script src="https://kit.fontawesome.com/7450ea0e8a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="ts/script.ts" defer></script>
-</head>
+<%- include("partials/head") %>
 
 <body>
-    <header class="navbar" id="top-nav">
-        <img src="assets/478d8e49233e7de64a3cbb875e526807.png" alt="Logo">
-        <nav>
-            <ul id="myLinks">
-                <li class="hide-navbar"><a href="guesspokemon.html">Speel</a></li>
-                <li class="hide-navbar"><a href="overzicht.html">Overzicht</a></li>
-                <li class="hide-navbar"><a href="teamplanner.html">TeamPlanner</a></li>
-                <li class="hide-navbar"><a href="index.html">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
-            </ul>
-            <a href="javascript:void(0);" id="hamburger" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
-        </nav>
-        </header>
+    <%- include("partials/header") %>
     <main id="main-detail">
         <h2 class="black-center-text">Bulbasaur</h2>
         <section id="pokemon-detail-container">
@@ -34,7 +16,7 @@
                         class="type">Grass</span> <span id="type2" class="type">Poison</span></p>
             </section>
             <section id="img-detail-container">
-                <img class="img-detail-pokemon" src="assets/detail-bulbasaur.png" alt="Bulbasaur">
+                <img class="img-detail-pokemon" src="/assets/detail-bulbasaur.png" alt="Bulbasaur">
             </section>
             <section class="pokemon-information-container">
                 <p class="pokemon-detail-stats">Naam: Bulbasaur</p>
@@ -46,10 +28,10 @@
         </section>
         <h2 id="h2-evolution" class="black-center-text">Evolutiepad</h2>
         <section id="pokemon-evolution-container">
-            <img src="assets/detail-bulbasaur.png" id="evo1" width="150" alt="Bulbasaur">
-            <img src="assets/detail-ivysaur.png" id="evo2" width="200" alt="Ivysaur">
-            <img src="assets/detail-venusaur.png" id="evo3" width="200" alt="Venusaur">
-            <img src="assets/detail-megavenusaur.png" id="evo4" width="350" alt="MegaVenusaur">
+            <img src="/assets/detail-bulbasaur.png" id="evo1" width="150" alt="Bulbasaur">
+            <img src="/assets/detail-ivysaur.png" id="evo2" width="200" alt="Ivysaur">
+            <img src="/assets/detail-venusaur.png" id="evo3" width="200" alt="Venusaur">
+            <img src="/assets/detail-megavenusaur.png" id="evo4" width="350" alt="MegaVenusaur">
         </section>
     </main>
     <footer id="footer-detail">
