@@ -485,10 +485,12 @@ button[type="submit"] {
     color: black;
     font-weight: bold;
 }
-#p-tegenstander-pokemon{
+
+#p-tegenstander-pokemon {
     color: black;
     font-weight: bold;
 }
+
 .battle-container-wrapper {
     display: flex;
     justify-content: center;
@@ -668,9 +670,20 @@ button[type="submit"] {
 
 
 /*GuessPokemon*/
-#main-guess-pokemon a{
-text-decoration: none;
+#body-guess-pokemon {
+    background-image: url("/assets/guessBGI1.jpg");
+    background-position: bottom;
+    background-size: cover;
 }
+
+#main-guess-pokemon {
+    margin-bottom: 10em;
+}
+
+#main-guess-pokemon a {
+    text-decoration: none;
+}
+
 .black-center-text {
     color: black;
     text-align: center;
@@ -702,18 +715,19 @@ text-decoration: none;
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
+    transition: transform 0.2s ease-out;
 }
 
 #button-submit:hover {
-    background-color: #304f91;
+    transform: scale(1.05);
 }
 
 #footer-guess-pokemon {
-    margin-top: 7rem
+    margin-top: 0;
 }
 
 /*Compare.html*/
-.compare-pokemon-info input{
+.compare-pokemon-info input {
     border: 1px solid black;
     margin-bottom: 15px;
     padding: 5px;
@@ -906,9 +920,9 @@ text-decoration: none;
         width: 100%;
         max-width: 2.75rem;
     }
+
     /*h1 van project.html kleiner maken note: alle medias moeten later bij mekaar.*/
-    #navbar-index { 
+    #navbar-index {
         font-size: 0.8rem;
     }
-    
 }
