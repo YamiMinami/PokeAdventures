@@ -169,7 +169,6 @@ aside {
     border-radius: 15px;
     flex: 1 1;
     box-shadow: 2px 2px 2px grey;
-    border: solid 2px #c11c1c;
     background-color: white;
 }
 
@@ -365,7 +364,8 @@ input {
     display: flex;
     justify-content: center;
     margin: 0 2em 0 2em;
-    border: #083249 Solid 2px;
+    border: #083249 solid 1px;
+    border-radius: 10px;
     gap: 1em;
     opacity: 95%;
 }
