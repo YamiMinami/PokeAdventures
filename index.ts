@@ -24,7 +24,7 @@ app.get("/inlog", (req, res) => {
 app.get("/overzicht", async (req, res) => {
   let pokemons = [];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 12; i++) {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
     const data = await response.json();
