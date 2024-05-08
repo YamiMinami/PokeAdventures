@@ -667,7 +667,59 @@ label {
 #h2-evolution {
     margin-top: 1.5rem;
 }
+@media screen and (max-width: 768px) {
+    #footer-detail{
+        margin-top: 0;
+    }
+    #evo1{
+        width: 15%;
+    }
+    #evo2{
+        width: 20%;
+    }
+    #evo3{
+        width: 20%;
+    }
+    #evo4{
+        width: 45%;
+    }
+    #main-detail{
+        margin-bottom: ;
+    }
+    #pokemon-evolution-container{
+        display:flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    #pokemon-detail-container {
+        margin: 0 auto;
+        display: block;
+        padding: 2px;
+    }
 
+    .pokemon-information-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .pokemon-detail-stats {
+        margin-right: 1px;
+        width: 25%;
+        font-size: 0.75rem;
+    }
+    .type {
+        display: block; /* Display as block for stacking */
+        width: 100%;
+        max-width: 2.75rem;
+    }
+
+    /*h1 van project.html kleiner maken note: alle medias moeten later bij mekaar.*/
+    #navbar-index {
+        font-size: 0.8rem;
+    }
+}
 @media (max-width: 768px) {
     #compare-container {
         display: flex;
