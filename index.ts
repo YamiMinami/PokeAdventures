@@ -44,10 +44,18 @@ app.get("/teamplanner", (req, res) => {
   res.render("teamplanner");
 });
 
-app.get("/detail/:id", (req, res) => {
+app.get("/detail/:id", async (req, res) => {
   const pokemonId = req.params.id;
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+  const data = await response.json();
+  const pokemon = data;
+  // Voor matthew
+  const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
+  const dataEvo = await responseEvo.json();
+  const evolutions = dataEvo;
   res.render("detail", {
-    pokemonId: pokemonId
+    pokemon: pokemon,
+    evolutions: evolutions
   });
 });
 

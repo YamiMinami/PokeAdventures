@@ -6,20 +6,22 @@
 <body>
     <%- include("partials/header") %>
     <main id="main-detail">
-        <h2 class="black-center-text">Bulbasaur</h2>
+        <h2 class="black-center-text"> <%= pokemon.name %> </h2>
         <section id="pokemon-detail-container">
             <section class="pokemon-information-container">
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-heart"></i> Leven: 200</p>
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-hand-fist"></i> Aanval: 10</p>
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Verdediging: 30</p>
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type: <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-heart"></i> Leven: <%= pokemon.stats.find(stat => stat.stat.name === 'hp').base_stat %></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-hand-fist"></i> Aanval: <%= pokemon.stats.find(stat => stat.stat.name === 'attack').base_stat %></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Verdediging: <%= pokemon.stats.find(stat => stat.stat.name === 'defense').base_stat %></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type:
+                    <% pokemon.types.forEach((type, i) => { %>
+                        <span id="type<%= i + 1 %>" class="type"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></span>
+                    <% }) %>
             </section>
             <section id="img-detail-container">
-                <img class="img-detail-pokemon" src="/assets/detail-bulbasaur.png" alt="Bulbasaur">
+                <img class="img-detail-pokemon" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name.charAt(0).toUpperCase() %>">
             </section>
             <section class="pokemon-information-container">
-                <p class="pokemon-detail-stats">Naam: Bulbasaur</p>
+                <p class="pokemon-detail-stats">Naam: <%= pokemon.name %></p>
                 <p class="pokemon-detail-stats">Bijnaam: Lebron</p>
                 <p class="pokemon-detail-stats">Gevangen op 13/03/2024</p>
                 <p class="pokemon-detail-stats">W0 L0</p>
