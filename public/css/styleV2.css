@@ -165,11 +165,12 @@ aside {
 .box {
     display: flex;
     align-items: center;
-    padding: 1rem 2rem 1em 2rem;
+    padding: 0 1rem 0 1rem;
     border-radius: 15px;
     flex: 1 1;
     box-shadow: 2px 2px 2px grey;
     background-color: white;
+    width: 21em;
 }
 
 
@@ -177,8 +178,9 @@ aside {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     color: #083249;
+    margin: 0;
 
 }
 
@@ -187,8 +189,8 @@ aside {
 }
 
 .box-content img {
-    height: 100px;
-    width: 100px;
+    height: 125px;
+    width: 125px;
     border-radius: 50%;
     object-fit: cover;
     background-color: white;
