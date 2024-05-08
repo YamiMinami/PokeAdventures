@@ -44,7 +44,7 @@ app.get("/teamplanner", (req, res) => {
   res.render("teamplanner");
 });
 
-app.get("/detail:id", (req, res) => {
+app.get("/detail/:id", (req, res) => {
   const pokemonId = req.params.id;
   res.render("detail", {
     pokemonId: pokemonId
