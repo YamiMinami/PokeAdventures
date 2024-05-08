@@ -21,8 +21,19 @@ app.get("/guesspokemon", (req, res) => {
 app.get("/inlog", (req, res) => {
   res.render("inlog");
 });
-app.get("/overzicht", (req, res) => {
-  res.render("overzicht");
+app.get("/overzicht", async (req, res) => {
+  let pokemons = [];
+
+  for (let i = 0; i < 5; i++) {
+    const randomId = Math.floor(Math.random() * 898) + 1;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const data = await response.json();
+    pokemons.push(data);
+  };
+
+  res.render("overzicht", {
+    pokemons: pokemons
+  });
 });
 app.get("/tester", (req, res) => {
   res.render("tester");
