@@ -12,9 +12,7 @@ app.get("/battle", (req, res) => {
 app.get("/compare", (req, res) => {
   res.render("compare");
 });
-app.get("/detail", (req, res) => {
-  res.render("detail");
-});
+
 app.get("/guesspokemon", (req, res) => {
   res.render("guesspokemon");
 });
@@ -31,16 +29,28 @@ app.get("/overzicht", async (req, res) => {
     pokemons.push(data);
   };
 
+  const currentPokemon = pokemons[1];
+
   res.render("overzicht", {
-    pokemons: pokemons
+    pokemons: pokemons,
+    cPokemon: currentPokemon
   });
 });
+
 app.get("/tester", (req, res) => {
   res.render("tester");
 });
 app.get("/teamplanner", (req, res) => {
   res.render("teamplanner");
 });
+
+app.get("/detail:id", (req, res) => {
+  const pokemonId = req.params.id;
+  res.render("detail", {
+    pokemonId: pokemonId
+  });
+});
+
 app.listen(app.get("port"), () =>
     console.log("[server] http://localhost:" + app.get("port"))
 );
