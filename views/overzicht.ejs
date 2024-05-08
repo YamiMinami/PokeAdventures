@@ -4,7 +4,7 @@
     <%- include("partials/header") %>
     <main class="main-container">
         <% pokemons.forEach(pokemon => { %>
-            <a href="#">
+            <a href="/detail/<%= pokemon.id %>">
                 <section class="box">
                     <article class="box-content">
                         <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
@@ -23,22 +23,22 @@
     <aside>
         <section class="current-pokemon-container">
             <article class="current-content">
-                    <h1>Your pokemon</h1>
-                    <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
-                    <h2>Charizard</h2>
+                <h1>Your pokemon</h1>
+                <img src="<%= cPokemon.sprites.other.showdown.front_default %>" alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
+                <h2><%= cPokemon.name %></h2>
             </article>
         </section>
         <section class="aside-container">
             <article class="aside-content">
                     <input type="text" placeholder="Search..." id="input-search">
-                    <div>
                         <% pokemons.forEach(pokemon => { %>
+                        <div>
                             <% pokemon.types.forEach((type, i) => { %>
                                 <input type="checkbox" id="type<%= i + 1 %>" id="input-checkbox">
                                 <label for="type<%= i + 1 %>"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></label>
                             <% }) %>
+                    </div>
                         <% }) %>
-                        </div>
             </article>
         </section>
 

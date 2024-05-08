@@ -12,9 +12,7 @@ app.get("/battle", (req, res) => {
 app.get("/compare", (req, res) => {
   res.render("compare");
 });
-app.get("/detail", (req, res) => {
-  res.render("detail");
-});
+
 app.get("/guesspokemon", (req, res) => {
   res.render("guesspokemon");
 });
@@ -31,16 +29,36 @@ app.get("/overzicht", async (req, res) => {
     pokemons.push(data);
   };
 
+  const currentPokemon = pokemons[1];
+
   res.render("overzicht", {
-    pokemons: pokemons
+    pokemons: pokemons,
+    cPokemon: currentPokemon
   });
 });
+
 app.get("/tester", (req, res) => {
   res.render("tester");
 });
 app.get("/teamplanner", (req, res) => {
   res.render("teamplanner");
 });
+
+app.get("/detail/:id", async (req, res) => {
+  const pokemonId = req.params.id;
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+  const data = await response.json();
+  const pokemon = data;
+  // Voor matthew
+  const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
+  const dataEvo = await responseEvo.json();
+  const evolutions = dataEvo;
+  res.render("detail", {
+    pokemon: pokemon,
+    evolutions: evolutions
+  });
+});
+
 app.listen(app.get("port"), () =>
     console.log("[server] http://localhost:" + app.get("port"))
 );

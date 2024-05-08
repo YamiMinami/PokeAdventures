@@ -133,7 +133,7 @@ aside {
 }
 
 .current-content img {
-    width: 100px;
+    width: 125px;
     height: auto;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -370,6 +370,7 @@ input {
     border-radius: 10px;
     gap: 1em;
     opacity: 95%;
+    color: black;
 }
 
 .carousel-content div {
@@ -606,6 +607,7 @@ label {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
     max-width: 4rem;
+    color: white;
 }
 
 #type1{
@@ -632,7 +634,7 @@ label {
     border-radius: 10px;
 }
 .img-detail-pokemon {
-    width: 100%;
+    width: 400px;
     max-width: 400px;
     height: auto;
     border-radius: 10px;
