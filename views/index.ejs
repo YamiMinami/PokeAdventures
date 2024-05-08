@@ -4,8 +4,32 @@
     <header id="navbar-index">
         <h1>Projecten</h1>
     </header>
-    <main class="main-container">
-        <a href="/inlog">
+    <main id="login-container">
+        <section>
+            <article id="login-icon">
+                <i class="fa-solid fa-user"></i>
+            </article>
+        </section>
+        <section id="login-content">
+            <article>
+                <form action="#">
+                    <label for="email">Email:</label>
+                    <br>
+                    <input type="email">
+                    <br>
+                    <br>
+                    <label for="password">Password:</label>
+                    <br>
+                    <input type="password">
+                </form>
+                <button>Inloggen</button>
+                <br>
+                <a href="#">Registreer</a>
+            </article>
+        </section>
+    </main>
+    <aside class="index-container">
+        <a href="tester.html">
             <section class="project-box">
                 <article class="project-content">
                     <img src="/assets/samuel-speziali-4-by-samuel-speziali.jpg" alt="pokemon">
@@ -53,6 +77,7 @@
                 </article>
             </section>
         </a>
+    </aside>
     </main>
     <%- include("partials/footer") %>
 </body>

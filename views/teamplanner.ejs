@@ -2,217 +2,90 @@
     <%- include("partials/head") %>
 <body>
     <%- include("partials/header") %>
-    <main>
-        <section class="selectionContainer">
-            <article class="selectedPokemon">
-                <h1>Current Pokemon</h1>
-                <div class="selectionBox">
-                    <div>
-                    <h1>Pokemon Name</h1>
-                    <p>Description</p>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-004-Charmander.72.png" alt="selection">
+    <main id="main-detail">
+        <h2 class="black-center-text">Bulbasaur</h2>
+        <section id="pokemon-detail-container">
+            <section class="pokemon-information-container">
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-heart"></i> Leven: 200</p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-hand-fist"></i> Aanval: 10</p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Verdediging: 30</p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type: <span id="type1"
+                                                                                               class="type">Grass</span> <span id="type2" class="type">Poison</span></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type: grass</p>
+            </section>
+            <section id="img-detail-container">
+                <img class="img-detail-pokemon" src="assets/detail-bulbasaur.png" alt="Bulbasaur">
+            </section>
+            <section class="pokemon-information-container">
+                <p class="pokemon-detail-stats">Naam: Bulbasaur</p>
+                <p class="pokemon-detail-stats">Bijnaam: Lebron</p>
+                <p class="pokemon-detail-stats">Gevangen op 13/03/2024</p>
+                <p class="pokemon-detail-stats">W0 L0</p>
+
+                <p class="pokemon-detail-stats">Wins: 0 | losses: 0</p>
+            </section>
+        </section>
+        <h2 id="h2-evolution" class="black-center-text">Evolutiepad</h2>
+        <section id="pokemon-evolution-container">
+            <img src="assets/detail-bulbasaur.png" id="evo1" width="150" alt="Bulbasaur">
+            <img src="assets/detail-ivysaur.png" id="evo2" width="200" alt="Ivysaur">
+            <img src="assets/detail-venusaur.png" id="evo3" width="200" alt="Venusaur">
+            <img src="assets/detail-megavenusaur.png" id="evo4" width="350" alt="MegaVenusaur">
+        </section>
+    </main>
+    <aside>
+        <section class="current-pokemon-container">
+            <article class="current-content">
+                <h1>Your pokemon</h1>
+                <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
+                <h2>Charizard</h2>
+            </article>
+        </section>
+        <section id="carousel-container">
+            <article class="carousel-content">
+                <button class="button-carousel">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </article>
+            <article class="carousel-content">
+                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
+                <div>
+                    <h1>pokemon</h1>
+                    <span id="type1"
+                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
                 </div>
-                <button>
-                    View all pokemons
+            </article>
+            <article class="carousel-content">
+                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
+                <div>
+                    <h1>pokemon</h1>
+                    <span id="type1"
+                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
+                </div>
+            </article>
+            <article class="carousel-content">
+                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
+                <div>
+                    <h1>pokemon</h1>
+                    <span id="type1"
+                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
+                </div>
+            </article>
+            <article class="carousel-content">
+                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
+                <div>
+                    <h1>pokemon</h1>
+                    <span id="type1"
+                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
+                </div>
+            </article>
+            <article class="carousel-content">
+                <button class="button-carousel">
+                    <i class="fas fa-chevron-down"></i>
                 </button>
             </article>
         </section>
-        <div class="team-container">
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-001-Bulbasaur.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-002-Ivysaur.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-003-Venusaur.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-004-Charmander.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-005-Charmeleon.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-006-Charizard.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-007-Squirtle.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-008-Wartortle.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-009-Blastoise.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-010-Caterpie.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-011-Metapod.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-012-Butterfree.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-013-Weedle.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="assets/Hektakun-Pokemon-014-Kakuna.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-015-Beedrill.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-016-Pidgey.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-017-Pidgeotto.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-018-Pidgeot.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-019-Rattata.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-020-Raticate.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-021-Spearow.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-022-Fearow.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-023-Ekans.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-        <a href="#">
-            <section class="team-content">
-                <article>
-                    <img src="/assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
-                    <h1>pokemon</h1>
-                </article>
-            </section>
-        </a>
-    </div>
-    </main>
+    </aside>
     <%- include("partials/footer") %>
 </body>
 </html>

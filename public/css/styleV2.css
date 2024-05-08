@@ -10,12 +10,16 @@ body {
     display: grid;
     grid-template-areas:
         "Header Header Header"
-        "Main Main Main"
+        "Main Main Aside"
         "Footer Footer Footer";
     height: 100vh;
     width: 100vw;
     grid-template-rows: auto auto auto;
     color: white;
+    background-image: url(/assets/samuel-speziali-4-by-samuel-speziali.jpg);
+    background-repeat:repeat-y;
+    background-size: cover;
+    background-position: center;
 }
 
 header {
@@ -51,7 +55,7 @@ footer {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background-color: #0a415e;
+    background-color: black;
 }
 
 .navbar ul {
@@ -79,23 +83,60 @@ footer {
     width: auto;
 }
 
-.navbar img {
-    height: 30px;
-    width: auto;
-}
-
 #hamburger {
     display: none;
     font-size: 1.5em;
 }
 
-
-
 /* pokedex */
 
 main {
     grid-area: Main;
-    margin: 3rem;
+    margin: 3em;
+}
+
+aside {
+    grid-area: Aside;
+}
+
+.aside-container {
+    margin-right: 2em;
+    margin-left: 2em;
+    background-color: grey;
+    padding: 1em;
+    border: solid 0.5em rgb(164, 164, 164) ;
+
+}
+
+.aside-content {
+    color: white;
+}
+
+.aside-content div {
+    margin-bottom: 0.25em;
+}
+
+.current-pokemon-container {
+    display: flex;
+    padding: 0.5em;
+    background-color: white;
+    justify-content: center;
+    margin: 30% 2em 1em;
+    border-radius: 10%;
+}
+
+.current-content {
+    color: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.current-content img {
+    width: 100px;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .main-container {
@@ -103,11 +144,10 @@ main {
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
     padding-bottom: 5rem;
     padding-top: 2rem;
     flex: 1 1;
-
 }
 
 .main-container a {
@@ -125,11 +165,11 @@ main {
 .box {
     display: flex;
     align-items: center;
-    background-color: #c12828;
     padding: 1rem 2rem 1em 2rem;
     border-radius: 15px;
     flex: 1 1;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 2px 2px 2px grey;
+    background-color: white;
 }
 
 
@@ -137,8 +177,13 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 10rem;
+    gap: 3rem;
+    color: #083249;
 
+}
+
+.box-content span {
+    color: white;
 }
 
 .box-content img {
@@ -152,16 +197,30 @@ main {
 
 /* projecten */
 
+.index-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+    flex: 1 1;
+    background-color: rgb(47, 47, 47);
+}
+
+.index-container a {
+    color: white;
+    text-decoration: none;
+    margin-top: 2em;
+}
 
 .project-box {
     display: flex;
     align-items: center;
-    background-color: #2a4e6b;
-    padding: 2em;
-    border-radius: 15px;
     flex: 1 1;
-    box-shadow: 5px 5px 5px grey;
     text-align: center;
+    padding: 1em;
 }
 
 .project-content img {
@@ -169,9 +228,56 @@ main {
     width: 300px;
     padding-bottom: 1em;
     object-fit: cover;
-
 }
 
+.project-content h1 {
+    font-size: 2em;
+    background-color: rgb(34, 0, 0);
+    margin-top: -0.5em;
+}
+
+#login-container {
+    background-color: rgb(51, 51, 51);
+    margin: 0;
+    padding: 2em;
+    border-right: 1px solid black;
+}
+
+#login-content {
+    margin-top: 1.5em;
+}
+
+#login-icon {
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(117, 117, 117);
+    margin-top: 1em;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+    padding: 0.25em;
+    font-size: 3em;
+    border-radius: 50%;
+}
+
+#login-content button {
+    padding: 0;
+    width: 10.75em;
+    height: 2em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: white;
+    background-color: #751a1a;
+    box-shadow: none;
+}
+
+input {
+    box-shadow: #083249 1px 1px;
+}
+
+#login-content a {
+    color: rgb(178, 177, 177);
+}
 /* Teamplanner */
 
 .team-container {
@@ -185,7 +291,7 @@ main {
 
 .team-container a {
     text-decoration: none;
-    color: black;
+    color: white;
     transition: transform 0.3s ease-out;
 }
 
@@ -237,18 +343,56 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #c11c1c;
     padding: 2em;
     gap: 5em;
     border-radius: 15px;
-    box-shadow: 0 5px 0 #17213a;
+    background-color: white;
+    border: #083249 solid 5px;
+    color: black;
 }
 
 .selectionBox h1 {
     padding-bottom: 1em;
 }
 
-button {
+#carousel-container {
+    display: block;
+}
+
+.carousel-content {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin: 0 2em 0 2em;
+    border: #083249 solid 1px;
+    border-radius: 10px;
+    gap: 1em;
+    opacity: 95%;
+}
+
+.carousel-content div {
+    margin-top: 0.5em;
+}
+
+.carousel-content img {
+    width: 60px;
+    height: auto;
+}
+
+.button-carousel{
+    background-color:white;
+    color: darkred;
+    width: auto;
+    border: none;
+    cursor: pointer;
+    padding: 0.25em 5em 0.25em 5em;
+}
+
+.button-carousel:hover {
+    background-color: white;
+}
+
+#button-view {
     color: white;
     background-color: #751a1a;
     padding: 1em;
@@ -260,9 +404,22 @@ button {
     cursor: pointer;
 }
 
-button :hover {
+button:hover {
     background-color: aliceblue;
     cursor: pointer;
+}
+
+#input-search {
+    margin-bottom: 1em;
+    width: auto;
+}
+
+.input-checkbox {
+    padding-bottom: 1em;
+}
+
+label {
+    padding-right: 1em;
 }
 
 /* Image Catch Pokemon */
@@ -303,6 +460,19 @@ button :hover {
     text-shadow: 3px 3px 3px #3a1717;
 }
 
+.current-pokemon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    background-color: #083249;
+    padding: 1rem;
+    border-radius: 30px;
+    border: turquoise solid 2px;
+}
+
 .current-pokemon article {
     display: flex;
     flex: 1 1;
@@ -318,47 +488,7 @@ button :hover {
     height: auto;
 }
 
-@media screen and (max-width: 600px) {
-    .hide-navbar {
-        display: none;
-    }
-
-    #hamburger {
-        display: contents;
-    }
-
-    .current-pokemon img {
-        width: 50px;
-        height: auto;
-    }
-
-    .current-pokemon h1,
-    .current-pokemon p {
-        padding: 0.2rem;
-        font-size: 10px;
-    }
-
-    .current-pokemon {
-        bottom: 1%;
-    }
-}
-
-
 /*GuessPokemon*/
-#body-guess-pokemon {
-    background-image: url("/assets/guessBGI1.jpg");
-    background-position: bottom;
-    background-size: cover;
-}
-
-#main-guess-pokemon {
-    margin-bottom: 10em;
-}
-
-#main-guess-pokemon a {
-    text-decoration: none;
-}
-
 .black-center-text {
     color: black;
     text-align: center;
@@ -390,20 +520,18 @@ button :hover {
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
-    transition: transform 0.2s ease-out;
 }
 
 #button-submit:hover {
-    transform: scale(1.05);
+    background-color: #304f91;
 }
 
 #footer-guess-pokemon {
-    margin-top: 0;
+    margin-top: 7rem
 }
 
 /*Compare.html*/
-.compare-pokemon-info input {
-    border: 1px solid black;
+.pokemon-input {
     margin-bottom: 15px;
     padding: 5px;
     width: 100%;
@@ -448,6 +576,7 @@ button :hover {
     text-align: left;
     width: 100%;
     margin-top: 5px;
+
 }
 
 .pokemon-stats p {
@@ -464,51 +593,6 @@ button :hover {
 .choose-content img {
     height: 15em;
     width: auto;
-}
-
-@media (max-width: 768px) {
-    #compare-container {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 2rem;
-        padding-bottom: 5rem;
-        padding-top: 2rem;
-    }
-
-    #compare-container {
-        margin-top: 0;
-    }
-
-    .project-content img {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-
-@media screen and (max-width: 600px) {
-    .hide-navbar {
-        display: none;
-    }
-
-    #hamburger {
-        display: contents;
-    }
-
-    .current-pokemon img {
-        width: 50px;
-        height: auto;
-    }
-
-    .current-pokemon h1,
-    .current-pokemon p {
-        padding: 0.2rem;
-        font-size: 10px;
-    }
-
-    .current-pokemon {
-        bottom: 1%;
-    }
 }
 
 /*detail.html*/
@@ -584,56 +668,47 @@ button :hover {
     margin-top: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    #compare-container {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+        padding-bottom: 5rem;
+        padding-top: 2rem;
+    }
 
-@media screen and (max-width: 768px) {
-    #footer-detail{
+    #compare-container {
         margin-top: 0;
     }
-    #evo1{
-        width: 15%;
+
+    .project-content img{
+        width: 250px;
+        height: 250px;
     }
-    #evo2{
-        width: 20%;
-    }
-    #evo3{
-        width: 20%;
-    }
-    #evo4{
-        width: 45%;
-    }
-    #main-detail{
-        margin: 3rem 1rem 1rem;
-    }
-    #pokemon-evolution-container{
-        display:flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-    }
-    #pokemon-detail-container {
-        margin: 0 auto;
-        display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+    .hide-navbar {
+        display: none;
     }
 
-    .pokemon-information-container {
-        display: flex;
-        width: 100%;
+    #hamburger {
+        display: contents;
     }
 
-    .pokemon-detail-stats {
-        margin-right: 1px;
-        width: 25%;
-        font-size: 0.75rem;
-    }
-    .type {
-        display: block; /* Display as block for stacking */
-        width: 100%;
-        max-width: 2.75rem;
+    .current-pokemon img {
+        width: 50px;
+        height: auto;
     }
 
-    /*h1 van project.html kleiner maken note: alle medias moeten later bij mekaar.*/
-    #navbar-index {
-        font-size: 0.8rem;
+    .current-pokemon h1,
+    .current-pokemon p {
+        padding: 0.2rem;
+        font-size: 10px;
+    }
+
+    .current-pokemon {
+        bottom: 1%;
     }
 }
