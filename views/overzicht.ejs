@@ -7,13 +7,14 @@
             <a href="#">
                 <section class="box">
                     <article class="box-content">
+                        <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
                         <div>
                             <h1><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h1>
                             <% pokemon.types.forEach((type, i) => { %>
                                 <span id="type<%= i + 1 %>" class="type"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></span>
                             <% }) %>
                         </div>
-                        <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+
                     </article>
                 </section>
             </a>
