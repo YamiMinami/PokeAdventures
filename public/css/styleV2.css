@@ -492,11 +492,23 @@ label {
 }
 
 /*GuessPokemon*/
+#body-guess-pokemon {
+    background-image: url("/assets/guessBGI1small.png");
+    background-position: bottom;
+    background-size: cover;
+}
 .black-center-text {
     color: black;
     text-align: center;
 }
-
+#main-guess-pokemon{
+    width: 64vw; /*wdith for pushing the aside to make it smaller.*/
+    margin-left: auto;
+    margin-right: 0; /*margins are for centering the guesspokemon image*/
+}
+#main-guess-pokemon a{
+    text-decoration: none;
+}
 #main-guess-pokemon h2 {
     margin: 4rem 0 0.5rem 0;
 }
@@ -510,23 +522,40 @@ label {
     margin: 0.5rem auto 0 auto;
     border-radius: 20px;
 }
-
-#img-guess {
-    width: 300px;
+#guess-image-container{
+    width: 64vw;
     height: 300px;
+    margin-left: auto;
+    margin-right: 0; /*margins are for centering the guesspokemon image*/
+}
+#img-guess {
+    transform: scale(2);
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
     display: block;
     border-radius: 20px;
+    filter: brightness(0);
+    transition: filter .5s ease-out;
+    transform-origin: center top;
 }
 
 #button-submit {
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
+    transition: transform 0.2s ease-out;
+    text-decoration: none;
+    background-color:#ff4848;
+    padding: 4px;
+    border-radius: 5px;
+    border: none;
 }
-
+#button-submit{
+    width: 300px;
+}
 #button-submit:hover {
-    background-color: #304f91;
+    transform: scale(1.05);
 }
 
 #footer-guess-pokemon {

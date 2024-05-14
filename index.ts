@@ -13,8 +13,13 @@ app.get("/compare", (req, res) => {
   res.render("compare");
 });
 
-app.get("/guesspokemon", (req, res) => {
-  res.render("guesspokemon");
+app.get("/guesspokemon", async(req, res) => {
+  let pokemon;
+  const randomId = Math.floor(Math.random() * 898) + 1;
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+  const data = await response.json();
+  pokemon = data;
+  res.render("guesspokemon", {pokemon: pokemon});
 });
 app.get("/inlog", (req, res) => {
   res.render("inlog");
