@@ -34,22 +34,26 @@ import fs from "fs";
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 
-app.post("/inlog", (req, res) => {
+app.post("/index", (req, res) => {
 
   const user = users.find((user: any) => user.username === uname && user.password === pword);
 
 
-  let uname :string = req.body.uname;
+  let uname :string = req.body.email;
   let pword :string = req.body.pword;
 
+  
+
   if (uname === "gebruiker1" || pword === "wachtwoord1") {
-    res.render("inlog", { error: "Succesvol ingelogd." });
+    res.render("index", { error: "Succesvol ingelogd." });
   } 
   else {
-    res.render("inlog", { error: "Ongeldige gebruikersnaam of wachtwoord." });
+    res.render("index", { error: "Ongeldige gebruikersnaam of wachtwoord." });
   }
 
 });
+
+
 
 
 app.get("/overzicht", (req, res) => {
