@@ -16,7 +16,7 @@ body {
     width: 100vw;
     grid-template-rows: auto auto auto;
     color: white;
-    background-image: url(/assets/samuel-speziali-4-by-samuel-speziali.jpg);
+    background-image: url(/assets/game-background.jpg);
     background-repeat:repeat-y;
     background-size: cover;
     background-position: center;
