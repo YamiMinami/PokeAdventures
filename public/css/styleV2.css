@@ -534,6 +534,13 @@ label {
 }
 
 /*Compare.html*/
+#body-compare{
+    background-image: url(/assets/compareBGI3.jpg);
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 .pokemon-input {
     margin-bottom: 15px;
     padding: 5px;
@@ -579,7 +586,7 @@ label {
     text-align: left;
     width: 100%;
     margin-top: 5px;
-
+    background-color: white;
 }
 
 .pokemon-stats p {
