@@ -4,7 +4,7 @@
     <%- include("partials/header") %>
     <main class="main-container">
         <% pokemons.forEach(pokemon => { %>
-            <a href="#">
+            <a href="/detail/<%= pokemon.id %>">
                 <section class="box">
                     <article class="box-content">
                         <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">

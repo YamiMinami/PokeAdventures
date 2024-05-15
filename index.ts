@@ -50,12 +50,12 @@ app.get("/detail/:id", async (req, res) => {
   const data = await response.json();
   const pokemon = data;
   // Voor matthew
-  const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
+  /*const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
   const dataEvo = await responseEvo.json();
-  const evolutions = dataEvo;
+  const evolutions = dataEvo;*/
   res.render("detail", {
-    pokemon: pokemon,
-    evolutions: evolutions
+    pokemon: pokemon
+    //evolutions: evolutions
   });
 });
 
