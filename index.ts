@@ -4,7 +4,7 @@ app.set("view engine", "ejs");
 app.set("port", 3000);
 app.use(express.static("public"));
 app.get("/", (req, res) => {
-    res.render("index");
+  res.render("index");
 });
 app.get("/battle", (req, res) => {
   res.render("battle");
@@ -13,8 +13,14 @@ app.get("/compare", (req, res) => {
   res.render("compare");
 });
 
-app.get("/guesspokemon", (req, res) => {
-  res.render("guesspokemon");
+
+app.get("/guesspokemon", async(req, res) => {
+  let pokemon;
+  const randomId = Math.floor(Math.random() * 898) + 1;
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+  const data = await response.json();
+  pokemon = data;
+  res.render("guesspokemon", {pokemon: pokemon});
 });
 app.get("/inlog", (req, res) => {
   res.render("inlog");
@@ -37,6 +43,7 @@ app.get("/overzicht", async (req, res) => {
   });
 });
 
+
 app.get("/tester", (req, res) => {
   res.render("tester");
 });
@@ -50,15 +57,15 @@ app.get("/detail/:id", async (req, res) => {
   const data = await response.json();
   const pokemon = data;
   // Voor matthew
-  const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
+  /*const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
   const dataEvo = await responseEvo.json();
-  const evolutions = dataEvo;
+  const evolutions = dataEvo;*/
   res.render("detail", {
-    pokemon: pokemon,
-    evolutions: evolutions
+    pokemon: pokemon
+    //evolutions: evolutions
   });
 });
 
 app.listen(app.get("port"), () =>
-    console.log("[server] http://localhost:" + app.get("port"))
+  console.log("[server] http://localhost:" + app.get("port"))
 );
