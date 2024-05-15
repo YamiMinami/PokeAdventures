@@ -13,6 +13,7 @@ app.get("/compare", (req, res) => {
   res.render("compare");
 });
 
+
 app.get("/guesspokemon", (req, res) => {
   res.render("guesspokemon");
 });
@@ -31,11 +32,16 @@ app.get("/overzicht", async (req, res) => {
 
   const currentPokemon = pokemons[1];
 
+  const currentPokemon = pokemons[1];
+
   res.render("overzicht", {
+    pokemons: pokemons,
+    cPokemon: currentPokemon
     pokemons: pokemons,
     cPokemon: currentPokemon
   });
 });
+
 
 app.get("/tester", (req, res) => {
   res.render("tester");
