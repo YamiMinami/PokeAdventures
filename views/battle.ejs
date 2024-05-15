@@ -2,46 +2,24 @@
 <html lang="nl-be">
   <%- include("partials/head") %>
 
-<body>
+<body class="battle-background">
   <%- include("partials/header") %>
-<main>
-  <h2 id="text-battle">Vechten</h2>
-  <section class="battle-container-wrapper">
-
-    <article class="battle-container">
-
-      <section class="pokemon" id="pokemon1">
-        <img src="/assets/Hektakun-Pokemon-004-Charmander.72.png" alt="Pokemon 1">
-        <p id="p-huidige-pokemon">Jouw pokemon</p>
-        <h3 class="name">Charmander</h3>
-        <p class="hp">HP: <span id="hp1">100</span></p>
-      </section>
-
-      <div class="vs">VS</div> 
-
-      <section class="pokemon" id="pokemon2">
-        <img src="/assets/Hektakun-Pokemon-009-Blastoise.72.png" alt="Pokemon 2">
-        <p id="p-tegenstander-pokemon">Tegenstander</p>
-        <h3 class="name">Blastoise</h3>
-        <p class="hp">HP: <span id="hp2">100</span></p>
-        
-      </section>
-
-      
-    </article>
-    
-    <section class="catch-info">
-      <p>Bij lage HP is de kans om te vangen hoger!</p>
+<main class="equal-view">
+    <section class="battle-container">
+        <article>
+            <h1><%= pokemon.name %></h1>
+            <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+        </article>
     </section>
-  
-  </section>
-  
-  <button class="attack-btn" onclick="attack()">Aanvallen!</button>
-
-  <button class="capture-btn" onclick="capture()">
-    Vangen! (3 kansen) 
-  </button>
 </main>
+<aside class="equal-view">
+    <section class="battle-container">
+        <article>
+            <h1><%= pokemon.name %></h1>
+            <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+        </article>
+    </section>
+</aside>
 <%- include("partials/footer") %>
 </body>
 </html>
