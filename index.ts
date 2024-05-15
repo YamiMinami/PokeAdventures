@@ -4,7 +4,7 @@ app.set("view engine", "ejs");
 app.set("port", 3000);
 app.use(express.static("public"));
 app.get("/", (req, res) => {
-    res.render("index");
+  res.render("index");
 });
 app.get("/battle", (req, res) => {
   res.render("battle");
@@ -32,11 +32,7 @@ app.get("/overzicht", async (req, res) => {
 
   const currentPokemon = pokemons[1];
 
-  const currentPokemon = pokemons[1];
-
   res.render("overzicht", {
-    pokemons: pokemons,
-    cPokemon: currentPokemon
     pokemons: pokemons,
     cPokemon: currentPokemon
   });
@@ -66,5 +62,5 @@ app.get("/detail/:id", async (req, res) => {
 });
 
 app.listen(app.get("port"), () =>
-    console.log("[server] http://localhost:" + app.get("port"))
+  console.log("[server] http://localhost:" + app.get("port"))
 );
