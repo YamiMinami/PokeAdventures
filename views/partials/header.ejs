@@ -1,4 +1,4 @@
-<header class="navbar" id="header-hamburger">
+<header class="navbar" id="navbar-hamburger">
   <nav id="topnav">
       <a href="/" class="active"><img src="/assets/478d8e49233e7de64a3cbb875e526807.png" alt="Logo"></a>
       <a href="javascript:void(0);" class="icon" id="hamburger" onclick="toggleNav()">
@@ -30,7 +30,7 @@
 
 <script>
   function toggleNav() {
-      var x = document.getElementById("nav-menu");
+      var x = document.getElementById("ul-menu");
       if (x.style.display === "block" && window.innerWidth < 768) {
           x.style.display = "none";
       } else {

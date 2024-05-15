@@ -718,21 +718,21 @@ label {
         color: black;
     }
     #navbar-hamburger {
-        display: flex;
+        display: block;
         background-color: #ff4848;
         margin: 0;
         padding: 0;
     }
 
-    #nav-menu {
+    #ul-menu {
         background-color: #e24040;
         width: 100%;
     }
-    #nav-menu li{
+    #ul-menu li{
         padding-top: 4px;
         padding-bottom: 4px;
     }
-    #nav-menu li:hover{
+    #ul-menu li:hover{
         background-color: black;
         color: black;
     }
@@ -742,7 +742,7 @@ label {
         width: 100vw;
     }
 
-    #topnav #nav-menu {
+    #topnav #ul-menu {
         display: none;
     }
     #nav-menu li:hover{
