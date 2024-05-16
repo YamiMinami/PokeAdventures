@@ -679,7 +679,7 @@ label {
 /* Battle.html */
 
 .battle-background {
-    background-image: url(/assets/vecteezy_2d-hero-battle-pvp-arena-background-casual-game-art-design_31688148.jpg);
+    background-image: url(/assets/ArenaTwo.png);
     background-repeat:repeat-y;
     background-size: cover;
     background-position: center;
@@ -701,6 +701,7 @@ label {
     align-items: center;
     height: 50%;
     text-align: center;
+    margin-top: 50px;
 }
 
 .battle-container img {
