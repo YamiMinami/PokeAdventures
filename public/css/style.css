@@ -269,7 +269,7 @@ button :hover {
 
 
 .background-image {
-    background-image: url(/assets/derek-weselake-breathe-small.jpg);
+    background-image: url(/assets/catch-pokemon-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -494,7 +494,6 @@ button :hover {
     #hamburger {
         display: contents;
     }
-
     .current-pokemon img {
         width: 50px;
         height: auto;
@@ -602,7 +601,7 @@ button :hover {
         width: 45%;
     }
     #main-detail{
-        margin: 3rem 1rem 1rem;
+        margin-bottom: ;
     }
     #pokemon-evolution-container{
         display:flex;
