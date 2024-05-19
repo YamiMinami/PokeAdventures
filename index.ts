@@ -1,23 +1,26 @@
 import express from "express";
-import mongoose from 'mongoose';
+import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
+import { Users } from "./interfaces";
 const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
 app.use(express.static("public"));
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect('mongodb+srv://estalistrinev:tPqvaqEIdP7z9KM1@mijnproject.udzcq5y.mongodb.net/?retryWrites=true&w=majority&appName=mijnProject', {
-    });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error: ${(error as Error).message}`);
-    process.exit(1);
-  }
-};
+const uri = "mongodb+srv://estalistrinev:tPqvaqEIdP7z9KM1@mijnproject.udzcq5y.mongodb.net/?retryWrites=true&w=majority&appName=mijnProject"
+const client = new MongoClient(uri);
 
-connectDB();
+async function main() {
+  try {
+    await client.connect();
+  } catch (e) {
+    console.error(e);
+  } finally {
+    await client.close();
+  }
+}
+
+main();
 
 app.get("/", (req, res) => {
     res.render("index");
