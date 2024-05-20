@@ -3,6 +3,9 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
 app.use(express.static("public"));
+
+
+
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -12,7 +15,6 @@ app.get("/battle", (req, res) => {
 app.get("/compare", (req, res) => {
   res.render("compare");
 });
-
 
 app.get("/guesspokemon", async(req, res) => {
   let pokemon;
