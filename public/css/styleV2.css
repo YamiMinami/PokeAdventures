@@ -99,6 +99,14 @@ footer {
 
 /* pokedex */
 
+.search-pokemon {
+    background-color: white;
+    border-radius: 15px;
+    color: black;
+    padding: 1rem;
+    margin: 0 2rem 0 2rem;
+}
+
 main {
     grid-area: Main;
     margin: 3em;

@@ -44,22 +44,33 @@ app.get("/guesspokemon", (req, res) => {
 app.get("/inlog", (req, res) => {
   res.render("inlog");
 });
+
 app.get("/overzicht", async (req, res) => {
-  let pokemons = [];
+    let pokemons = [];
+    let searchQuery: any = req.query.q ?? "";
 
-  for (let i = 0; i < 12; i++) {
-    const randomId = Math.floor(Math.random() * 898) + 1;
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-    const data = await response.json();
-    pokemons.push(data);
-  };
+    if (searchQuery) {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery.toLowerCase()}`);
+            if (response.ok) {
+                const data = await response.json();
+                pokemons.push(data);
+            }
+        } catch (error) {
+            console.error("Error fetching Pokémon:", error);
+        }
+    } else {
+        for (let i = 0; i < 12; i++) {
+            const randomId = Math.floor(Math.random() * 898) + 1;
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+            if (response.ok) {
+                const data = await response.json();
+                pokemons.push(data);
+            }
+        }
+    }
 
-  const currentPokemon = pokemons[1];
-
-  res.render("overzicht", {
-    pokemons: pokemons,
-    cPokemon: currentPokemon
-  });
+    res.render('overzicht', { pokemons, q: searchQuery, cPokemon: pokemons[0] });
 });
 
 app.get("/tester", (req, res) => {
