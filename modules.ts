@@ -18,6 +18,3 @@ export async function main() {
 
 main();
 
-export function userId {
-
-}

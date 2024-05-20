@@ -1,44 +1,43 @@
 <html lang="nl-be">
-<%- include("partials/head") %>
+    <%- include("partials/head") %>
 <body>
-<%- include("partials/header") %>
-<main class="main-container">
-    <% pokemons.forEach(pokemon => { %>
-        <a href="/detail/<%= pokemon.id %>">
-            <section class="box">
-                <article class="box-content">
-                    <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-                    <div>
-                        <h1><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h1>
-                        <% pokemon.types.forEach((type, i) => { %>
-                            <span id="type<%= i + 1 %>" class="type"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></span>
-                        <% }) %>
-                    </div>
-                </article>
-            </section>
-        </a>
-    <% }) %>
-</main>
-<aside>
-    <section class="current-pokemon-container">
-        <article class="current-content">
-            <h1>Your pokemon</h1>
-            <% if (cPokemon) { %>
+    <%- include("partials/header") %>
+    <main class="main-container">
+        <% pokemons.forEach(pokemon => { %>
+            <a href="/detail/<%= pokemon.id %>">
+                <section class="box">
+                    <article class="box-content">
+                        <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+                        <div>
+                            <h1><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h1>
+                            <% pokemon.types.forEach((type, i) => { %>
+                                <span id="type<%= i + 1 %>" class="type"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></span>
+                            <% }) %>
+                        </div>
+
+                    </article>
+                </section>
+            </a>
+        <% }) %>
+    </main>
+    <aside>
+        <section class="current-pokemon-container">
+            <article class="current-content">
+                <h1>Your pokemon</h1>
                 <img src="<%= cPokemon.sprites.other.showdown.front_default %>" alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
                 <h2><%= cPokemon.name %></h2>
-            <% } %>
-        </article>
-    </section>
-    <div class="search-pokemon">
-    <form action="/overzicht" method="get">
-        <label for="search">Search for a pokemon</label>
-        <br>
-        <input type="text" id="search" name="q" value="<%= q %>">
-        <button type="submit">Search</button>
-    </form>
-    </div>
-
-</aside>
-<%- include("partials/footer") %>
+            </article>
+        </section>
+        <div class="search-pokemon">
+            <form action="/overzicht" method="get">
+                <label for="search">Search for a pokemon</label>
+                <br>
+                <input type="text" id="search" name="q" value="<%= q %>">
+                <br>
+                <button type="submit">Search</button>
+            </form>
+            </div>
+    </aside>
+    <%- include("partials/footer") %>
 </body>
 </html>
