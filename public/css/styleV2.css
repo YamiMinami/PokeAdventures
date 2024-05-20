@@ -541,7 +541,7 @@ label {
     margin: 0 auto;
     display: block;
     border-radius: 20px;
-    filter: brightness(0);
+    filter: brightness(0%);
     transition: filter .5s ease-out;
     transform-origin: center top;
 }
