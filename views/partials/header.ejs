@@ -1,14 +1,31 @@
-<header class="navbar">
-    <img src="/assets/logo-game.png" alt="Logo">
-    <nav>
-        <ul>
-            <li class="hide-navbar"><a href="/guesspokemon">Spelen</a></li>
+<header class="navbar" id="navbar-hamburger">
+    <nav id="topnav">
+        <a href="/" class="active"><img src="/assets/478d8e49233e7de64a3cbb875e526807.png" alt="Logo"></a>
+        <a href="javascript:void(0);" class="icon" id="hamburger" onclick="toggleNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <ul id="ul-menu">
+            <li class="hide-navbar"><a href="/guesspokemon">Speel</a></li>
             <li class="hide-navbar"><a href="/overzicht">Overzicht</a></li>
             <li class="hide-navbar"><a href="/teamplanner">TeamPlanner</a></li>
-            <li class="hide-navbar"><a href="/compare">Vergelijken</a></li>
+            <li class="hide-navbar"><a href="/compare">Compare</a></li>
+            <li class="hide-navbar"><a href="/">Uitloggen &nbsp<i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </nav>
+  </header>
+  
+  <header class="navbar" id="navbar-normal">
+    <img src="/assets/478d8e49233e7de64a3cbb875e526807.png" alt="Logo">
+    <nav>
+        <ul>
+            <li class="hide-navbar"><a href="/guesspokemon">Speel</a></li>
+            <li class="hide-navbar"><a href="/overzicht">Overzicht</a></li>
+            <li class="hide-navbar"><a href="/teamplanner">TeamPlanner</a></li>
+            <li class="hide-navbar"><a href="/compare">Compare</a></li>
             <li class="hide-navbar"><a href="/">Uitloggen</a> &nbsp<i class="fa-solid fa-user"></i></li>
             <li id="hamburger"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
         </ul>
     </nav>
-</header>
-
+  </header>
+  
+  
