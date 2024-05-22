@@ -2,10 +2,13 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
 import { Users } from "./interfaces";
+import bodyParser from 'body-parser';
 const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
 app.use(express.static("public"));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const uri = "mongodb+srv://estalistrinev:tPqvaqEIdP7z9KM1@mijnproject.udzcq5y.mongodb.net/?retryWrites=true&w=majority&appName=mijnProject"
 const client = new MongoClient(uri);
@@ -106,22 +109,23 @@ app.get("/detail/:id", async (req, res) => {
   });
 });
 
-app.get("/registratie", (req, res) => {
-  let username : string = req.body.name;
-  let password : string = req.body.password;
-  let email : string = req.body.email;
+app.get('/registratie', (req, res) => {
+  res.render('registratie', { error: "" });
+});
+
+app.post('/registratie', (req, res) => {
+  let username: string = req.body.name;
+  let password: string = req.body.password;
+  let email: string = req.body.email;
 
   if (username === "" || email === "" || password === "") {
-    res.render("register", { error: "All fields are required" });
+    res.render("registratie", { error: "All fields are required" });
   } else if (!email.includes("@")) {
-    res.render("register", { error: "Invalid email" });
+    res.render("registratie", { error: "Invalid email" });
   } else {
-
+    res.render("registratie", { error: "" });
   }
-  res.render("registratie", {
-  error: ""
-  });
-})
+});
 
 app.listen(app.get("port"), () =>
   console.log("[server] http://localhost:" + app.get("port"))
