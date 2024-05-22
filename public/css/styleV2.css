@@ -507,7 +507,7 @@ label {
     color: black;
     text-align: center;
 }
-#main-guess-pokemon{
+#main-guess-pokemon, #main-compare-pokemon{
     width: 64vw; /*wdith for pushing the aside to make it smaller.*/
     margin-left: auto;
     margin-right: 0; /*margins are for centering the guesspokemon image*/
@@ -569,13 +569,6 @@ label {
 }
 
 /*Compare.html*/
-#body-compare{
-    background-image: url(/assets/compareBGI3.jpg);
-    background-size: cover;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
 .pokemon-input {
     margin-bottom: 15px;
     padding: 5px;

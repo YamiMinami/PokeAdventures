@@ -4,9 +4,9 @@
 <%- include("partials/head") %>
 
 
-<body id="body-compare">
+<body>
     <%- include("partials/header") %>
-    <main>
+    <main id="main-compare-pokemon">
         <h2 class="black-center-text">Vergelijk pokemon</h2>
         <article id="compare-container">
             <section class="compare-pokemon-info">
@@ -30,8 +30,17 @@
                     <p><i class="fa-solid fa-shield"></i> Verdediging: 15 <span style="color: red;">(-15)</span></p>
                 </section>
             </section>
-        </article>
+        </article> 
     </main>
+    <aside>
+        <section class="current-pokemon-container">
+            <article class="current-content">
+                <h1>Your pokemon</h1>
+                <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
+                <h2>Charizard</h2>
+            </article>
+        </section>
+    </aside>
     <%- include("partials/footer") %>
 </body>
 
