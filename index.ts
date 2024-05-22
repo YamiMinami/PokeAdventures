@@ -74,7 +74,10 @@ app.get("/overzicht", async (req, res) => {
     }
   }
 
-  res.render('overzicht', { pokemons, q: searchQuery, cPokemon: pokemons[0] });
+  res.render('overzicht', {
+    pokemons,
+    q: searchQuery,
+    cPokemon: pokemons[0] });
 });
 
 app.get("/tester", (req, res) => {
