@@ -80,8 +80,13 @@ app.get("/overzicht", async (req, res) => {
     cPokemon: pokemons[0] });
 });
 
-app.get("/tester", (req, res) => {
-  res.render("tester");
+app.get("/tester", async (req, res) => {
+  const randomId = Math.floor(Math.random() * 898) + 1;
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+  const pokemon = await response.json();
+  res.render("tester", {
+    pokemon: pokemon,
+  });
 });
 app.get("/teamplanner", (req, res) => {
   res.render("teamplanner");
@@ -102,7 +107,20 @@ app.get("/detail/:id", async (req, res) => {
 });
 
 app.get("/registratie", (req, res) => {
-  res.render("registraties");
+  let username : string = req.body.name;
+  let password : string = req.body.password;
+  let email : string = req.body.email;
+
+  if (username === "" || email === "" || password === "") {
+    res.render("register", { error: "All fields are required" });
+  } else if (!email.includes("@")) {
+    res.render("register", { error: "Invalid email" });
+  } else {
+
+  }
+  res.render("registratie", {
+  error: ""
+  });
 })
 
 app.listen(app.get("port"), () =>

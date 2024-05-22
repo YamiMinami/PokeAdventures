@@ -3,14 +3,24 @@
 <body>
 <%- include("partials/header") %>
 <main id="registratie-container">
-    <section>
-        <form action="">
-            <label for="Name">Username</label>
-            <input type="text">
-            <label for="Password">Password</label>
-            <input type="password">
-            <label for="email">Email</label>
-            <input type="email">
+    <section id="registratie-box">
+        <form action="/registratie" method="post">
+            <div>
+                <label for="name">Username</label>
+                <input type="text" placeholder="Username" id="name">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" id="email">
+            </div>
+            <% if (error) { %>
+                <p><%= error %></p>
+            <% } %>
+            <button type="submit">Submit</button>
         </form>
     </section>
 </main>
