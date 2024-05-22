@@ -214,6 +214,14 @@ aside {
     padding: 10px;
 }
 
+/* registraties */
+
+#registratie-container {
+    display: block;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 /* projecten */
 
 .index-container {

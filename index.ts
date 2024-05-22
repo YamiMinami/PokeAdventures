@@ -101,6 +101,10 @@ app.get("/detail/:id", async (req, res) => {
   });
 });
 
+app.get("/registratie", (req, res) => {
+  res.render("registraties");
+})
+
 app.listen(app.get("port"), () =>
   console.log("[server] http://localhost:" + app.get("port"))
 );
