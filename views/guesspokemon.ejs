@@ -3,16 +3,28 @@
 
 <%- include("partials/head") %>
 
-<body id="body-guess-pokemon">
-    <%- include("partials/header") %>
-    <main id="main-guess-pokemon">
-        <h2 class="black-center-text">Wie is deze Pokémon???</h1>
-            <img id="img-guess" src="/assets/silhouette-pikachu.png" alt="Wie is deze Pokémon?">
-            <input type="text" id="pokemon-input" placeholder="Typ hier de naam van de Pokémon">
-            <a href="/battle"><button id="button-submit" type="submit">Indienen</button></a>
-    </main>
-    <footer id="footer-guess-pokemon">
-        <p>&copy; 2023 PokeAdventures. All rights reserved.</p>
-    </footer>
-</body>
+    <body id="body-guess-pokemon">
+        <%- include("partials/header") %>
+            <main id="main-guess-pokemon">
+                <h2 class="black-center-text">Wie is deze Pokémon???</h1>
+                    <section id="guess-image-container">
+                        <img id="img-guess" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+                    </section>
+                    <input type="text" id="pokemon-input" placeholder="Typ hier de naam van de Pokémon">
+                    <a href="/battle"><button id="button-submit" type="submit">Indienen</button></a>
+            </main>
+            <aside>
+                <section class="current-pokemon-container">
+                    <article class="current-content">
+                        <h1>Your pokemon</h1>
+                        <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
+                        <h2>Charizard</h2>
+                    </article>
+                </section>
+            </aside>
+            <footer id="footer-guess-pokemon">
+                <p>&copy; 2023 PokeAdventures. All rights reserved.</p>
+            </footer>
+    </body>
+
 </html>

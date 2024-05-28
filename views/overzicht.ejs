@@ -3,196 +3,42 @@
 <body>
     <%- include("partials/header") %>
     <main class="main-container">
-        <a href="#">
-        <section class="box">
-            <article class="box-content">
-                <div>
-                    <h1>Title</h1>
-                    <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                </div>
-                <img src="/assets/Hektakun-Pokemon-004-Charmander.72.png" alt="pikachu">
-            </article>
-        </section>
-        </a>
-        <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-005-Charmeleon.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>        <a href="#">
-            <section class="box">
+        <% pokemons.forEach(pokemon => { %>
+            <a href="/detail/<%= pokemon.id %>">
+                <section class="box">
                     <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-006-Charizard.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>        
-            <a href="detail.html">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-001-Bulbasaur.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>        
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-002-Ivysaur.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>        
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-003-Venusaur.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>        
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-007-Squirtle.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>        
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-008-Wartortle.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>        
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-009-Blastoise.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-010-Caterpie.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-011-Metapod.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>
-            <a href="#">
-            <section class="box">
-                <article class="box-content">
-                    <div>
-                        <h1>Title</h1>
-                        <span id="type1"
-                        class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                    </div>
-                    <img src="/assets/Hektakun-Pokemon-012-Butterfree.72.png" alt="pikachu">
-                </article>
-            </section>
-            </a>
+                        <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+                        <div>
+                            <h1><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h1>
+                            <% pokemon.types.forEach((type, i) => { %>
+                                <span id="type<%= i + 1 %>" class="type"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></span>
+                            <% }) %>
+                        </div>
 
-            <!--Huidige Pokemon-->
-            <!--
-            <section class="current-pokemon">
-                <article>
-                    <div>
-                    <h1>Huidige Pokemon</h1>
-                    <p><i class="fa-solid fa-heart"> HP : 100</i></p>
-                    <p><i class="fa-solid fa-hand-fist"> ATK: 10 </i></p>
-                    <p><i class="fa-solid fa-shield"> DEF: 5</i></p>
-                    </div>
-                    <img src="assets/Hektakun-Pokemon-004-Charmander.72.png" alt="">
-                </article>
-            </section>
-            -->
-
-
+                    </article>
+                </section>
+            </a>
+        <% }) %>
     </main>
     <aside>
         <section class="current-pokemon-container">
             <article class="current-content">
-                    <h1>Your pokemon</h1>
-                    <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
-                    <h2>Charizard</h2>
+                <h1>Your pokemon</h1>
+                <img src="<%= cPokemon.sprites.other.showdown.front_default %>" alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
+                <h2><%= cPokemon.name %></h2>
             </article>
         </section>
         <section class="aside-container">
             <article class="aside-content">
                     <input type="text" placeholder="Search..." id="input-search">
-                    <div>
-                    <input type="checkbox" id="type1" id="input-checkbox">
-                    <label for="type1">Poison</label>
-                    <input type="checkbox" id="type2" id="input-checkbox">
-                    <label for="type2">Poison</label>
+                        <% pokemons.forEach(pokemon => { %>
+                        <div>
+                            <% pokemon.types.forEach((type, i) => { %>
+                                <input type="checkbox" id="type<%= i + 1 %>" id="input-checkbox">
+                                <label for="type<%= i + 1 %>"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></label>
+                            <% }) %>
                     </div>
-                    <div>
-                    <input type="checkbox" id="type3" id="input-checkbox">
-                    <label for="type3">Poison</label>
-                    <input type="checkbox" id="type4" id="input-checkbox">
-                    <label for="type4">Poison</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="type5" id="input-checkbox">
-                        <label for="type5">Poison</label>
-                        <input type="checkbox" id="type6" id="input-checkbox">
-                        <label for="type6">Poison</label>
-                        </div>
+                        <% }) %>
             </article>
         </section>
 
