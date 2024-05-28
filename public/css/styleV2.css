@@ -718,7 +718,9 @@ label {
 #main-detail {
     margin-top: 4rem;
 }
-
+#main-detail h2{
+    padding-top: 1rem;
+}
 #pokemon-detail-allstats-container,
 #img-detail-container {
     display: flex;
