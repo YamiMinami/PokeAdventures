@@ -14,7 +14,6 @@ app.get("/compare", async (req, res) => {
   let pokemon2;
   let searchQuery1 = req.query.q1 ? String(req.query.q1).toLowerCase() : "";
   let searchQuery2 = req.query.q2 ? String(req.query.q2).toLowerCase() : "";
-  let pokemons = [];
   try {
     if (searchQuery1) {
       const response1 = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery1}`);
@@ -43,15 +42,11 @@ app.get("/compare", async (req, res) => {
   } catch (error) {
     console.error("Error fetching Pokémon:", error);
   }
+  const randomIdCP = Math.floor(Math.random() * 898) + 1;
+  const responseCP = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIdCP}`);
+  const dataCP = await responseCP.json();
+  let currentPokemon = dataCP;
 
-  for (let i = 0; i < 12; i++) {
-    const randomId = Math.floor(Math.random() * 898) + 1;
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-    const data = await response.json();
-    pokemons.push(data);
-  };
-
-  const currentPokemon = pokemons[1];
   res.render('compare', {
     pokemon1,
     pokemon2,
@@ -62,27 +57,21 @@ app.get("/compare", async (req, res) => {
   });
 });
 
-
-
-app.get("/guesspokemon", async(req, res) => {
+app.get("/guesspokemon", async (req, res) => {
   let pokemon;
   const randomId = Math.floor(Math.random() * 898) + 1;
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
   const data = await response.json();
-  let pokemons = [];
   pokemon = data;
 
-  for (let i = 0; i < 12; i++) {
-    const randomId = Math.floor(Math.random() * 898) + 1;
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-    const data = await response.json();
-    pokemons.push(data);
-  };
+  const randomIdCP = Math.floor(Math.random() * 898) + 1;
+  const responseCP = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIdCP}`);
+  const dataCP = await responseCP.json();
+  let currentPokemon = dataCP;
 
-  const currentPokemon = pokemons[1];
-  res.render("guesspokemon", {pokemon: pokemon,
+  res.render("guesspokemon", {
+    pokemon: pokemon,
     cPokemon: currentPokemon
-
   });
 });
 app.get("/inlog", (req, res) => {
@@ -119,15 +108,11 @@ app.get("/detail/:id", async (req, res) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
   const data = await response.json();
   const pokemon = data;
-  let pokemons = [];
-  for (let i = 0; i < 12; i++) {
-    const randomId = Math.floor(Math.random() * 898) + 1;
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-    const data = await response.json();
-    pokemons.push(data);
-  };
 
-  const currentPokemon = pokemons[1];
+  const randomIdCP = Math.floor(Math.random() * 898) + 1;
+  const responseCP = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIdCP}`);
+  const dataCP = await responseCP.json();
+  let currentPokemon = dataCP;
   const speciesResponse = await fetch(pokemon.species.url);
   const species = await speciesResponse.json();
 
