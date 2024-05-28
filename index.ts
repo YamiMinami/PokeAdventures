@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from 'body-parser';
-import {connect, getUsers, login} from "./database";
+import {connect, getUsers, login, initialUser} from "./database";
 import {Users} from "./interfaces";
 import session from "./session";
 const app = express();
@@ -10,8 +10,12 @@ app.use(session)
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async(req, res) => {
+  if (req.session.username) {
+    res.render("index", {user: req.session.username})
+  } else {
+      res.redirect("/regisratie")
+  }
 });
 
 app.post("/", async(req, res) => {
@@ -125,6 +129,7 @@ app.post('/registratie', (req, res) => {
 app.listen(app.get("port"), async () => {
   try{
     await connect();
+    await initialUser()
     await getUsers();
     console.log("[server] http://localhost:" + app.get("port"))
   } catch (e) {
