@@ -69,8 +69,21 @@ app.get("/guesspokemon", async(req, res) => {
   const randomId = Math.floor(Math.random() * 898) + 1;
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
   const data = await response.json();
+  let pokemons = [];
   pokemon = data;
-  res.render("guesspokemon", {pokemon: pokemon});
+
+  for (let i = 0; i < 12; i++) {
+    const randomId = Math.floor(Math.random() * 898) + 1;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const data = await response.json();
+    pokemons.push(data);
+  };
+
+  const currentPokemon = pokemons[1];
+  res.render("guesspokemon", {pokemon: pokemon,
+    cPokemon: currentPokemon
+
+  });
 });
 app.get("/inlog", (req, res) => {
   res.render("inlog");

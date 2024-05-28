@@ -504,7 +504,7 @@ label {
 /*GuessPokemon*/
 #body-guess-pokemon {
     background-image: url("/assets/guessBGI1small.png");
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
 }
 .black-center-text {
@@ -523,7 +523,7 @@ label {
     margin: 4rem 0 0.5rem 0;
 }
 
-.pokemon-input {
+#pokemon-input {
     width: 300px;
     height: 30px;
     font-size: 18px;
@@ -569,9 +569,6 @@ label {
     transform: scale(1.05);
 }
 
-#footer-guess-pokemon {
-    margin-top: 7rem
-}
 /*test compare*/
 
 /*Compare.html*/

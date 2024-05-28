@@ -8,13 +8,15 @@
             <main id="main-compare-pokemon">
                 <form id="form-compare" action="/compare" method="get">
                     <h2 class="black-center-text">Vergelijk pokemon</h2>
-                    <section><p>Pokemon 1</p>
-                        <input autocomplete="off" type="text" class="compare-pokemon-input" id="search" name="q1" value="<%= q1 %>"
-                            placeholder="Vul pokemon in.">
+                    <section>
+                        <p>Pokemon 1</p>
+                        <input autocomplete="off" type="text" class="compare-pokemon-input" id="search" name="q1"
+                            value="<%= q1 %>" placeholder="Vul pokemon in.">
                     </section>
-                    <section><p>Pokemon 2</p>
-                        <input autocomplete="off" type="text" class="compare-pokemon-input" id="search2" name="q2" value="<%= q2 %>"
-                            placeholder="Vul pokemon in.">
+                    <section>
+                        <p>Pokemon 2</p>
+                        <input autocomplete="off" type="text" class="compare-pokemon-input" id="search2" name="q2"
+                            value="<%= q2 %>" placeholder="Vul pokemon in.">
                     </section>
 
                     <button id="button-submit-compare" type="submit">submit</button>
@@ -23,7 +25,9 @@
                     <section class="compare-pokemon-info" id="compare-pokemon-info1">
                         <section class="compare-details">
                             <section class="compare-pokemon-name">
-                                <p><%=pokemon1.name%></p>
+                                <p>
+                                    <%=pokemon1.name%>
+                                </p>
                             </section>
                             <section class="img-compare-container">
                                 <img class="img-compare"
@@ -32,30 +36,38 @@
                             </section>
                             <section class="pokemon-stats">
                                 <p><i class="fa-solid fa-heart"></i> Leven: <%= pokemon1.stats.find(stat=>
-                                        stat.stat.name === 'hp').base_stat %> 
-                                        <% var hpDiff = pokemon1.stats[0].base_stat - pokemon2.stats[0].base_stat; %>
-                                        <span class="<%= hpDiff > 0 ? 'stat-higher' : (hpDiff < 0 ? 'stat-lower' : '') %>">
-                                            <% if (hpDiff > 0) { %> (+<%= hpDiff %>)<% } %><% if (hpDiff < 0) { %> (<%= hpDiff %>)<% } %>
-                                        </span></p>
+                                        stat.stat.name === 'hp').base_stat %>
+                                        <% var hpDiff=pokemon1.stats[0].base_stat - pokemon2.stats[0].base_stat; %>
+                                            <span
+                                                class="<%= hpDiff > 0 ? 'stat-higher' : (hpDiff < 0 ? 'stat-lower' : '') %>">
+                                                <% if (hpDiff> 0) { %> (+<%= hpDiff %>)<% } %>
+                                                            <% if (hpDiff < 0) { %> (<%= hpDiff %>)<% } %>
+                                            </span></p>
                                 <p><i class="fa-solid fa-hand-fist"></i> Aanval: <%= pokemon1.stats.find(stat=>
                                         stat.stat.name === 'attack').base_stat %>
-                                        <% var attDiff = pokemon1.stats[1].base_stat - pokemon2.stats[1].base_stat; %>
-                                        <span class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
-                                            <% if (attDiff > 0) { %> (+<%= attDiff %>)<% } %><% if (attDiff < 0) { %> (<%= attDiff %>)<% } %>
-                                        </span></p>
+                                        <% var attDiff=pokemon1.stats[1].base_stat - pokemon2.stats[1].base_stat; %>
+                                            <span
+                                                class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
+                                                <% if (attDiff> 0) { %> (+<%= attDiff %>)<% } %>
+                                                            <% if (attDiff < 0) { %> (<%= attDiff %>)<% } %>
+                                            </span></p>
                                 <p><i class="fa-solid fa-shield"></i> Verdediging: <%= pokemon1.stats.find(stat=>
                                         stat.stat.name === 'defense').base_stat %>
-                                        <% var defDiff = pokemon1.stats[2].base_stat - pokemon2.stats[2].base_stat; %>
-                                        <span class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
-                                            <% if (defDiff > 0) { %> (+<%= defDiff %>)<% } %><% if (defDiff < 0) { %> (<%= defDiff %>)<% } %>
-                                        </span></p>
+                                        <% var defDiff=pokemon1.stats[2].base_stat - pokemon2.stats[2].base_stat; %>
+                                            <span
+                                                class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
+                                                <% if (defDiff> 0) { %> (+<%= defDiff %>)<% } %>
+                                                            <% if (defDiff < 0) { %> (<%= defDiff %>)<% } %>
+                                            </span></p>
                             </section>
                         </section>
                     </section>
                     <section class="compare-pokemon-info" id="compare-pokemon-info2">
                         <section class="compare-details">
                             <section class="compare-pokemon-name">
-                                <p><%=pokemon2.name%></p>
+                                <p>
+                                    <%=pokemon2.name%>
+                                </p>
                             </section>
                             <section class="img-compare-container">
                                 <img class="img-compare"
@@ -65,37 +77,37 @@
                             <section class="pokemon-stats">
                                 <p><i class="fa-solid fa-heart"></i> Leven: <%= pokemon2.stats.find(stat=>
                                         stat.stat.name === 'hp').base_stat %>
-                                        <% var hpDiff = pokemon2.stats[0].base_stat - pokemon1.stats[0].base_stat; %>
-                                        <span class="<%= hpDiff > 0 ? 'stat-higher' : (hpDiff < 0 ? 'stat-lower' : '') %>">
-                                            <% if (hpDiff > 0) { %> (+<%= hpDiff %>)<% } %><% if (hpDiff < 0) { %> (<%= hpDiff %>)<% } %>
-                                        </span>
-                                    </p>
+                                        <% var hpDiff=pokemon2.stats[0].base_stat - pokemon1.stats[0].base_stat; %>
+                                            <span
+                                                class="<%= hpDiff > 0 ? 'stat-higher' : (hpDiff < 0 ? 'stat-lower' : '') %>">
+                                                <% if (hpDiff> 0) { %> (+<%= hpDiff %>)<% } %>
+                                                            <% if (hpDiff < 0) { %> (<%= hpDiff %>)<% } %>
+                                            </span>
+                                </p>
                                 <p><i class="fa-solid fa-hand-fist"></i> Aanval: <%= pokemon2.stats.find(stat=>
                                         stat.stat.name === 'attack').base_stat %>
-                                        <% var attDiff = pokemon2.stats[1].base_stat - pokemon1.stats[1].base_stat; %>
-                                        <span class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
-                                            <% if (attDiff > 0) { %> (+<%= attDiff %>)<% } %><% if (attDiff < 0) { %> (<%= attDiff %>)<% } %>
-                                        </span></p>
+                                        <% var attDiff=pokemon2.stats[1].base_stat - pokemon1.stats[1].base_stat; %>
+                                            <span
+                                                class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
+                                                <% if (attDiff> 0) { %> (+<%= attDiff %>)<% } %>
+                                                            <% if (attDiff < 0) { %> (<%= attDiff %>)<% } %>
+                                            </span></p>
                                 <p><i class="fa-solid fa-shield"></i> Verdediging: <%= pokemon2.stats.find(stat=>
                                         stat.stat.name === 'defense').base_stat %>
-                                        <% var defDiff = pokemon2.stats[2].base_stat - pokemon1.stats[2].base_stat; %>
-                                        <span class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
-                                            <% if (defDiff > 0) { %> (+<%= defDiff %>)<% } %><% if (defDiff < 0) { %> (<%= defDiff %>)<% } %>
-                                        </span></p>
+                                        <% var defDiff=pokemon2.stats[2].base_stat - pokemon1.stats[2].base_stat; %>
+                                            <span
+                                                class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
+                                                <% if (defDiff> 0) { %> (+<%= defDiff %>)<% } %>
+                                                            <% if (defDiff < 0) { %> (<%= defDiff %>)<% } %>
+                                            </span></p>
                             </section>
                         </section>
                     </section>
                 </article>
             </main>
             <aside>
-                <section class="current-pokemon-container">
-                    <article class="current-content">
-                        <h1>Your pokemon</h1>
-                        <img src="<%= cPokemon.sprites.other.showdown.front_default %>" alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
-                        <h2><%= cPokemon.name %></h2>
-                    </article>
-                </section>
-            </aside>
+                <%- include("partials/asideCP") %>
+            </aside> 
             <%- include("partials/footer") %>
     </body>
 
