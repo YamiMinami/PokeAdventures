@@ -3,27 +3,12 @@ import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
 import { Users } from "./interfaces";
 import bodyParser from 'body-parser';
+import {connect} from "./database";
 const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
 app.use(express.static("public"));
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
-const uri = "mongodb+srv://estalistrinev:tPqvaqEIdP7z9KM1@mijnproject.udzcq5y.mongodb.net/?retryWrites=true&w=majority&appName=mijnProject"
-const client = new MongoClient(uri);
-
-async function main() {
-  try {
-    await client.connect();
-  } catch (e) {
-    console.error(e);
-  } finally {
-    await client.close();
-  }
-}
-
-main();
 
 app.get("/", (req, res) => {
   res.render("index");
@@ -127,6 +112,7 @@ app.post('/registratie', (req, res) => {
   }
 });
 
-app.listen(app.get("port"), () =>
-  console.log("[server] http://localhost:" + app.get("port"))
-);
+app.listen(app.get("port"), async () => {
+      await connect();
+      console.log("[server] http://localhost:" + app.get("port"))
+    });

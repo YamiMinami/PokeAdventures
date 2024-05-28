@@ -1,7 +1,8 @@
+import { ObjectId} from "mongodb";
+
 export interface Users {
-    id: number;
-    name: string;
-    email: string;
+    _id?: ObjectId;
+    username: string;
     password: string;
     currentPokemon: number;
     ownedPokemons: string[];
