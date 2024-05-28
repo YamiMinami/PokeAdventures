@@ -65,15 +65,15 @@ app.get("/detail/:id", async (req, res) => {
   };
 
   const currentPokemon = pokemons[1];
-  // Voor matthew
-  /*const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
-  const dataEvo = await responseEvo.json();
-  const evolutions = dataEvo;*/
+  const speciesResponse = await fetch(pokemon.species.url);
+  const species = await speciesResponse.json();
+
+  const evolutionResponse = await fetch(species.evolution_chain.url);
+  const evolutionChain = await evolutionResponse.json();
   res.render("detail", {
     pokemon: pokemon,
-    cPokemon: currentPokemon
-    
-    //evolutions: evolutions
+    cPokemon: currentPokemon,
+    evolutionChain: evolutionChain
   });
 });
 
