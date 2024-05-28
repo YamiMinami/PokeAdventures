@@ -54,20 +54,9 @@
                 </section>
             </main>
             <aside>
-                <section class="current-pokemon-container">
-                    <article class="current-content">
-                        <h1>Your pokemon</h1>
-                        <img src="<%= cPokemon.sprites.other.showdown.front_default %>"
-                            alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
-                        <h2>
-                            <%= cPokemon.name %>
-                        </h2>
-                    </article>
-                </section>
+                <%- include("partials/asideCP") %>
             </aside>
-            <footer id="footer-detail">
-                <p>&copy; 2023 PokeAdventures. All rights reserved.</p>
-            </footer>
+            <%- include("partials/footer") %>
     </body>
 
 </html>
