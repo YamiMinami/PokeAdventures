@@ -1,8 +1,9 @@
 import express from "express";
 import bodyParser from 'body-parser';
-import {connect, getUsers, login, initialUser} from "./database";
+import {connect, getUsers, login, initialUser, userCollection} from "./database";
 import {Users} from "./interfaces";
 import session from "./session";
+import {secureMiddleware} from "./secureMiddleware";
 const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
@@ -10,7 +11,7 @@ app.use(session)
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", async(req, res) => {
+app.get("/", secureMiddleware, async(req, res) => {
   if (req.session.username) {
     res.render("index", {user: req.session.username})
   } else {

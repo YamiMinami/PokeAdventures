@@ -11,20 +11,43 @@ export const userCollection : Collection<Users> = client.db("PokeAdventures").co
 const saltRounds : number = 10;
 
 export async function initialUser() {
-    if (await userCollection.countDocuments() > 0) {
+    if (await userCollection.countDocuments() > 1) {
         return;
     }
 
-    let username : string = "Trong";
+    let username : string = "Matthew";
     let password: string = "dummy";
-    let currentPokemon: number = 1;
-    let ownedPokemons: number[] = [1, 4, 7];
+    let currentPokemon: number = 3;
+    let ownedPokemons: number[] = [11, 14, 17];
     await userCollection.insertOne({
         username: username,
         password: await bcrypt.hash(password, saltRounds),
         currentPokemon: currentPokemon,
         ownedPokemons: ownedPokemons
     });
+}
+
+export async function registerUser(username: string, password: string) {
+    try {
+        const existingUser = await userCollection.findOne({ username });
+
+        if (existingUser) {
+            throw new Error("Username already exists");
+        }
+
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+        const newUser: Users = {
+            username,
+            password: hashedPassword,
+            currentPokemon: null,
+            ownedPokemons: null
+        };
+
+        await userCollection.insertOne(newUser);
+    } catch (error) {
+        throw error;
+    }
 }
 
 export async function login(username: string, password: string) {
