@@ -663,7 +663,7 @@ label {
     margin-top: 4rem;
 }
 
-#pokemon-detail-container,
+#pokemon-detail-allstats-container,
 #img-detail-container {
     display: flex;
     justify-content: center;
@@ -672,8 +672,7 @@ label {
 
 #pokemon-detail-container,
 #pokemon-evolution-container {
-    background-color: lightgrey;
-    margin: 0;
+    background-color: white;
     border-radius: 10px;
 }
 
@@ -698,7 +697,7 @@ label {
     font-weight: bold;
 }
 
-#pokemon-evolution-container {
+#pokemon-evolution-img-container {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -707,7 +706,7 @@ label {
     margin-top: 0;
 }
 
-#pokemon-evolution-container img {
+#pokemon-evolution-img-container img {
     max-width: 25%;
     height: auto;
 }
@@ -734,14 +733,14 @@ label {
     #main-detail{
         margin-bottom: ;
     }
-    #pokemon-evolution-container{
+    #pokemon-evolution-img-container{
         display:flex;
         width: 100%;
         justify-content: center;
         align-items: center;
         margin: 0;
     }
-    #pokemon-detail-container {
+    #pokemon-detail-allstats-container {
         margin: 0 auto;
         display: block;
         padding: 2px;

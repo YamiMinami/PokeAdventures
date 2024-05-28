@@ -56,12 +56,23 @@ app.get("/detail/:id", async (req, res) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
   const data = await response.json();
   const pokemon = data;
+  let pokemons = [];
+  for (let i = 0; i < 12; i++) {
+    const randomId = Math.floor(Math.random() * 898) + 1;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const data = await response.json();
+    pokemons.push(data);
+  };
+
+  const currentPokemon = pokemons[1];
   // Voor matthew
   /*const responseEvo = await fetch('https://pokeapi.co/api/v2/evolution-chain/${pokemonId}')
   const dataEvo = await responseEvo.json();
   const evolutions = dataEvo;*/
   res.render("detail", {
-    pokemon: pokemon
+    pokemon: pokemon,
+    cPokemon: currentPokemon
+    
     //evolutions: evolutions
   });
 });
