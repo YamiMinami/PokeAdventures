@@ -44,7 +44,8 @@
                                             <% if (attDiff > 0) { %> (+<%= attDiff %>)<% } %><% if (attDiff < 0) { %> (<%= attDiff %>)<% } %>
                                         </span></p>
                                 <p><i class="fa-solid fa-shield"></i> Verdediging: <%= pokemon1.stats.find(stat=>
-                                        stat.stat.name === 'defense').base_stat %>                                        <% var defDiff = pokemon1.stats[2].base_stat - pokemon2.stats[2].base_stat; %>
+                                        stat.stat.name === 'defense').base_stat %>
+                                        <% var defDiff = pokemon1.stats[2].base_stat - pokemon2.stats[2].base_stat; %>
                                         <span class="<%= attDiff > 0 ? 'stat-higher' : (attDiff < 0 ? 'stat-lower' : '') %>">
                                             <% if (defDiff > 0) { %> (+<%= defDiff %>)<% } %><% if (defDiff < 0) { %> (<%= defDiff %>)<% } %>
                                         </span></p>
@@ -90,8 +91,8 @@
                 <section class="current-pokemon-container">
                     <article class="current-content">
                         <h1>Your pokemon</h1>
-                        <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
-                        <h2>Charizard</h2>
+                        <img src="<%= cPokemon.sprites.other.showdown.front_default %>" alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
+                        <h2><%= cPokemon.name %></h2>
                     </article>
                 </section>
             </aside>

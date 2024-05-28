@@ -14,7 +14,7 @@ app.get("/compare", async (req, res) => {
   let pokemon2;
   let searchQuery1 = req.query.q1 ? String(req.query.q1).toLowerCase() : "";
   let searchQuery2 = req.query.q2 ? String(req.query.q2).toLowerCase() : "";
-
+  let pokemons = [];
   try {
     if (searchQuery1) {
       const response1 = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery1}`);
@@ -44,11 +44,21 @@ app.get("/compare", async (req, res) => {
     console.error("Error fetching Pokémon:", error);
   }
 
+  for (let i = 0; i < 12; i++) {
+    const randomId = Math.floor(Math.random() * 898) + 1;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const data = await response.json();
+    pokemons.push(data);
+  };
+
+  const currentPokemon = pokemons[1];
   res.render('compare', {
     pokemon1,
     pokemon2,
     q1: searchQuery1,
-    q2: searchQuery2
+    q2: searchQuery2,
+    cPokemon: currentPokemon
+
   });
 });
 
