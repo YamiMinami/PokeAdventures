@@ -12,13 +12,13 @@
         </section>
         <section id="login-content">
             <article>
-                <form action="#">
-                    <label for="email" class="label-login">Email:</label>
-                    <input type="email" class="input-login">
+                <form action="/" method="post">
+                    <label for="username" class="label-login">Username:</label>
+                    <input type="text" id="username" class="input-login" name="username">
                     <label for="password" class="label-login">Password:</label>
-                    <input type="password" class="input-login">
+                    <input type="password"  id="password" class="input-login" name="password">
                 </form>
-                <button>Inloggen</button>
+                <button type="submit">Inloggen</button>
                 <br>
                 <a href="/registratie">Registreer</a>
             </article>

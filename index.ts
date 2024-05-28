@@ -1,18 +1,30 @@
 import express from "express";
-import { MongoClient } from "mongodb";
-import dotenv from 'dotenv';
-import { Users } from "./interfaces";
 import bodyParser from 'body-parser';
-import {connect} from "./database";
+import {connect, getUsers, login} from "./database";
+import {Users} from "./interfaces";
+import session from "./session";
 const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
+app.use(session)
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.post("/", async(req, res) => {
+  const username : string = req.body.username;
+  const password : string = req.body.password;
+  try {
+    let user : Users = await login(username, password);
+    delete user.password;
+    req.session.username = user;
+  } catch (e: any) {
+    res.redirect("/");
+  }
+})
 app.get("/battle", async (req, res) => {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
@@ -34,9 +46,7 @@ app.get("/guesspokemon", async(req, res) => {
     pokemon = data;
     res.render("guesspokemon", {pokemon: pokemon});
 });
-app.get("/inlog", (req, res) => {
-  res.render("inlog");
-});
+
 app.get("/overzicht", async (req, res) => {
   let pokemons = [];
   let searchQuery: string = req.query.q ? String(req.query.q).toLowerCase() : "";
@@ -113,6 +123,12 @@ app.post('/registratie', (req, res) => {
 });
 
 app.listen(app.get("port"), async () => {
-      await connect();
-      console.log("[server] http://localhost:" + app.get("port"))
+  try{
+    await connect();
+    await getUsers();
+    console.log("[server] http://localhost:" + app.get("port"))
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
     });
