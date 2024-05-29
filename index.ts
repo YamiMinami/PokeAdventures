@@ -267,6 +267,7 @@ app.post("/teamplanner/select", secureMiddleware, async (req, res) => {
       { $set: { currentPokemon: selectedPokemonId } }
   );
 
+  user.currentPokemon = selectedPokemonId;
   const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${selectedPokemonId}`);
   const currentPokemon: Pokemon = await currentResponse.json();
 
