@@ -5,6 +5,6 @@ export function secureMiddleware(req: Request, res: Response, next: NextFunction
         res.locals.username = req.session.username;
         next();
     } else {
-        res.redirect("/index");
+        res.redirect("/");
     }
 };

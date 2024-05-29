@@ -283,10 +283,13 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1em;
+    width: 80%;
+    transition: transform 0.2s ease-out;
 }
 
 button:hover {
-    background-color: #e04040;
+    transform: scale(1.05);
+    background-color: #ff4848;
 }
 
 
@@ -302,6 +305,8 @@ button:hover {
     padding-top: 2rem;
     flex: 1 1;
     background-color: rgb(47, 47, 47);
+    width: 100vw;
+    margin: 0;
 }
 
 .index-container a {
@@ -319,8 +324,8 @@ button:hover {
 }
 
 .project-content img {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     padding-bottom: 1em;
     object-fit: cover;
 }

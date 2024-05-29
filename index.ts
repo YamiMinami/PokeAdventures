@@ -11,25 +11,27 @@ app.use(session)
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", secureMiddleware, async(req, res) => {
-  if (req.session.username) {
-    res.render("index", {user: req.session.username})
-  } else {
-      res.redirect("/regisratie")
+app.get("/", (req, res) => {
+    res.render("index", );
+})
+
+app.get("/login", (req, res) => {
+  res.render("login");
+})
+
+app.post("/login", async(req, res) => {
+  const username: string = req.body.username;
+  const password: string = req.body.password;
+  try {
+    let user: Users = await login(username, password);
+    delete user.password;
+    req.session.username = user;
+    res.redirect("/tester")
+  } catch (e: any) {
+    res.redirect("/login");
   }
 });
 
-app.post("/", async(req, res) => {
-  const username : string = req.body.username;
-  const password : string = req.body.password;
-  try {
-    let user : Users = await login(username, password);
-    delete user.password;
-    req.session.username = user;
-  } catch (e: any) {
-    res.redirect("/");
-  }
-})
 app.get("/battle", async (req, res) => {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
@@ -39,6 +41,7 @@ app.get("/battle", async (req, res) => {
     pokemon: pokemon,
   });
 });
+
 app.get("/compare", (req, res) => {
   res.render("compare");
 });
@@ -83,13 +86,18 @@ app.get("/overzicht", async (req, res) => {
     cPokemon: pokemons[0] });
 });
 
-app.get("/tester", async (req, res) => {
-  const randomId = Math.floor(Math.random() * 898) + 1;
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-  const pokemon = await response.json();
-  res.render("tester", {
-    pokemon: pokemon,
-  });
+app.get("/tester", secureMiddleware, async (req, res) => {
+  if (req.session.username) {
+    const randomId = Math.floor(Math.random() * 898) + 1;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const pokemon = await response.json();
+    res.render("tester", {
+      user: req.session.username,
+      pokemon
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 app.get("/teamplanner", (req, res) => {
   res.render("teamplanner");

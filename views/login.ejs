@@ -4,7 +4,7 @@
 <%- include("partials/header") %>
 <main id="registratie-container">
     <section id="registratie-box">
-        <form action="/registratie" method="post">
+        <form action="/login" method="post">
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="username" placeholder="Username" id="username">
@@ -13,9 +13,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Password" id="password">
             </div>
-            <% if (error) { %>
-                <p><%= error %></p>
-            <% } %>
+            <a href="/registratie">Registreer</a>
             <button type="submit">Submit</button>
         </form>
     </section>
