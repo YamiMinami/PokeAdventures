@@ -100,8 +100,8 @@ app.get("/guesspokemon", secureMiddleware, async (req, res) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
     const pokemon: Pokemon = await response.json();
 
-    const currentRandomId = Math.floor(Math.random() * 898) + 1;
-    const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentRandomId}`);
+    const user = req.session.username as Users;
+    const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
     const currentPokemon: Pokemon = await currentResponse.json();
 
     res.render("guesspokemon", {
@@ -119,12 +119,13 @@ app.post("/guesspokemon", secureMiddleware, async (req, res) => {
   try {
     const guessedName = req.body.pokemonName.toLowerCase();
     const pokemonId = req.body.pokemonId;
-    const currentPokemonId = req.body.currentPokemonId;
+
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
     const pokemon: Pokemon = await response.json();
 
-    const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentPokemonId}`);
+    const user = req.session.username as Users;
+    const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
     const currentPokemon: Pokemon = await currentResponse.json();
 
     let guessedCorrectly = false;
@@ -192,8 +193,8 @@ app.get("/tester", secureMiddleware, async (req, res) => {
   }
 });
 app.get("/teamplanner", secureMiddleware, async(req, res) => {
-  const currentRandomId = Math.floor(Math.random() * 898) + 1;
-  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentRandomId}`);
+  const user = req.session.username as Users;
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
   const currentPokemon: Pokemon = await currentResponse.json();
 
   const speciesResponse = await fetch(currentPokemon.species.url);
@@ -215,10 +216,9 @@ app.get("/detail/:id", secureMiddleware, async (req, res) => {
   const data = await response.json();
   const pokemon = data;
 
-  const randomIdCP = Math.floor(Math.random() * 898) + 1;
-  const responseCP = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIdCP}`);
-  const dataCP = await responseCP.json();
-  let currentPokemon = dataCP;
+  const user = req.session.username as Users;
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
+  const currentPokemon: Pokemon = await currentResponse.json();
   const speciesResponse = await fetch(pokemon.species.url);
   const species = await speciesResponse.json();
 
