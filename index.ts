@@ -239,7 +239,7 @@ app.get('/registratie', (req, res) => {
 });
 
 app.post('/registratie', async(req, res) => {
-  let username: string = req.body.name;
+  let username: string = req.body.username;
   let password: string = req.body.password;
 
 
