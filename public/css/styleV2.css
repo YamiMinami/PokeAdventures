@@ -99,7 +99,7 @@ footer {
 
 /* pokedex */
 
-#search, .compare-pokemon-input {
+#search, .compare-pokemon-input, .login-input {
     background-color: white;
     width: 100%;
     padding: 0;
@@ -272,7 +272,7 @@ input {
     padding: 0.5em;
     box-shadow: none;
     border: 1px solid grey;
-    background-color: lightgray;
+    background-color: white;
 }
 
 button {
@@ -666,7 +666,7 @@ label {
     transform-origin: center top;
 }
 
-#button-submit, #button-submit-compare{
+#button-submit, #button-submit-compare, .button-login{
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
@@ -678,10 +678,10 @@ label {
     border: none;
 }
 
-#button-submit {
+#button-submit, .button-login {
     width: 300px;
 }
-#button-submit:hover, #button-submit-compare:hover {
+#button-submit:hover, #button-submit-compare:hover, .button-login:hover {
     transform: scale(1.05);
 }
 
@@ -693,7 +693,7 @@ label {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.compare-pokemon-input {
+.compare-pokemon-input, .login-input {
     margin-bottom: 15px;
     padding: 5px;
     border-radius: 10px;
