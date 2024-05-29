@@ -44,12 +44,13 @@
                     <h2 id="h2-evolution" class="black-center-text">Evolutiepad</h2>
                     <section id="pokemon-evolution-img-container">
                         <% function renderEvolutionChain(chain) { %>
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= chain.species.url.split('/').slice(-2, -1)[0] %>.png" width="150" alt="<%= chain.species.name %>">
-                            <% if (chain.evolves_to.length > 0) { %>
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= chain.species.url.split('/').slice(-2, -1)[0] %>.png"
+                                width="150" alt="<%= chain.species.name %>">
+                            <% if (chain.evolves_to.length> 0) { %>
                                 <%- renderEvolutionChain(chain.evolves_to[0]) %>
-                            <% } %>
-                        <% } %>
-                        <%- renderEvolutionChain(evolutionChain.chain) %>
+                                    <% } %>
+                                        <% } %>
+                                            <%- renderEvolutionChain(evolutionChain.chain) %>
                     </section>
                 </section>
             </main>

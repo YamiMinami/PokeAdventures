@@ -502,6 +502,24 @@ label {
 }
 
 /*GuessPokemon*/
+#guess-correct, #guess-incorrect{
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+}
+#guess-correct{
+    color: green;
+}
+#guess-incorrect{
+    color: red;
+}
+#guess-alert-container{
+    background-color: white;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+    padding: 6px;
+}
 #body-guess-pokemon {
     background-image: url("/assets/guessBGI1small.png");
     background-position: top;
