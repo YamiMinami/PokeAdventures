@@ -630,7 +630,7 @@ label {
     transform-origin: center top;
 }
 /*HUISSTIJL BUTTON*/
-button{
+button, .menu-content a{
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
@@ -642,11 +642,14 @@ button{
     border: none;
     color: white;
 }
-
+.menu-content a{
+    padding: 1em 0 1em 0;
+    width: 300px;
+}
 #button-submit {
     width: 300px;
 }
-button:hover{
+button:hover, .menu-content a:hover{
     transform: scale(1.05);
 }
 
@@ -749,9 +752,12 @@ button:hover{
         margin-top: 3rem;
     }
     #main-guess-pokemon, #main-compare-pokemon, #guess-image-container{
-        width: unset; /*wdith for pushing the aside to make it smaller.*/
+        width: unset; /*width back to unset so you can center everything nicely*/
         margin: 1em;
         /*margins are for centering the guesspokemon image*/
+    }
+    #main-compare-pokemon{
+        margin-top: 4em;
     }
     #form-compare{
         width: 300px;
@@ -947,22 +953,7 @@ button:hover{
     height: 100%;
     gap: 25px;
     margin-left: 50%;
-
 }
-
-.menu-content {
-    background-color: darkred;
-    padding: 1em 5em 1em 5em;
-    border-radius: 10px;
-    width: 300px;/
-}
-
-.menu-content a {
-    text-decoration: none;
-    color: white;
-}
-
-
 @media (max-width: 768px) {
     #compare-container {
         display: flex;
@@ -971,7 +962,6 @@ button:hover{
         padding-bottom: 5rem;
         padding-top: 2rem;
     }
-
     #compare-container {
         margin-top: 0;
     }
