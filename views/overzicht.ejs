@@ -25,16 +25,16 @@
     <aside>
         <section class="current-pokemon-container">
             <article class="current-content">
-                <h1>Your pokemon</h1>
+                <h1>Jouw pokemon</h1>
                 <img src="<%= currentPokemon.sprites.other.showdown.front_default %>" alt="<%= currentPokemon.name.charAt(0).toUpperCase() %>">
                 <h2><%= currentPokemon.name %></h2>
             </article>
         </section>
         <div class="search-pokemon">
             <form action="/overzicht" method="get">
-                <label for="search">Search for a pokemon</label>
-                <input   type="text" id="overzicht-input" name="q" value="<%= q %>" placeholder="Enter a pokemon name">
-                <button type="submit">Search</button>
+                <label for="search">Zoek een pokemon</label>
+                <input   type="text" id="overzicht-input" name="q" value="<%= q %>" placeholder="Vul pokemonnaam in">
+                <button type="submit">Zoek</button>
             </form>
             </div>
     </aside>
