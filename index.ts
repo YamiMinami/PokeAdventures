@@ -251,7 +251,7 @@ app.get("/teamplanner", secureMiddleware, async (req, res) => {
       })
   );
 
-  res.render('teamPlanner', {
+  res.render('teamplanner', {
     cPokemon: currentPokemon,
     ownedPokemonDetails,
     evolutionChain
@@ -283,7 +283,7 @@ app.post("/teamplanner/select", secureMiddleware, async (req, res) => {
       })
   );
 
-  res.render('teamPlanner', {
+  res.render('teamplanner', {
     cPokemon: currentPokemon,
     ownedPokemonDetails,
     evolutionChain
