@@ -5,6 +5,7 @@ import session from "./session";
 import {secureMiddleware} from "./secureMiddleware";
 import { Pokemon, Stat } from "./interfaces"; // Import the types
 import bodyParser from "body-parser";
+import { ObjectId} from "mongodb";
 
 const app = express();
 app.set("view engine", "ejs");
@@ -24,14 +25,19 @@ app.get("/login", (req, res) => {
   res.render("login");
 })
 
-app.post("/login", async(req, res) => {
+app.post("/login", async (req, res) => {
   const username: string = req.body.username;
   const password: string = req.body.password;
   try {
     let user: Users = await login(username, password);
     delete user.password;
     req.session.username = user;
-    res.redirect("/tester")
+
+    if (user.currentPokemon) {
+      res.redirect("/menu");
+    } else {
+      res.redirect("/tester");
+    }
   } catch (e: any) {
     res.redirect("/login");
   }
@@ -195,6 +201,33 @@ app.get("/tester", secureMiddleware, async (req, res) => {
     res.redirect("/");
   }
 });
+
+app.post('/catch', secureMiddleware, async (req, res) => {
+  const pokemonId = parseInt(req.body.pokemonId, 10);
+  const username = req.session.username;
+
+  if (!username) {
+    return res.redirect("/login");
+  }
+
+  try {
+    const user = await userCollection.findOne({ username: username.username });
+    if (user) {
+      const updatedOwnedPokemons = user.ownedPokemons ? [...user.ownedPokemons, pokemonId] : [pokemonId];
+      await userCollection.updateOne(
+          { _id: new ObjectId(user._id) },
+          { $set: { currentPokemon: pokemonId, ownedPokemons: updatedOwnedPokemons } }
+      );
+      res.redirect("/overzicht");
+    } else {
+      res.redirect("/login");
+    }
+  } catch (error) {
+    console.error("Error catching Pokémon:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 app.get("/teamplanner", secureMiddleware, async(req, res) => {
   const user = req.session.username as Users;
   const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
