@@ -99,7 +99,7 @@ footer {
 
 /* pokedex */
 
-#search {
+#search, .compare-pokemon-input {
     background-color: white;
     width: 100%;
     padding: 0;
@@ -324,8 +324,8 @@ button:hover {
 }
 
 .project-content img {
-    height: 350px;
-    width: 350px;
+    height: 300px;
+    width: 300px;
     padding-bottom: 1em;
     object-fit: cover;
 }
@@ -532,6 +532,7 @@ label {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
 }
@@ -591,23 +592,45 @@ label {
 }
 
 /*GuessPokemon*/
+#guess-correct, #guess-incorrect{
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+}
+#guess-correct{
+    color: green;
+}
+#guess-incorrect{
+    color: red;
+}
+#guess-alert-container{
+    background-color: white;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+    padding: 6px;
+}
 #body-guess-pokemon {
     background-image: url("/assets/guessBGI1small.png");
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
 }
+
 .black-center-text {
     color: black;
     text-align: center;
 }
-#main-guess-pokemon{
+#main-guess-pokemon, #main-compare-pokemon{
     width: 64vw; /*wdith for pushing the aside to make it smaller.*/
     margin-left: auto;
-    margin-right: 0; /*margins are for centering the guesspokemon image*/
+    margin-right: 0;
+    /*margins are for centering the guesspokemon image*/
 }
-#main-guess-pokemon a{
+
+#main-guess-pokemon a {
     text-decoration: none;
 }
+
 #main-guess-pokemon h2 {
     margin: 4rem 0 0.5rem 0;
 }
@@ -620,13 +643,17 @@ label {
     display: block;
     margin: 0.5rem auto 0 auto;
     border-radius: 20px;
+    color: black;
 }
-#guess-image-container{
+
+#guess-image-container {
     width: 64vw;
     height: 300px;
     margin-left: auto;
-    margin-right: 0; /*margins are for centering the guesspokemon image*/
+    margin-right: 0;
+    /*margins are for centering the guesspokemon image*/
 }
+
 #img-guess {
     transform: scale(2);
     width: 150px;
@@ -634,93 +661,149 @@ label {
     margin: 0 auto;
     display: block;
     border-radius: 20px;
-    filter: brightness(0);
+    filter: brightness(0%);
     transition: filter .5s ease-out;
     transform-origin: center top;
 }
 
-#button-submit {
+#button-submit, #button-submit-compare{
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
     transition: transform 0.2s ease-out;
     text-decoration: none;
-    background-color:#ff4848;
+    background-color: #ff4848;
     padding: 4px;
     border-radius: 10px;
     border: none;
 }
-#button-submit{
+
+#button-submit {
     width: 300px;
 }
-#button-submit:hover {
+#button-submit:hover, #button-submit-compare:hover {
     transform: scale(1.05);
 }
 
-#footer-guess-pokemon {
-    margin-top: 7rem
-}
+/*test compare*/
 
 /*Compare.html*/
-.pokemon-input {
+#body-compare{
+    background-image: url(/assets/samuel-speziali-4-by-samuel-speziali.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.compare-pokemon-input {
     margin-bottom: 15px;
     padding: 5px;
-    width: 100%;
     border-radius: 10px;
+    min-width: 200px;
 }
 
-
+#form-compare{
+    margin: auto;
+    width: 630px;
+    text-align: center;
+    background-color: white;
+    padding: 10px 0px 10px 0px;
+    border-radius: 10px;
+}
+#form-compare h2{
+    margin-bottom: 1rem;
+}
+#form-compare section p{
+    color: black;
+}
 #compare-container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+    width: 630px;/*width of the 2 images so it aligns with the form width*/
+    margin: auto;
     margin-top: 2rem;
 }
 
 .compare-pokemon-info {
     display: flex;
+    width: 630px;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 15px 0 15px;
     margin-bottom: 2rem;
 }
-
-#compare-container {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+#compare-pokemon-info1{
+    padding-right: 15px;
+}
+#compare-pokemon-info2{
+    padding-left: 15px;
+}
+.img-compare-container{
+    background-color: white;
+    margin-bottom: 0;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
 }
 
 .img-compare {
     width: 300px;
-    height: 300px;
-    border-radius: 10px;
     border: 1px solid black;
-    margin-bottom: 5px
 }
 
-.pokemon-stats {
-    color: white;
+.pokemon-stats, .compare-pokemon-name {
     padding: 1rem;
     border: 1px solid black;
     border-radius: 10px;
     text-align: left;
     width: 100%;
     margin-top: 5px;
-
+    background-color: white;
 }
-
-.pokemon-stats p {
+.compare-pokemon-name{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.pokemon-stats p, .compare-pokemon-name p {
     color: black;
     font-weight: bold;
 }
-
+.stat-higher{
+    color: green;
+}
+.stat-lower{
+    color:red;
+}
 .choose-container {
     display: flex;
     justify-content: space-evenly;
 
 }
+@media (max-width: 768px) {
+    #form-compare{
+        width: 300px;
+    }
 
+    #compare-container {
+        display: flex;
+        flex-flow: row wrap;
+        width: 300px;
+        gap: 2rem;
+        padding-bottom: 5rem;
+        padding-top: 2rem;
+    }
+    #compare-pokemon-info1, #compare-pokemon-info2{
+        padding: 0;
+    }
+    #compare-container {
+        margin-top: 0;
+    }
+
+    .project-content img {
+        width: 250px;
+        height: 250px;
+    }
+}
 .choose-content img {
     height: 15em;
     width: auto;
@@ -751,8 +834,10 @@ label {
 #main-detail {
     margin-top: 4rem;
 }
-
-#pokemon-detail-container,
+#main-detail h2{
+    padding-top: 1rem;
+}
+#pokemon-detail-allstats-container,
 #img-detail-container {
     display: flex;
     justify-content: center;
@@ -761,8 +846,7 @@ label {
 
 #pokemon-detail-container,
 #pokemon-evolution-container {
-    background-color: lightgrey;
-    margin: 0;
+    background-color: white;
     border-radius: 10px;
 }
 
@@ -787,7 +871,7 @@ label {
     font-weight: bold;
 }
 
-#pokemon-evolution-container {
+#pokemon-evolution-img-container {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -796,20 +880,62 @@ label {
     margin-top: 0;
 }
 
-#pokemon-evolution-container img {
+#pokemon-evolution-img-container img {
     max-width: 25%;
     height: auto;
 }
-
+#pokemon-evolution-img-container p{
+    color: black;
+}
 #h2-evolution {
     margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    #pokemon-evolution-img-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    #pokemon-detail-allstats-container {
+        margin: 0 auto;
+        display: block;
+        padding: 2px;
+    }
+
+    .pokemon-information-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .pokemon-detail-stats {
+        margin-right: 1px;
+        width: 25%;
+        font-size: 0.75rem;
+    }
+
+    .type {
+        display: block;
+        /* Display as block for stacking */
+        width: 100%;
+        max-width: 2.75rem;
+    }
+
+    /*h1 van project.html kleiner maken note: alle medias moeten later bij mekaar.*/
+    #navbar-index {
+        font-size: 0.8rem;
+    }
 }
 
 /* Battle.html */
 
 .battle-background {
     background-image: url(/assets/ArenaTwo.png);
-    background-repeat:repeat-y;
+    background-repeat: repeat-y;
     background-size: cover;
     background-position: center;
 }
@@ -855,7 +981,7 @@ label {
     background-color: darkred;
     padding: 1em 5em 1em 5em;
     border-radius: 10px;
-    width: 300px; /
+    width: 300px;/
 }
 
 .menu-content a {
@@ -890,20 +1016,17 @@ label {
 }
 
 @media screen and (max-width: 768px) {
-<<<<<<< HEAD
     /*template area for aside*/
-
+    
 /*hamburgermenu*/
-=======
-
-
->>>>>>> refs/remotes/origin/main
     #hamburger {
         display: block;
     }
-    #hamburger i:hover{
+
+    #hamburger i:hover {
         color: black;
     }
+
     #navbar-hamburger {
         display: block;
         background-color: #ff4848;
@@ -915,14 +1038,17 @@ label {
         background-color: #e24040;
         width: 100%;
     }
-    #ul-menu li{
+
+    #ul-menu li {
         padding-top: 4px;
         padding-bottom: 4px;
     }
-    #ul-menu li:hover{
+
+    #ul-menu li:hover {
         background-color: black;
         color: black;
     }
+
     #topnav {
         overflow: hidden;
         position: relative;
@@ -932,7 +1058,8 @@ label {
     #topnav #ul-menu {
         display: none;
     }
-    #nav-menu li:hover{
+
+    #nav-menu li:hover {
         background-color: black;
     }
 
@@ -958,6 +1085,7 @@ label {
         margin: auto;
     }
 
+    /*aside-current-pokemon*/
     .current-pokemon img {
         width: 50px;
         height: auto;
@@ -972,4 +1100,5 @@ label {
     .current-pokemon {
         bottom: 1%;
     }
+
 }
