@@ -897,8 +897,9 @@ label {
 }
 
 @media screen and (max-width: 768px) {
+    /*template area for aside*/
 
-
+/*hamburgermenu*/
     #hamburger {
         display: block;
     }
@@ -959,6 +960,7 @@ label {
         margin: auto;
     }
 
+    /*aside-current-pokemon*/
     .current-pokemon img {
         width: 50px;
         height: auto;
@@ -973,4 +975,5 @@ label {
     .current-pokemon {
         bottom: 1%;
     }
+
 }
