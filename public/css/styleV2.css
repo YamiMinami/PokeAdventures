@@ -751,7 +751,7 @@ button:hover, .menu-content a:hover{
     #guess-alert-container{
         margin-top: 3rem;
     }
-    #main-guess-pokemon, #main-compare-pokemon, #guess-image-container{
+    main, #guess-image-container{
         width: unset; /*width back to unset so you can center everything nicely*/
         margin: 1em;
         /*margins are for centering the guesspokemon image*/
