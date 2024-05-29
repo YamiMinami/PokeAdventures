@@ -235,7 +235,7 @@ app.post('/tester', secureMiddleware, async (req, res) => {
 app.get("/teamplanner", secureMiddleware, async (req, res) => {
   const user = req.session.username as Users;
 
-  const currentPokemonName = user.currentPokemon || 'pikachu'; // Default to 'pikachu' if no current Pokémon
+  const currentPokemonName = user.currentPokemon ;
   const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentPokemonName}`);
   const currentPokemon: Pokemon = await currentResponse.json();
 
@@ -290,8 +290,13 @@ app.post("/teamplanner/select", secureMiddleware, async (req, res) => {
 });
 
 
-app.get("/menu", secureMiddleware, (req, res) => {
-  res.render("menu");
+app.get("/menu", secureMiddleware, async(req, res) => {
+  const user = req.session.username as Users;
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
+  const currentPokemon: Pokemon = await currentResponse.json();
+  res.render("menu", {
+    cPokemon: currentPokemon
+  });
 });
 
 app.get("/detail/:id", secureMiddleware, async (req, res) => {
