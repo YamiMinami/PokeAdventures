@@ -51,28 +51,15 @@
 </main>
 <aside>
     <%- include("partials/asideCP") %>
-    <section id="carousel-container">
-        <button class="button-carousel" id="scroll-up">
-            <i class="fas fa-chevron-up"></i>
-        </button>
-        <div class="carousel-track">
-            <% ownedPokemonDetails.forEach(pokemon => { %>
-                <article class="carousel-content carousel-item">
-                    <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name %>">
-                    <div>
-                        <h1><%= pokemon.name %></h1>
-                        <% pokemon.types.forEach((type, i) => { %>
-                            <span id="type<%= i + 1 %>" class="type">
-                                <%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %>
-                            </span>
-                        <% }) %>
-                    </div>
-                </article>
-            <% }) %>
-        </div>
-        <button class="button-carousel" id="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </button>
+    <section id="dropdown-container">
+        <form method="POST" action="/teamplanner/select">
+            <h1>Jouw Pokemons</h1>
+            <select name="selectedPokemon" id="pokemon-dropdown" onchange="this.form.submit()" style="width: 100%; height: 100%;">
+                <% ownedPokemonDetails.forEach(pokemon => { %>
+                    <option value="<%= pokemon.id %>" <%= pokemon.id === cPokemon.id ? 'selected' : '' %>><%= pokemon.name %></option>
+                <% }) %>
+            </select>
+        </form>
     </section>
 </aside>
 <%- include("partials/footer") %>

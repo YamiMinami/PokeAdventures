@@ -425,47 +425,20 @@ input {
     padding-bottom: 1em;
 }
 
-#carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    max-height: 600px;
+#pokemon-dropdown {
+    width: 100%;
 }
-.carousel-track {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s ease;
-}
-.button-carousel {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 10px;
-}
-.carousel-item {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    min-height: 100px;
-    padding: 0 3em 0 3em;
-    background-color: #fff;
+
+#dropdown-container {
+    background-color: white;
+    color: black;
+    margin: 0 2em 0 2em;
+    padding: 1em;
     border-radius: 15px;
 }
-.carousel-item img {
-    width: 60px;
-    height: auto;
-    margin-right: 10px;
-}
-.carousel-item div {
-    display: flex;
-    flex-direction: column;
-}
-.carousel-item h1 {
-    color: black;
-    margin: 0;
-    font-size: 16px;
+
+#dropdown-container h1 {
+    margin-bottom: 1em;
 }
 
 #button-view {
