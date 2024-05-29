@@ -608,7 +608,7 @@ label {
     transform-origin: center top;
 }
 /*HUISSTIJL BUTTON*/
-button{
+button, .menu-content a, .battle-content a, #guess-ref-container a{
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
@@ -619,12 +619,22 @@ button{
     border-radius: 10px;
     border: none;
     color: white;
+    text-align: center;
 }
+.battle-content{
 
-#button-submit {
+margin: auto;
+margin-left: 30%;
+}
+.menu-content a, .battle-content a{
+    padding: 1em 0 1em 0;
     width: 300px;
 }
-button:hover{
+#button-submit, #guess-ref-container a{
+    width: 300px;
+    font-size: 1em;
+}
+button:hover, .menu-content a:hover, .battle-content a:hover, #guess-ref-container a:hover{
     transform: scale(1.05);
 }
 
@@ -693,7 +703,7 @@ button:hover{
     border: 1px solid black;
 }
 
-.pokemon-stats, .compare-pokemon-name {
+.pokemon-stats, .compare-pokemon-name, .battle-pokemon-name {
     padding: 1rem;
     border: 1px solid black;
     border-radius: 10px;
@@ -702,14 +712,17 @@ button:hover{
     margin-top: 5px;
     background-color: white;
 }
-.compare-pokemon-name{
+.compare-pokemon-name, .battle-pokemon-name{
     text-align: center;
     margin-top: 0;
     margin-bottom: 5px;
 }
-.pokemon-stats p, .compare-pokemon-name p {
+.pokemon-stats p, .compare-pokemon-name p, .battle-pokemon-name p{
     color: black;
     font-weight: bold;
+}
+.battle-pokemon-name{
+    margin-top: 250px;
 }
 .stat-higher{
     color: green;
@@ -723,6 +736,17 @@ button:hover{
 
 }
 @media (max-width: 768px) {
+    #guess-alert-container{
+        margin-top: 3rem;
+    }
+    #guess-image-container, #main-compare-pokemon, #main-guess-pokemon{
+        width: unset; /*width back to unset so you can center everything nicely*/
+        margin: 1em;
+        /*margins are for centering the guesspokemon image*/
+    }
+    #main-compare-pokemon{
+        margin-top: 4em;
+    }
     #form-compare{
         width: 300px;
     }
@@ -917,23 +941,11 @@ button:hover{
     height: 100%;
     gap: 25px;
     margin-left: 50%;
-
 }
-
-.menu-content {
-    background-color: darkred;
-    padding: 1em 5em 1em 5em;
-    border-radius: 10px;
-    width: 300px;/
-}
-
-.menu-content a {
-    text-decoration: none;
-    color: white;
-}
-
-
 @media (max-width: 768px) {
+    .menu-container{
+        margin: 0;
+    }
     #compare-container {
         display: flex;
         flex-flow: row wrap;
@@ -941,7 +953,6 @@ button:hover{
         padding-bottom: 5rem;
         padding-top: 2rem;
     }
-
     #compare-container {
         margin-top: 0;
     }
@@ -961,6 +972,14 @@ button:hover{
 @media screen and (max-width: 768px) {
     /*template area for aside*/
     
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
 /*hamburgermenu*/
     #hamburger {
         display: block;
