@@ -426,41 +426,46 @@ input {
 }
 
 #carousel-container {
-    display: block;
-}
-
-.carousel-content {
-    background-color: white;
     display: flex;
-    justify-content: center;
-    margin: 0 2em 0 2em;
-    border: #083249 solid 1px;
-    border-radius: 10px;
-    gap: 1em;
-    opacity: 95%;
-    color: black;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 600px;
 }
-
-.carousel-content div {
-    margin-top: 0.5em;
+.carousel-track {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease;
 }
-
-.carousel-content img {
-    width: 60px;
-    height: auto;
-}
-
 .button-carousel {
-    background-color: white;
-    color: darkred;
-    width: auto;
+    background: none;
     border: none;
     cursor: pointer;
-    padding: 0.25em 5em 0.25em 5em;
+    font-size: 24px;
+    margin: 10px;
 }
-
-.button-carousel:hover {
-    background-color: white;
+.carousel-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    min-height: 100px;
+    padding: 0 3em 0 3em;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.carousel-item img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+.carousel-item div {
+    display: flex;
+    flex-direction: column;
+}
+.carousel-item h1 {
+    color: black;
+    margin: 0;
+    font-size: 16px;
 }
 
 #button-view {
