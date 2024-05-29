@@ -235,7 +235,8 @@ app.post('/tester', secureMiddleware, async (req, res) => {
 app.get("/teamplanner", secureMiddleware, async (req, res) => {
   const user = req.session.username as Users;
 
-  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
+  const currentPokemonName = user.currentPokemon || 'pikachu'; // Default to 'pikachu' if no current Pokémon
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentPokemonName}`);
   const currentPokemon: Pokemon = await currentResponse.json();
 
   const speciesResponse = await fetch(currentPokemon.species.url);
@@ -250,10 +251,41 @@ app.get("/teamplanner", secureMiddleware, async (req, res) => {
       })
   );
 
-  res.render("teamplanner", {
+  res.render('teamPlanner', {
     cPokemon: currentPokemon,
-    evolutionChain: evolutionChain,
-    ownedPokemonDetails: ownedPokemonDetails
+    ownedPokemonDetails,
+    evolutionChain
+  });
+});
+
+app.post("/teamplanner/select", secureMiddleware, async (req, res) => {
+  const user = req.session.username as Users;
+  const selectedPokemonId = parseInt(req.body.selectedPokemon);
+
+  await userCollection.updateOne(
+      { username: user.username },
+      { $set: { currentPokemon: selectedPokemonId } }
+  );
+
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${selectedPokemonId}`);
+  const currentPokemon: Pokemon = await currentResponse.json();
+
+  const speciesResponse = await fetch(currentPokemon.species.url);
+  const species = await speciesResponse.json();
+  const evolutionResponse = await fetch(species.evolution_chain.url);
+  const evolutionChain = await evolutionResponse.json();
+
+  const ownedPokemonDetails = await Promise.all(
+      (user.ownedPokemons || []).map(async (id) => {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        return await response.json();
+      })
+  );
+
+  res.render('teamPlanner', {
+    cPokemon: currentPokemon,
+    ownedPokemonDetails,
+    evolutionChain
   });
 });
 

@@ -425,42 +425,20 @@ input {
     padding-bottom: 1em;
 }
 
-#carousel-container {
-    display: block;
+#pokemon-dropdown {
+    width: 100%;
 }
 
-.carousel-content {
+#dropdown-container {
     background-color: white;
-    display: flex;
-    justify-content: center;
-    margin: 0 2em 0 2em;
-    border: #083249 solid 1px;
-    border-radius: 10px;
-    gap: 1em;
-    opacity: 95%;
     color: black;
+    margin: 0 2em 0 2em;
+    padding: 1em;
+    border-radius: 15px;
 }
 
-.carousel-content div {
-    margin-top: 0.5em;
-}
-
-.carousel-content img {
-    width: 60px;
-    height: auto;
-}
-
-.button-carousel {
-    background-color: white;
-    color: darkred;
-    width: auto;
-    border: none;
-    cursor: pointer;
-    padding: 0.25em 5em 0.25em 5em;
-}
-
-.button-carousel:hover {
-    background-color: white;
+#dropdown-container h1 {
+    margin-bottom: 1em;
 }
 
 #button-view {
