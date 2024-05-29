@@ -1,5 +1,5 @@
 import express from "express";
-import {connect, getUsers, login, initialUser, userCollection} from "./database";
+import {connect, getUsers, login, initialUser, userCollection, registerUser} from "./database";
 import {Users} from "./interfaces";
 import session from "./session";
 import {secureMiddleware} from "./secureMiddleware";
@@ -79,10 +79,9 @@ app.get("/compare", async (req, res) => {
   } catch (error) {
     console.error("Error fetching Pokémon:", error);
   }
-  const randomIdCP = Math.floor(Math.random() * 898) + 1;
-  const responseCP = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIdCP}`);
-  const dataCP = await responseCP.json();
-  let currentPokemon = dataCP;
+  const user = req.session.username as Users;
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
+  const currentPokemon: Pokemon = await currentResponse.json();
 
   res.render('compare', {
     pokemon1,
@@ -151,6 +150,9 @@ app.post("/guesspokemon", secureMiddleware, async (req, res) => {
 app.get("/overzicht", secureMiddleware, async (req, res) => {
   let pokemons = [];
   let searchQuery: string = req.query.q ? String(req.query.q).toLowerCase() : "";
+  const user = req.session.username as Users;
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
+  const currentPokemon: Pokemon = await currentResponse.json();
 
   if (searchQuery) {
     try {
@@ -176,7 +178,8 @@ app.get("/overzicht", secureMiddleware, async (req, res) => {
   res.render('overzicht', {
     pokemons,
     q: searchQuery,
-    cPokemon: pokemons[0] });
+    cPokemon: pokemons[0],
+    currentPokemon: currentPokemon});
 });
 
 app.get("/tester", secureMiddleware, async (req, res) => {
@@ -235,17 +238,24 @@ app.get('/registratie', (req, res) => {
   res.render('registratie', { error: "" });
 });
 
-app.post('/registratie', (req, res) => {
+app.post('/registratie', async(req, res) => {
   let username: string = req.body.name;
   let password: string = req.body.password;
-  let email: string = req.body.email;
 
-  if (username === "" || email === "" || password === "") {
+
+  if (username === "" || password === "") {
     res.render("registratie", { error: "All fields are required" });
-  } else if (!email.includes("@")) {
-    res.render("registratie", { error: "Invalid email" });
   } else {
-    res.render("registratie", { error: "" });
+    try {
+      await registerUser(username, password);
+      res.redirect("/login");
+    } catch (error: any) {
+      if (error.message === "Username already exists") {
+        res.render("registratie", { error: "Username already exists" });
+      } else {
+        res.render("registratie", { error: "Error registering user" });
+      }
+    }
   }
 });
 
