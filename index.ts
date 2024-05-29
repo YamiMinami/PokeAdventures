@@ -202,7 +202,7 @@ app.get("/tester", secureMiddleware, async (req, res) => {
   }
 });
 
-app.post('/catch', secureMiddleware, async (req, res) => {
+app.post('/tester', secureMiddleware, async (req, res) => {
   const pokemonId = parseInt(req.body.pokemonId, 10);
   const username = req.session.username;
 
@@ -228,19 +228,31 @@ app.post('/catch', secureMiddleware, async (req, res) => {
   }
 });
 
-app.get("/teamplanner", secureMiddleware, async(req, res) => {
+app.get("/teamplanner", secureMiddleware, async (req, res) => {
   const user = req.session.username as Users;
+
   const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
   const currentPokemon: Pokemon = await currentResponse.json();
 
   const speciesResponse = await fetch(currentPokemon.species.url);
   const species = await speciesResponse.json();
-
   const evolutionResponse = await fetch(species.evolution_chain.url);
   const evolutionChain = await evolutionResponse.json();
 
-  res.render("teamplanner", {cPokemon: currentPokemon, evolutionChain: evolutionChain});
+  const ownedPokemonDetails = await Promise.all(
+      (user.ownedPokemons || []).map(async (id) => {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        return await response.json();
+      })
+  );
+
+  res.render("teamplanner", {
+    cPokemon: currentPokemon,
+    evolutionChain: evolutionChain,
+    ownedPokemonDetails: ownedPokemonDetails
+  });
 });
+
 
 app.get("/menu", secureMiddleware, (req, res) => {
   res.render("menu");

@@ -1,105 +1,80 @@
 <html lang="nl-be">
-    <head>
-        <%- include("partials/head") %>
-      </head>
-      <body>
-    <%- include("partials/header") %>
-    <main id="main-detail">
-        <section id="pokemon-detail-container">
-            <h2 class="black-center-text">
-                <%= cPokemon.name %>
-            </h2>
-            <section id="pokemon-detail-allstats-container">
-                <section class="pokemon-information-container">
-                    <p class="pokemon-detail-stats"><i class="fa-solid fa-heart"></i> Leven: <%=
-                        cPokemon.stats.find(stat=> stat.stat.name === 'hp').base_stat %></p>
-                    <p class="pokemon-detail-stats"><i class="fa-solid fa-hand-fist"></i> Aanval: <%=
-                        cPokemon.stats.find(stat=> stat.stat.name === 'attack').base_stat %></p>
-                    <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Verdediging: <%=
-                        cPokemon.stats.find(stat=> stat.stat.name === 'defense').base_stat %></p>
-                    <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type:
-                        <% cPokemon.types.forEach((type, i)=> { %>
+<head>
+    <%- include("partials/head") %>
+</head>
+<body>
+<%- include("partials/header") %>
+<main id="main-detail">
+    <section id="pokemon-detail-container">
+        <h2 class="black-center-text">
+            <%= cPokemon.name %>
+        </h2>
+        <section id="pokemon-detail-allstats-container">
+            <section class="pokemon-information-container">
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-heart"></i> Leven: <%= cPokemon.stats.find(stat => stat.stat.name === 'hp').base_stat %></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-hand-fist"></i> Aanval: <%= cPokemon.stats.find(stat => stat.stat.name === 'attack').base_stat %></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Verdediging: <%= cPokemon.stats.find(stat => stat.stat.name === 'defense').base_stat %></p>
+                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type:
+                    <% cPokemon.types.forEach((type, i) => { %>
+                        <span id="type<%= i + 1 %>" class="type">
+                            <%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %>
+                        </span>
+                    <% }) %>
+                </p>
+            </section>
+            <section id="img-detail-container">
+                <img class="img-detail-pokemon"
+                     src="<%= cPokemon.sprites.other['official-artwork'].front_default %>"
+                     alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
+            </section>
+            <section class="pokemon-information-container">
+                <p class="pokemon-detail-stats">Naam: <%= cPokemon.name %></p>
+                <p class="pokemon-detail-stats">Bijnaam: </p>
+                <p class="pokemon-detail-stats">Nog niet gevangen</p>
+                <p class="pokemon-detail-stats">W0 L0</p>
+            </section>
+        </section>
+    </section>
+    <section id="pokemon-evolution-container">
+        <h2 id="h2-evolution" class="black-center-text">Evolutiepad</h2>
+        <section id="pokemon-evolution-img-container">
+            <% function renderEvolutionChain(chain) { %>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= chain.species.url.split('/').slice(-2, -1)[0] %>.png"
+                     width="150" alt="<%= chain.species.name %>">
+                <% if (chain.evolves_to.length > 0) { %>
+                    <%- renderEvolutionChain(chain.evolves_to[0]) %>
+                <% } %>
+            <% } %>
+            <%- renderEvolutionChain(evolutionChain.chain) %>
+        </section>
+    </section>
+</main>
+<aside>
+    <%- include("partials/asideCP") %>
+    <section id="carousel-container">
+        <button class="button-carousel" id="scroll-up">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <div class="carousel-track">
+            <% ownedPokemonDetails.forEach(pokemon => { %>
+                <article class="carousel-content carousel-item">
+                    <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name %>">
+                    <div>
+                        <h1><%= pokemon.name %></h1>
+                        <% pokemon.types.forEach((type, i) => { %>
                             <span id="type<%= i + 1 %>" class="type">
                                 <%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %>
                             </span>
-                            <% }) %>
-                </section>
-                <section id="img-detail-container">
-                    <img class="img-detail-pokemon"
-                        src="<%= cPokemon.sprites.other['official-artwork'].front_default %>"
-                        alt="<%= cPokemon.name.charAt(0).toUpperCase() %>">
-                </section>
-                <section class="pokemon-information-container">
-                    <p class="pokemon-detail-stats">Naam: <%= cPokemon.name %>
-                    </p>
-                    <p class="pokemon-detail-stats">Bijnaam: </p>
-                    <p class="pokemon-detail-stats">Nog niet gevangen</p>
-                    <p class="pokemon-detail-stats">W0 L0</p>
-                </section>
-            </section>
-
-        </section>
-        <section id="pokemon-evolution-container">
-            <h2 id="h2-evolution" class="black-center-text">Evolutiepad</h2>
-            <section id="pokemon-evolution-img-container">
-                <% function renderEvolutionChain(chain) { %>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= chain.species.url.split('/').slice(-2, -1)[0] %>.png"
-                        width="150" alt="<%= chain.species.name %>">
-                    <% if (chain.evolves_to.length> 0) { %>
-                        <%- renderEvolutionChain(chain.evolves_to[0]) %>
-                            <% } %>
-                                <% } %>
-                                    <%- renderEvolutionChain(evolutionChain.chain) %>
-            </section>
-        </section>
-    </main>
-    <aside>
-        <%- include("partials/asideCP") %>
-        <section id="carousel-container">
-            <article class="carousel-content">
-                <button class="button-carousel">
-                    <i class="fas fa-chevron-up"></i>
-                </button>
-            </article>
-            <article class="carousel-content">
-                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
-                <div>
-                    <h1>pokemon</h1>
-                    <span id="type1"
-                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                </div>
-            </article>
-            <article class="carousel-content">
-                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
-                <div>
-                    <h1>pokemon</h1>
-                    <span id="type1"
-                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                </div>
-            </article>
-            <article class="carousel-content">
-                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
-                <div>
-                    <h1>pokemon</h1>
-                    <span id="type1"
-                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                </div>
-            </article>
-            <article class="carousel-content">
-                <img src="assets/Hektakun-Pokemon-024-Arbok.72.png" alt="pokemon">
-                <div>
-                    <h1>pokemon</h1>
-                    <span id="type1"
-                          class="type">Grass</span> <span id="type2" class="type">Poison</span>
-                </div>
-            </article>
-            <article class="carousel-content">
-                <button class="button-carousel">
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-            </article>
-        </section>
-    </aside>
-    <%- include("partials/footer") %>
+                        <% }) %>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+        <button class="button-carousel" id="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </section>
+</aside>
+<%- include("partials/footer") %>
 </body>
 </html>
