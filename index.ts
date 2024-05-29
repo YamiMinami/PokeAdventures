@@ -238,12 +238,9 @@ app.get('/registratie', (req, res) => {
 app.post('/registratie', (req, res) => {
   let username: string = req.body.name;
   let password: string = req.body.password;
-  let email: string = req.body.email;
 
-  if (username === "" || email === "" || password === "") {
+  if (username === ""|| password === "") {
     res.render("registratie", { error: "All fields are required" });
-  } else if (!email.includes("@")) {
-    res.render("registratie", { error: "Invalid email" });
   } else {
     res.render("registratie", { error: "" });
   }
