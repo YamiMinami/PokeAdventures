@@ -426,46 +426,41 @@ input {
 }
 
 #carousel-container {
+    display: block;
+}
+
+.carousel-content {
+    background-color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    max-height: 600px;
+    justify-content: center;
+    margin: 0 2em 0 2em;
+    border: #083249 solid 1px;
+    border-radius: 10px;
+    gap: 1em;
+    opacity: 95%;
+    color: black;
 }
-.carousel-track {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s ease;
+
+.carousel-content div {
+    margin-top: 0.5em;
 }
-.button-carousel {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 10px;
-}
-.carousel-item {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    min-height: 100px;
-    padding: 0 3em 0 3em;
-    background-color: #fff;
-    border-radius: 15px;
-}
-.carousel-item img {
+
+.carousel-content img {
     width: 60px;
     height: auto;
-    margin-right: 10px;
 }
-.carousel-item div {
-    display: flex;
-    flex-direction: column;
+
+.button-carousel {
+    background-color: white;
+    color: darkred;
+    width: auto;
+    border: none;
+    cursor: pointer;
+    padding: 0.25em 5em 0.25em 5em;
 }
-.carousel-item h1 {
-    color: black;
-    margin: 0;
-    font-size: 16px;
+
+.button-carousel:hover {
+    background-color: white;
 }
 
 #button-view {
@@ -635,7 +630,7 @@ label {
     transform-origin: center top;
 }
 /*HUISSTIJL BUTTON*/
-button, .menu-content a{
+button, .menu-content a, .battle-content a, #guess-ref-container a{
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
@@ -646,15 +641,22 @@ button, .menu-content a{
     border-radius: 10px;
     border: none;
     color: white;
+    text-align: center;
 }
-.menu-content a{
+.battle-content{
+
+margin: auto;
+margin-left: 30%;
+}
+.menu-content a, .battle-content a{
     padding: 1em 0 1em 0;
     width: 300px;
 }
-#button-submit {
+#button-submit, #guess-ref-container a{
     width: 300px;
+    font-size: 1em;
 }
-button:hover, .menu-content a:hover{
+button:hover, .menu-content a:hover, .battle-content a:hover, #guess-ref-container a:hover{
     transform: scale(1.05);
 }
 
@@ -723,7 +725,7 @@ button:hover, .menu-content a:hover{
     border: 1px solid black;
 }
 
-.pokemon-stats, .compare-pokemon-name {
+.pokemon-stats, .compare-pokemon-name, .battle-pokemon-name {
     padding: 1rem;
     border: 1px solid black;
     border-radius: 10px;
@@ -732,14 +734,17 @@ button:hover, .menu-content a:hover{
     margin-top: 5px;
     background-color: white;
 }
-.compare-pokemon-name{
+.compare-pokemon-name, .battle-pokemon-name{
     text-align: center;
     margin-top: 0;
     margin-bottom: 5px;
 }
-.pokemon-stats p, .compare-pokemon-name p {
+.pokemon-stats p, .compare-pokemon-name p, .battle-pokemon-name p{
     color: black;
     font-weight: bold;
+}
+.battle-pokemon-name{
+    margin-top: 250px;
 }
 .stat-higher{
     color: green;
@@ -756,7 +761,7 @@ button:hover, .menu-content a:hover{
     #guess-alert-container{
         margin-top: 3rem;
     }
-    main, #guess-image-container{
+    #guess-image-container, #main-compare-pokemon, #main-guess-pokemon{
         width: unset; /*width back to unset so you can center everything nicely*/
         margin: 1em;
         /*margins are for centering the guesspokemon image*/
@@ -960,6 +965,9 @@ button:hover, .menu-content a:hover{
     margin-left: 50%;
 }
 @media (max-width: 768px) {
+    .menu-container{
+        margin: 0;
+    }
     #compare-container {
         display: flex;
         flex-flow: row wrap;

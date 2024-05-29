@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="nl-be">
-    <head>
-        <%- include("partials/head") %>
-      </head>
+
+<head>
+    <%- include("partials/head") %>
+</head>
+
 <body class="battle-background">
-  <%- include("partials/header") %>
-<main class="equal-view">
-    <section class="battle-container">
-        <article>
-            <h1><%= pokemon.name %></h1>
-            <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name %>">
-        </article>
-    </section>
-</main>
-<aside class="equal-view">
-    <section class="battle-container">
-        <article>
-            <h1><%= pokemon.name %></h1>
-            <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name %>">
-        </article>
-    </section>
-</aside>
-<%- include("partials/footer") %>
+    <%- include("partials/header") %>
+        <main class="equal-view">
+            <section class="battle-container">
+                <article>
+                    <section class="battle-pokemon-name">
+                        <p>
+                            Jij: <%=cPokemon.name%>
+                        </p>
+                    </section>
+                    <img src="<%= cPokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name %>">
+                    <section class="pokemon-stats">
+                        <p><i class="fa-solid fa-heart"></i> Leven: <%= cPokemon.stats.find(stat=>
+                                stat.stat.name === 'hp').base_stat %></p>
+                    </section>
+                </article>
+            </section>
+            <article class="battle-content">
+                <a href=""><h1>Val aan!</h1></a>
+                <a href="/menu"><h1>Loop weg!</h1></a>
+            </article>
+        </main>
+        <aside class="equal-view">
+            <section class="battle-container">
+                <article>
+                    <section class="battle-pokemon-name">
+                        <p>
+                            Vijand: <%=pokemon.name%>
+                        </p>
+                    </section>
+                    <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name %>">
+                    <section class="pokemon-stats">
+                        <p><i class="fa-solid fa-heart"></i> Leven: <%= pokemon.stats.find(stat=>
+                                stat.stat.name === 'hp').base_stat %></p>
+                    </section>
+                </article>
+            </section>
+        </aside>
+        <%- include("partials/footer") %>
 </body>
+
 </html>

@@ -47,9 +47,13 @@ app.get("/battle", secureMiddleware, async (req, res) => {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
     const pokemon = await response.json();
-
+    
+    const user = req.session.username as Users;
+    const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${user.currentPokemon}`);
+    const currentPokemon: Pokemon = await currentResponse.json();
   res.render("battle", {
     pokemon: pokemon,
+    cPokemon: currentPokemon
   });
 });
 app.get("/compare", async (req, res) => {

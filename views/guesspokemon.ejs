@@ -29,8 +29,11 @@
           <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
           <input type="hidden" name="currentPokemonId" value="<%= cPokemon.id %>">
           <input type="text" id="pokemon-input" name="pokemonName" placeholder="Typ hier de naam van de Pokémon">
-          <button id="button-submit" type="submit">Indienen</button>
+          <button id="button-submit" type="submit">Gok</button>
         </form>
+        <article id="guess-ref-container">
+          <a href="/battle">Vecht!</a>
+      </article>
     </main>
     <aside>
       <%- include("partials/asideCP") %>
