@@ -3,7 +3,7 @@
         <%- include("partials/head") %>
       </head>
       <body>
-        <%- include("partials/header") %>
+        <%- include("partials/headerNC") %>
 <main id="main-menu">
     <section class="menu-container">
         <article class="menu-content">
@@ -25,13 +25,7 @@
 </main>
 
 <aside>
-    <section class="current-pokemon-container">
-        <article class="current-content">
-            <h1>Your pokemon</h1>
-            <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
-            <h2>Charizard</h2>
-        </article>
-    </section>
+    <%- include("partials/asideCP") %>
 </aside>
 
 <footer>
