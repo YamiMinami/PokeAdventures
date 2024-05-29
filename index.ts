@@ -1,5 +1,4 @@
 import express from "express";
-import bodyParser from 'body-parser';
 import {connect, getUsers, login, initialUser, userCollection} from "./database";
 import {Users} from "./interfaces";
 import session from "./session";
@@ -38,7 +37,7 @@ app.post("/login", async(req, res) => {
   }
 });
 
-app.get("/battle", async (req, res) => {
+app.get("/battle", secureMiddleware, async (req, res) => {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
     const pokemon = await response.json();
@@ -95,7 +94,7 @@ app.get("/compare", async (req, res) => {
   });
 });
 
-app.get("/guesspokemon", async (req, res) => {
+app.get("/guesspokemon", secureMiddleware, async (req, res) => {
   try {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
@@ -116,7 +115,7 @@ app.get("/guesspokemon", async (req, res) => {
   }
 });
 
-app.post("/guesspokemon", async (req, res) => {
+app.post("/guesspokemon", secureMiddleware, async (req, res) => {
   try {
     const guessedName = req.body.pokemonName.toLowerCase();
     const pokemonId = req.body.pokemonId;
@@ -147,10 +146,8 @@ app.post("/guesspokemon", async (req, res) => {
   }
 });
 
-app.get("/inlog", (req, res) => {
-  res.render("inlog");
-});
-app.get("/overzicht", async (req, res) => {
+
+app.get("/overzicht", secureMiddleware, async (req, res) => {
   let pokemons = [];
   let searchQuery: string = req.query.q ? String(req.query.q).toLowerCase() : "";
 
@@ -194,7 +191,7 @@ app.get("/tester", secureMiddleware, async (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/teamplanner", async(req, res) => {
+app.get("/teamplanner", secureMiddleware, async(req, res) => {
   const currentRandomId = Math.floor(Math.random() * 898) + 1;
   const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentRandomId}`);
   const currentPokemon: Pokemon = await currentResponse.json();
@@ -208,11 +205,11 @@ app.get("/teamplanner", async(req, res) => {
   res.render("teamplanner", {cPokemon: currentPokemon, evolutionChain: evolutionChain});
 });
 
-app.get("/menu", (req, res) => {
+app.get("/menu", secureMiddleware, (req, res) => {
   res.render("menu");
 });
 
-app.get("/detail/:id", async (req, res) => {
+app.get("/detail/:id", secureMiddleware, async (req, res) => {
   const pokemonId = req.params.id;
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
   const data = await response.json();
