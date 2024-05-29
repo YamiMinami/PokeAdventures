@@ -63,8 +63,6 @@ app.get("/compare", async (req, res) => {
   });
 });
 
-
-
 app.get("/guesspokemon", async (req, res) => {
   try {
     const randomId = Math.floor(Math.random() * 898) + 1;
@@ -142,8 +140,18 @@ app.get("/overzicht", async (req, res) => {
 app.get("/tester", (req, res) => {
   res.render("tester");
 });
-app.get("/teamplanner", (req, res) => {
-  res.render("teamplanner");
+app.get("/teamplanner", async(req, res) => {
+  const currentRandomId = Math.floor(Math.random() * 898) + 1;
+  const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentRandomId}`);
+  const currentPokemon: Pokemon = await currentResponse.json();
+
+  const speciesResponse = await fetch(currentPokemon.species.url);
+  const species = await speciesResponse.json();
+
+  const evolutionResponse = await fetch(species.evolution_chain.url);
+  const evolutionChain = await evolutionResponse.json();
+
+  res.render("teamplanner", {cPokemon: currentPokemon, evolutionChain: evolutionChain});
 });
 
 app.get("/detail/:id", async (req, res) => {
