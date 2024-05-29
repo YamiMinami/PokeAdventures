@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="nl-be">
 
-<%- include("partials/head") %>
+<head>
+    <%- include("partials/head") %>
+  </head>
+    <body>
+        <%- include("partials/header") %>
+            <main id="main-detail">
+                <section id="pokemon-detail-container">
+                    <h2 class="black-center-text">
+                        <%= pokemon.name %>
+                    </h2>
+                    <section id="pokemon-detail-allstats-container">
+                        <section class="pokemon-information-container">
+                            <p class="pokemon-detail-stats"><i class="fa-solid fa-heart"></i> Leven: <%=
+                                    pokemon.stats.find(stat=> stat.stat.name === 'hp').base_stat %></p>
+                            <p class="pokemon-detail-stats"><i class="fa-solid fa-hand-fist"></i> Aanval: <%=
+                                    pokemon.stats.find(stat=> stat.stat.name === 'attack').base_stat %></p>
+                            <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Verdediging: <%=
+                                    pokemon.stats.find(stat=> stat.stat.name === 'defense').base_stat %></p>
+                            <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type:
+                                <% pokemon.types.forEach((type, i)=> { %>
+                                    <span id="type<%= i + 1 %>" class="type">
+                                        <%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %>
+                                    </span>
+                                    <% }) %>
+                        </section>
+                        <section id="img-detail-container">
+                            <img class="img-detail-pokemon"
+                                src="<%= pokemon.sprites.other['official-artwork'].front_default %>"
+                                alt="<%= pokemon.name.charAt(0).toUpperCase() %>">
+                        </section>
+                        <section class="pokemon-information-container">
+                            <p class="pokemon-detail-stats">Naam: <%= pokemon.name %>
+                            </p>
+                            <p class="pokemon-detail-stats">Bijnaam: Lebron</p>
+                            <p class="pokemon-detail-stats">Gevangen op 13/03/2024</p>
+                            <p class="pokemon-detail-stats">W0 L0</p>
+                        </section>
+                    </section>
 
-<body>
-    <%- include("partials/header") %>
-    <main id="main-detail">
-        <h2 class="black-center-text"> <%= pokemon.name %> </h2>
-        <section id="pokemon-detail-container">
-            <section class="pokemon-information-container">
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-heart"></i> Leven: <%= pokemon.stats.find(stat => stat.stat.name === 'hp').base_stat %></p>
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-hand-fist"></i> Aanval: <%= pokemon.stats.find(stat => stat.stat.name === 'attack').base_stat %></p>
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Verdediging: <%= pokemon.stats.find(stat => stat.stat.name === 'defense').base_stat %></p>
-                <p class="pokemon-detail-stats"><i class="fa-solid fa-shield"></i> Type:
-                    <% pokemon.types.forEach((type, i) => { %>
-                        <span id="type<%= i + 1 %>" class="type"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></span>
-                    <% }) %>
-            </section>
-            <section id="img-detail-container">
-                <img class="img-detail-pokemon" src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="<%= pokemon.name.charAt(0).toUpperCase() %>">
-            </section>
-            <section class="pokemon-information-container">
-                <p class="pokemon-detail-stats">Naam: <%= pokemon.name %></p>
-                <p class="pokemon-detail-stats">Bijnaam: Lebron</p>
-                <p class="pokemon-detail-stats">Gevangen op 13/03/2024</p>
-                <p class="pokemon-detail-stats">W0 L0</p>
-
-            </section>
-        </section>
-        <h2 id="h2-evolution" class="black-center-text">Evolutiepad</h2>
-        <section id="pokemon-evolution-container">
-            <img src="/assets/detail-bulbasaur.png" id="evo1" width="150" alt="Bulbasaur">
-            <img src="/assets/detail-ivysaur.png" id="evo2" width="200" alt="Ivysaur">
-            <img src="/assets/detail-venusaur.png" id="evo3" width="200" alt="Venusaur">
-            <img src="/assets/detail-megavenusaur.png" id="evo4" width="350" alt="MegaVenusaur">
-        </section>
-    </main>
-    <footer id="footer-detail">
-        <p>&copy; 2023 PokeAdventures. All rights reserved.</p>
-    </footer>
-</body>
+                </section>
+                <section id="pokemon-evolution-container">
+                    <h2 id="h2-evolution" class="black-center-text">Evolutiepad</h2>
+                    <section id="pokemon-evolution-img-container">
+                        <% function renderEvolutionChain(chain) { %>
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= chain.species.url.split('/').slice(-2, -1)[0] %>.png"
+                                width="150" alt="<%= chain.species.name %>">
+                            <% if (chain.evolves_to.length> 0) { %>
+                                <%- renderEvolutionChain(chain.evolves_to[0]) %>
+                                    <% } %>
+                                        <% } %>
+                                            <%- renderEvolutionChain(evolutionChain.chain) %>
+                    </section>
+                </section>
+            </main>
+            <aside>
+                <%- include("partials/asideCP") %>
+            </aside>
+            <%- include("partials/footer") %>
+    </body>
 
 </html>

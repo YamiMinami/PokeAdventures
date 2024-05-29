@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="nl-be">
 
-<%- include("partials/head") %>
+<head>
+  <%- include("partials/head") %>
+</head>
 
-    <body id="body-guess-pokemon">
-        <%- include("partials/header") %>
-            <main id="main-guess-pokemon">
-                <h2 class="black-center-text">Wie is deze Pokémon???</h1>
-                    <section id="guess-image-container">
-                        <img id="img-guess" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-                    </section>
-                    <input type="text" id="pokemon-input" placeholder="Typ hier de naam van de Pokémon">
-                    <a href="/battle"><button id="button-submit" type="submit">Indienen</button></a>
-            </main>
-            <aside>
-                <section class="current-pokemon-container">
-                    <article class="current-content">
-                        <h1>Your pokemon</h1>
-                        <img src="assets/Hektakun-Pokemon-006-Charizard.72.png" alt="current pokemon">
-                        <h2>Charizard</h2>
-                    </article>
-                </section>
-            </aside>
-            <footer id="footer-guess-pokemon">
-                <p>&copy; 2023 PokeAdventures. All rights reserved.</p>
-            </footer>
-    </body>
+<body id="body-guess-pokemon">
+  <%- include("partials/header") %>
+    <main id="main-guess-pokemon">
+      <section id="guess-alert-container">
+        <% if (guessedCorrectly==true) { %>
+          <p id="guess-correct">Je hebt het goed geraden! <%= cPokemon.name %> heeft nu
+              (<%=cPokemon.stats.find(stat=> stat.stat.name === 'hp').base_stat - 1 %> ->)
+                <%= cPokemon.stats.find(stat=> stat.stat.name === "hp").base_stat %> HP.</p>
+          <% } else if(guessedCorrectly==false) {%>
+            <p id="guess-incorrect">Je hebt het verkeerd geraden!
+            </p>
+            <%}%>
+      </section>
+      <h2 class="black-center-text">Wie is deze Pokémon???</h1>
+        <section id="guess-image-container">
+          <img id="img-guess" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+          <p>
+            <%=pokemon.name%>
+          </p>
+        </section>
+        <form action="/guesspokemon" method="POST">
+          <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
+          <input type="hidden" name="currentPokemonId" value="<%= cPokemon.id %>">
+          <input type="text" id="pokemon-input" name="pokemonName" placeholder="Typ hier de naam van de Pokémon">
+          <button id="button-submit" type="submit">Indienen</button>
+        </form>
+    </main>
+    <aside>
+      <%- include("partials/asideCP") %>
+    </aside>
+    <%- include("partials/footer") %>
+</body>
 
 </html>
