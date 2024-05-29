@@ -12,7 +12,9 @@
         </section>
         <section class="catch-container">
             <article>
-                <a class="catch" href="/overzicht"><img src="<%= pokemon.sprites.other.showdown.front_default %>" alt="Hektakun-Pokemon-001-Bulbasaur"></a>
+                <form action="/tester" method="post" id="catch-form"></form>
+                <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
+                <a class="catch" href="/overzicht" onclick="document.getElementById('catchForm').submit(); return false;">><img src="<%= pokemon.sprites.other.showdown.front_default %>" alt="<%= pokemon.id %>"></a>
             </article>
         </section>
     </main>
