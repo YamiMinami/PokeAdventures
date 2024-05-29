@@ -202,7 +202,7 @@ app.get("/tester", secureMiddleware, async (req, res) => {
   }
 });
 
-app.post('/catch', secureMiddleware, async (req, res) => {
+app.post('/tester', secureMiddleware, async (req, res) => {
   const pokemonId = parseInt(req.body.pokemonId, 10);
   const username = req.session.username;
 
