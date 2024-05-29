@@ -579,6 +579,7 @@ label {
     padding: 4px;
     border-radius: 10px;
     border: none;
+    color: white;
 }
 #button-submit{
     width: 300px;
