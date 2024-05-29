@@ -21,9 +21,6 @@
       <h2 class="black-center-text">Wie is deze Pokémon???</h1>
         <section id="guess-image-container">
           <img id="img-guess" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-          <p>
-            <%=pokemon.name%>
-          </p>
         </section>
         <form action="/guesspokemon" method="POST">
           <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">

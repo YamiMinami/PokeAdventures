@@ -1,14 +1,7 @@
 <html lang="nl-be">
 <%- include("partials/head") %>
 <body>
-<header class="navbar" id="navbar-hamburger">
-    <nav id="topnav">
-        <a href="#" class="active"><img src="/assets/logo-game.png" alt="Logo"></a>
-        <a href="javascript:void(0);" class="icon" id="hamburger" onclick="toggleNav()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </nav>
-</header>
+    <%- include("partials/headerNC") %>
 <main id="registratie-container">
     <section id="registratie-box">
         <form action="/registratie" method="post">

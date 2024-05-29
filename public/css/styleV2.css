@@ -859,7 +859,10 @@ button:hover, .menu-content a:hover, .battle-content a:hover, #guess-ref-contain
 }
 
 @media screen and (max-width: 768px) {
-
+    #main-detail{
+        margin: 1rem;
+        margin-top: 3rem;
+    }
     #pokemon-evolution-img-container {
         display: flex;
         width: 100%;
@@ -943,6 +946,9 @@ button:hover, .menu-content a:hover, .battle-content a:hover, #guess-ref-contain
     margin-left: 50%;
 }
 @media (max-width: 768px) {
+    #main-menu{
+        margin-top: 8rem;
+    }
     .menu-container{
         margin: 0;
     }
