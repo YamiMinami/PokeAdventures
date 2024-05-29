@@ -99,7 +99,7 @@ footer {
 
 /* pokedex */
 
-#search, .compare-pokemon-input {
+#search, .compare-pokemon-input, .login-input {
     background-color: white;
     width: 100%;
     padding: 0;
@@ -272,27 +272,8 @@ input {
     padding: 0.5em;
     box-shadow: none;
     border: 1px solid grey;
-    background-color: lightgray;
+    background-color: white;
 }
-
-button {
-    padding: 0.5em 1em;
-    border: none;
-    background-color: #ff4848;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1em;
-    width: 80%;
-    transition: transform 0.2s ease-out;
-}
-
-button:hover {
-    transform: scale(1.05);
-    background-color: #ff4848;
-}
-
-
 /* projecten */
 
 .index-container {
@@ -357,18 +338,6 @@ button:hover {
     padding: 0.25em;
     font-size: 3em;
     border-radius: 50%;
-}
-
-#login-content button {
-    padding: 0;
-    width: 10.75em;
-    height: 2em;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    color: white;
-    background-color: #751a1a;
-    box-shadow: none;
 }
 
 input {
@@ -503,11 +472,6 @@ input {
     border: none;
     width: 385px;
     border-radius: 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: aliceblue;
     cursor: pointer;
 }
 
@@ -665,8 +629,8 @@ label {
     transition: filter .5s ease-out;
     transform-origin: center top;
 }
-
-#button-submit, #button-submit-compare{
+/*HUISSTIJL BUTTON*/
+button{
     display: block;
     margin: 0.5rem auto 0 auto;
     width: 10em;
@@ -676,12 +640,13 @@ label {
     padding: 4px;
     border-radius: 10px;
     border: none;
+    color: white;
 }
 
 #button-submit {
     width: 300px;
 }
-#button-submit:hover, #button-submit-compare:hover {
+button:hover{
     transform: scale(1.05);
 }
 
@@ -693,7 +658,7 @@ label {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.compare-pokemon-input {
+.compare-pokemon-input, .login-input, #overzicht-input {
     margin-bottom: 15px;
     padding: 5px;
     border-radius: 10px;

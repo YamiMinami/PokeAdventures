@@ -14,16 +14,16 @@
         <form action="/registratie" method="post">
             <div>
                 <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Username" id="username">
+                <input class="login-input" type="text" name="username" placeholder="Username" id="username">
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Password" id="password">
+                <input class="login-input" type="password" name="password" placeholder="Password" id="password">
             </div>
             <% if (error) { %>
                 <p><%= error %></p>
             <% } %>
-            <button type="submit">Submit</button>
+            <button type="submit">Registreer</button>
         </form>
     </section>
 </main>
