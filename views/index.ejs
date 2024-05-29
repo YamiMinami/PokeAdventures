@@ -1,37 +1,11 @@
 <html lang="nl-be">
-    <head>
-        <%- include("partials/head") %>
-      </head>    
-      <body>
+    <%- include("partials/head") %>
+    <body>
     <header id="navbar-index">
         <h1>Projecten</h1>
     </header>
-    <main id="login-container">
-        <section>
-            <article id="login-icon">
-                <i class="fa-solid fa-user"></i>
-            </article>
-        </section>
-        <section id="login-content">
-            <article>
-                <form action="#">
-                    <label for="email">Email:</label>
-                    <br>
-                    <input type="email">
-                    <br>
-                    <br>
-                    <label for="password">Password:</label>
-                    <br>
-                    <input type="password">
-                </form>
-                <button>Inloggen</button>
-                <br>
-                <a href="#">Registreer</a>
-            </article>
-        </section>
-    </main>
-    <aside class="index-container">
-        <a href="/tester">
+    <main class="index-container">
+        <a href="/login">
             <section class="project-box">
                 <article class="project-content">
                     <img src="/assets/game-background.jpg" alt="pokemon">
@@ -79,8 +53,9 @@
                 </article>
             </section>
         </a>
-    </aside>
     </main>
+    <aside>
+    </aside>
     <%- include("partials/footer") %>
 </body>
 </html>

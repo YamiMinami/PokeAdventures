@@ -30,20 +30,13 @@
                 <h2><%= cPokemon.name %></h2>
             </article>
         </section>
-        <section class="aside-container">
-            <article class="aside-content">
-                    <input type="text" placeholder="Search..." id="input-search">
-                        <% pokemons.forEach(pokemon => { %>
-                        <div>
-                            <% pokemon.types.forEach((type, i) => { %>
-                                <input type="checkbox" id="type<%= i + 1 %>" id="input-checkbox">
-                                <label for="type<%= i + 1 %>"><%= type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) %></label>
-                            <% }) %>
-                    </div>
-                        <% }) %>
-            </article>
-        </section>
-
+        <div class="search-pokemon">
+            <form action="/overzicht" method="get">
+                <label for="search">Search for a pokemon</label>
+                <input type="text" id="search" name="q" value="<%= q %>" placeholder="Enter a pokemon name">
+                <button type="submit">Search</button>
+            </form>
+            </div>
     </aside>
     <%- include("partials/footer") %>
 </body>

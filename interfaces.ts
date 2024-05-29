@@ -1,10 +1,11 @@
+import { ObjectId} from "mongodb";
+
 export interface Users {
-    id: number;
-    name: string;
-    email: string;
-    password: string;
-    currentPokemon: number;
-    ownedPokemons: string[];
+    _id?: ObjectId;
+    username: string;
+    password?: string;
+    currentPokemon: number | null;
+    ownedPokemons: number[] | null;
 }
 // types.ts
 export interface Stat {
@@ -15,7 +16,7 @@ export interface Stat {
       url: string;
     };
   }
-  
+
   export interface Pokemon {
     id: number;
     name: string;
@@ -27,7 +28,7 @@ export interface Stat {
       url: string;
     };
   }
-  
+
   export interface EvolutionChain {
     chain: {
       evolves_to: EvolutionChain[];
@@ -37,4 +38,3 @@ export interface Stat {
       };
     };
   }
-  

@@ -1,19 +1,50 @@
 import express from "express";
+import {connect, getUsers, login, initialUser, userCollection} from "./database";
+import {Users} from "./interfaces";
+import session from "./session";
+import {secureMiddleware} from "./secureMiddleware";
 import { Pokemon, Stat } from "./interfaces"; // Import the types
 import bodyParser from "body-parser";
 
 const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
+app.use(session)
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(bodyParser.json()); // Parse JSON bodies (optional if you're not sending JSON)
 
 app.get("/", (req, res) => {
-  res.render("index");
+    res.render("index", );
+})
+
+app.get("/login", (req, res) => {
+  res.render("login");
+})
+
+app.post("/login", async(req, res) => {
+  const username: string = req.body.username;
+  const password: string = req.body.password;
+  try {
+    let user: Users = await login(username, password);
+    delete user.password;
+    req.session.username = user;
+    res.redirect("/tester")
+  } catch (e: any) {
+    res.redirect("/login");
+  }
 });
-app.get("/battle", (req, res) => {
-  res.render("battle");
+
+app.get("/battle", secureMiddleware, async (req, res) => {
+    const randomId = Math.floor(Math.random() * 898) + 1;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const pokemon = await response.json();
+
+  res.render("battle", {
+    pokemon: pokemon,
+  });
 });
 app.get("/compare", async (req, res) => {
   let pokemon1;
@@ -63,7 +94,7 @@ app.get("/compare", async (req, res) => {
   });
 });
 
-app.get("/guesspokemon", async (req, res) => {
+app.get("/guesspokemon", secureMiddleware, async (req, res) => {
   try {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
@@ -84,7 +115,7 @@ app.get("/guesspokemon", async (req, res) => {
   }
 });
 
-app.post("/guesspokemon", async (req, res) => {
+app.post("/guesspokemon", secureMiddleware, async (req, res) => {
   try {
     const guessedName = req.body.pokemonName.toLowerCase();
     const pokemonId = req.body.pokemonId;
@@ -115,32 +146,52 @@ app.post("/guesspokemon", async (req, res) => {
   }
 });
 
-app.get("/inlog", (req, res) => {
-  res.render("inlog");
-});
-app.get("/overzicht", async (req, res) => {
-  let pokemons = [];
 
-  for (let i = 0; i < 12; i++) {
+app.get("/overzicht", secureMiddleware, async (req, res) => {
+  let pokemons = [];
+  let searchQuery: string = req.query.q ? String(req.query.q).toLowerCase() : "";
+
+  if (searchQuery) {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery}`);
+      if (response.ok) {
+        const data = await response.json();
+        pokemons.push(data);
+      }
+    } catch (error) {
+      console.error("Error fetching Pokémon:", error);
+    }
+  } else {
+    for (let i = 0; i < 12; i++) {
+      const randomId = Math.floor(Math.random() * 898) + 1;
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+      if (response.ok) {
+        const data = await response.json();
+        pokemons.push(data);
+      }
+    }
+  }
+
+  res.render('overzicht', {
+    pokemons,
+    q: searchQuery,
+    cPokemon: pokemons[0] });
+});
+
+app.get("/tester", secureMiddleware, async (req, res) => {
+  if (req.session.username) {
     const randomId = Math.floor(Math.random() * 898) + 1;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-    const data = await response.json();
-    pokemons.push(data);
-  };
-
-  const currentPokemon = pokemons[1];
-
-  res.render("overzicht", {
-    pokemons: pokemons,
-    cPokemon: currentPokemon
-  });
+    const pokemon = await response.json();
+    res.render("tester", {
+      user: req.session.username,
+      pokemon
+    });
+  } else {
+    res.redirect("/");
+  }
 });
-
-
-app.get("/tester", (req, res) => {
-  res.render("tester");
-});
-app.get("/teamplanner", async(req, res) => {
+app.get("/teamplanner", secureMiddleware, async(req, res) => {
   const currentRandomId = Math.floor(Math.random() * 898) + 1;
   const currentResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${currentRandomId}`);
   const currentPokemon: Pokemon = await currentResponse.json();
@@ -154,7 +205,11 @@ app.get("/teamplanner", async(req, res) => {
   res.render("teamplanner", {cPokemon: currentPokemon, evolutionChain: evolutionChain});
 });
 
-app.get("/detail/:id", async (req, res) => {
+app.get("/menu", secureMiddleware, (req, res) => {
+  res.render("menu");
+});
+
+app.get("/detail/:id", secureMiddleware, async (req, res) => {
   const pokemonId = req.params.id;
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
   const data = await response.json();
@@ -176,6 +231,32 @@ app.get("/detail/:id", async (req, res) => {
   });
 });
 
-app.listen(app.get("port"), () =>
-  console.log("[server] http://localhost:" + app.get("port"))
-);
+app.get('/registratie', (req, res) => {
+  res.render('registratie', { error: "" });
+});
+
+app.post('/registratie', (req, res) => {
+  let username: string = req.body.name;
+  let password: string = req.body.password;
+  let email: string = req.body.email;
+
+  if (username === "" || email === "" || password === "") {
+    res.render("registratie", { error: "All fields are required" });
+  } else if (!email.includes("@")) {
+    res.render("registratie", { error: "Invalid email" });
+  } else {
+    res.render("registratie", { error: "" });
+  }
+});
+
+app.listen(app.get("port"), async () => {
+  try{
+    await connect();
+    await initialUser()
+    await getUsers();
+    console.log("[server] http://localhost:" + app.get("port"))
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
+    });
